@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cn.edu.ecnu</groupId>
 	<artifactId>java-tools</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>1.00.01</version>
 	<!-- TODO project name  -->
 	<name>quickstart</name>
