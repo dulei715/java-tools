@@ -6,9 +6,9 @@
 	<groupId>cn.edu.ecnu</groupId>
 	<artifactId>java-tools</artifactId>
 	<packaging>jar</packaging>
-	<version>1.00.01</version>
+	<version>1.01.01</version>
 	<!-- TODO project name  -->
-	<name>quickstart</name>
+	<name>java_tools</name>
 	<description></description>
 
 	<!-- TODO

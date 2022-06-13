@@ -1,5 +1,7 @@
 package cn.edu.ecnu.math;
 
+import cn.edu.ecnu.math.methods.solve_function.iteration_methods.IterationMethod;
+
 public class LambertW {
     public static final double INITIALIZED_VALUE = -2.0;
     public static final double DEFAULT_PRECISION = Math.pow(10,-6);
