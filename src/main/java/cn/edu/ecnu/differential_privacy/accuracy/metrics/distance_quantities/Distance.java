@@ -1,4 +1,4 @@
-package cn.edu.ecnu.differential_privacy.utility.metrics.distance_quantities;
+package cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities;
 
 
 import cn.edu.ecnu.basic.cumulate.CumulativeFunction;

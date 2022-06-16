@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="" />
+    <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Admin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/DistanceAble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/NeighborAble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/ExponentialMechanism.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/SimpleCDPExponentialMechanism.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/SimpleLDPExponentialMechanism.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/utility/UtilityFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/BasicSearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/RandomUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/RandomUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/utility/UtilityMetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/accuracy/UtilityMetric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/utility/metrics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/accuracy/metrics/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/utility/metrics/basic_statistical_quantities/BasicStatisticalQuantile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/accuracy/metrics/basic_statistical_quantities/BasicStatisticalQuantile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/utility/metrics/distance_quantities/Distance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/accuracy/metrics/distance_quantities/Distance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/utility/metrics/distance_quantities/WassersteinDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/accuracy/metrics/distance_quantities/WassersteinDistance.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,82 +31,87 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/math/LambertW.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/SimpleCDPExponentialMechanism.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/SimpleLDPExponentialMechanism.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
-              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+              <caret line="8" column="88" lean-forward="true" selection-start-line="8" selection-start-column="88" selection-end-line="8" selection-end-column="88" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/math/methods/solve_function/iteration_methods/BinaryIterationAlgorithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/io/print/MyPrint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5124">
-              <caret line="264" selection-start-line="264" selection-end-line="264" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/io/write/PointWrite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2079">
-              <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/statistic/StatisticTool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4347">
-              <caret line="213" column="10" selection-start-line="213" selection-start-column="10" selection-end-line="213" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/math/methods/solve_function/iteration_methods/IterationMethod.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="59" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/SimpleTwoDimensionalPoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="819">
-              <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/DistanceAble.java">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalDoublePoint.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/ExponentialMechanism.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="44" column="37" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
+            <state relative-caret-position="169">
+              <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicArray.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="192" column="18" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/NeighborAble.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/RandomUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/utility/UtilityFunction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/noise/LaplaceUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -118,14 +141,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/math/methods/NewtonIterationAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/math/methods/BinaryIterationAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/LambertWTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/io/read/TaskWorkerPointRead.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/Point.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/io/read/TaxiRead.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/algorithm/HungarianAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/RandomUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/Grid.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/SimpleTwoDimensionalPoint.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -159,6 +178,20 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/io/print/MyPrint.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/io/write/PointWrite.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/statistic/StatisticTool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/noise/ExponentialUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/utility/UtilityFunction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/RandomUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicSearch.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/BasicSearchTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicArray.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/Neighborable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/NeighboreAble.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/NeighborAble.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/SimpleExponentialMechanism.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/SimpleCDPExponentialMechanism.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/DistanceAble.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/SimpleLDPExponentialMechanism.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/ExponentialMechanism.java" />
       </list>
     </option>
   </component>
@@ -191,11 +224,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="2000" />
-    <option name="y" value="25" />
-    <option name="width" value="1934" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -203,7 +236,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,7 +276,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ecnu" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="basic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-tools" type="b2602c69:ProjectViewProjectNode" />
@@ -253,8 +285,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ecnu" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="print" type="462c0819:PsiDirectoryNode" />
+              <item name="differential_privacy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-tools" type="b2602c69:ProjectViewProjectNode" />
@@ -263,8 +294,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ecnu" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="write" type="462c0819:PsiDirectoryNode" />
+              <item name="differential_privacy" type="462c0819:PsiDirectoryNode" />
+              <item name="cdp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-tools" type="b2602c69:ProjectViewProjectNode" />
@@ -273,7 +304,9 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ecnu" type="462c0819:PsiDirectoryNode" />
-              <item name="math" type="462c0819:PsiDirectoryNode" />
+              <item name="differential_privacy" type="462c0819:PsiDirectoryNode" />
+              <item name="cdp" type="462c0819:PsiDirectoryNode" />
+              <item name="basic_struct" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-tools" type="b2602c69:ProjectViewProjectNode" />
@@ -282,8 +315,9 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ecnu" type="462c0819:PsiDirectoryNode" />
-              <item name="math" type="462c0819:PsiDirectoryNode" />
-              <item name="solve_function" type="462c0819:PsiDirectoryNode" />
+              <item name="differential_privacy" type="462c0819:PsiDirectoryNode" />
+              <item name="cdp" type="462c0819:PsiDirectoryNode" />
+              <item name="exponential_mechanism" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-tools" type="b2602c69:ProjectViewProjectNode" />
@@ -292,9 +326,18 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ecnu" type="462c0819:PsiDirectoryNode" />
-              <item name="math" type="462c0819:PsiDirectoryNode" />
-              <item name="solve_function" type="462c0819:PsiDirectoryNode" />
-              <item name="iteration_methods" type="462c0819:PsiDirectoryNode" />
+              <item name="differential_privacy" type="462c0819:PsiDirectoryNode" />
+              <item name="ldp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-tools" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecnu" type="462c0819:PsiDirectoryNode" />
+              <item name="differential_privacy" type="462c0819:PsiDirectoryNode" />
+              <item name="noise" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-tools" type="b2602c69:ProjectViewProjectNode" />
@@ -321,16 +364,18 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1655108826105" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1655365488652" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -338,6 +383,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.edu.ecnu.differential_privacy.cdp.basic_struct" />
+      <recent name="cn.edu.ecnu.differential_privacy.cdp.exponential_mechanism" />
       <recent name="cn.edu.ecnu.basic" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -357,7 +404,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StatisticTool">
+  <component name="RunManager" selected="JUnit.BasicSearchTest.fun1">
     <configuration name="BoundedHashFunction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.cryptography.hash_function_impl.BoundedHashFunction" />
       <module name="java-tools" />
@@ -384,7 +431,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LambertWTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BasicSearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-tools" />
       <extension name="coverage">
         <pattern>
@@ -393,13 +440,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.LambertWTest" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.BasicSearchTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LambertWTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BasicSearchTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-tools" />
       <extension name="coverage">
         <pattern>
@@ -408,7 +455,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.LambertWTest" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.BasicSearchTest" />
       <option name="METHOD_NAME" value="fun1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -433,11 +480,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BasicSearchTest.fun1" />
+        <item itemvalue="JUnit.BasicSearchTest" />
         <item itemvalue="Application.StatisticTool" />
         <item itemvalue="Application.BoundedHashFunction" />
         <item itemvalue="JUnit.LambertWTest.fun2" />
-        <item itemvalue="JUnit.LambertWTest.fun1" />
-        <item itemvalue="JUnit.LambertWTest" />
       </list>
     </recent_temporary>
   </component>
@@ -455,48 +502,52 @@
       <workItem from="1654920208557" duration="293000" />
       <workItem from="1654937623952" duration="17821000" />
       <workItem from="1655128783643" duration="597000" />
+      <workItem from="1655254817145" duration="1202000" />
+      <workItem from="1655276321044" duration="9738000" />
+      <workItem from="1655339798388" duration="12748000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LambertWTest_fun2 - 2022.06.11 at 11h 33m 46s.xml">
-      <configuration name="LambertWTest.fun2" configurationId="JUnit" />
+    <history-entry file="BasicSearchTest_fun1 - 2022.06.15 at 16h 18m 50s.xml">
+      <configuration name="BasicSearchTest.fun1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LambertWTest_fun2 - 2022.06.11 at 11h 33m 55s.xml">
-      <configuration name="LambertWTest.fun2" configurationId="JUnit" />
+    <history-entry file="BasicSearchTest_fun1 - 2022.06.15 at 16h 19m 17s.xml">
+      <configuration name="BasicSearchTest.fun1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LambertWTest_fun2 - 2022.06.11 at 11h 36m 37s.xml">
-      <configuration name="LambertWTest.fun2" configurationId="JUnit" />
+    <history-entry file="BasicSearchTest_fun1 - 2022.06.15 at 16h 19m 52s.xml">
+      <configuration name="BasicSearchTest.fun1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LambertWTest_fun2 - 2022.06.11 at 11h 49m 20s.xml">
-      <configuration name="LambertWTest.fun2" configurationId="JUnit" />
+    <history-entry file="BasicSearchTest_fun1 - 2022.06.15 at 16h 20m 43s.xml">
+      <configuration name="BasicSearchTest.fun1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LambertWTest_fun2 - 2022.06.11 at 11h 49m 38s.xml">
-      <configuration name="LambertWTest.fun2" configurationId="JUnit" />
+    <history-entry file="BasicSearchTest_fun1 - 2022.06.15 at 16h 22m 23s.xml">
+      <configuration name="BasicSearchTest.fun1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LambertWTest_fun2 - 2022.06.11 at 11h 49m 50s.xml">
-      <configuration name="LambertWTest.fun2" configurationId="JUnit" />
+    <history-entry file="BasicSearchTest_fun1 - 2022.06.15 at 16h 28m 51s.xml">
+      <configuration name="BasicSearchTest.fun1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LambertWTest_fun1 - 2022.06.11 at 11h 49m 54s.xml">
-      <configuration name="LambertWTest.fun1" configurationId="JUnit" />
+    <history-entry file="BasicSearchTest_fun1 - 2022.06.15 at 16h 28m 57s.xml">
+      <configuration name="BasicSearchTest.fun1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LambertWTest_fun2 - 2022.06.11 at 11h 50m 17s.xml">
-      <configuration name="LambertWTest.fun2" configurationId="JUnit" />
+    <history-entry file="BasicSearchTest_fun1 - 2022.06.15 at 16h 29m 44s.xml">
+      <configuration name="BasicSearchTest.fun1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LambertWTest_fun2 - 2022.06.11 at 11h 50m 42s.xml">
-      <configuration name="LambertWTest.fun2" configurationId="JUnit" />
+    <history-entry file="BasicSearchTest_fun1 - 2022.06.15 at 16h 30m 15s.xml">
+      <configuration name="BasicSearchTest.fun1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LambertWTest_fun2 - 2022.06.11 at 12h 03m 39s.xml">
-      <configuration name="LambertWTest.fun2" configurationId="JUnit" />
+    <history-entry file="BasicSearchTest_fun1 - 2022.06.15 at 16h 30m 46s.xml">
+      <configuration name="BasicSearchTest.fun1" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24229000" />
+    <option name="totallyTimeSpent" value="47917000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2000" y="25" width="1934" height="1047" extended-state="7" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25827107" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -523,7 +574,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.09338314" />
+      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.09328358" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -544,45 +595,8 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/Order.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/Taxi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/io/read/TaskWorkerPointRead.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/io/read/TaxiRead.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/utility/UtilityMetric.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/integration/trapezoid/d3r1F.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/MatrixArray.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/collection/ListUtils.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/cryptography/HashFunction.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/algorithm/HungarianAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/RandomUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -591,13 +605,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -759,14 +766,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/utility/metrics/distance_quantities/Distance.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/accuracy/metrics/distance_quantities/Distance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/utility/metrics/distance_quantities/WassersteinDistance.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/accuracy/metrics/distance_quantities/WassersteinDistance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
           <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
@@ -871,6 +878,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/math/methods/solve_function/iteration_methods/IterationMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -885,6 +893,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalDoublePoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="44" column="37" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cn/edu/ecnu/BasicSearchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/utility/UtilityFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/noise/LaplaceUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://D:/software/Java/jdk1.8.0_121/src.zip!/java/lang/Math.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9492">
@@ -892,10 +941,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalDoublePoint.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicArray.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="44" column="37" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
+        <state relative-caret-position="648">
+          <caret line="192" column="18" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/RandomUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/NeighborAble.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/DistanceAble.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/SimpleLDPExponentialMechanism.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="8" column="88" lean-forward="true" selection-start-line="8" selection-start-column="88" selection-end-line="8" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/SimpleCDPExponentialMechanism.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/exponential_mechanism/ExponentialMechanism.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

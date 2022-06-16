@@ -166,6 +166,33 @@ public class BasicArray {
         return resultList;
     }
 
+    public static <T> int getFirstFindValueIndex(T[] data, T value) {
+        for (int i = 0; i < data.length; i++) {
+            if (data[i].equals(value)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static <T> int getFirstFindValueIndexByGivenColum(T[][] data, int colum, T value) {
+        for (int i = 0; i < data.length; i++) {
+            if (data[i][colum].equals(value)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static <T> int getFirstFindValueIndex(List<T> data, T value) {
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i).equals(value)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
     public static <T extends Comparable<T>> Pair<Integer, T> getMaxValuePair(T... objs) {
         T result = objs[0];

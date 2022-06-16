@@ -3,6 +3,8 @@ package cn.edu.ecnu.basic;
 
 import cn.edu.ecnu.io.print.MyPrint;
 
+import java.util.Random;
+
 public class RandomUtil {
 
     /**
@@ -51,6 +53,16 @@ public class RandomUtil {
             resultArray[i] = getRandomInteger(lowerBound, upperBound);
         }
         return resultArray;
+    }
+
+    /**
+     *
+     * @param cumulatedValues 是一系列排序好的小于1的正小数，第一个数为0
+     * @return
+     */
+    public static Integer getRandomIndexGivenCumulatedPoint(Double[] cumulatedValues) {
+        double randomValue = Math.random();
+        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.FORMER);
     }
 
     public static void main(String[] args) {

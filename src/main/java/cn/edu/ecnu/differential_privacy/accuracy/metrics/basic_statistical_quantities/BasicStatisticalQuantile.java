@@ -1,4 +1,4 @@
-package cn.edu.ecnu.differential_privacy.utility.metrics.basic_statistical_quantities;
+package cn.edu.ecnu.differential_privacy.accuracy.metrics.basic_statistical_quantities;
 
 import org.apache.commons.math3.util.Pair;
 
