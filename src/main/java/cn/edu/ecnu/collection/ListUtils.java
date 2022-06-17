@@ -31,4 +31,40 @@ public class ListUtils {
         return result;
     }
 
+    public static <T> void swap(List<T> elementList, int i, int j) {
+        T tempElement = elementList.get(i);
+        elementList.set(i, elementList.get(j));
+        elementList.set(j, tempElement);
+    }
+
+    private static <T extends Comparable<T>> void quickSort(List<T> elementList, int left, int right) {
+        if (left > right) {
+            return;
+        }
+        T baseElement = elementList.get(left);
+        int i = left;
+        int j = right;
+        while (i < j) {
+            while (elementList.get(j).compareTo(baseElement) >= 0 && i < j) {
+                -- j;
+            }
+            while (elementList.get(i).compareTo(baseElement) <= 0 && i < j) {
+                ++ i;
+            }
+            if (i < j) {
+                swap(elementList, i, j);
+            }
+        }
+        swap(elementList, left, i);
+        quickSort(elementList, left, j - 1);
+        quickSort(elementList, j + 1, right);
+    }
+
+    public static <T extends Comparable<T>> void quickSort(List<T> elementList) {
+        int end = elementList.size() - 1;
+        quickSort(elementList, 0, end);
+    }
+
+
+
 }

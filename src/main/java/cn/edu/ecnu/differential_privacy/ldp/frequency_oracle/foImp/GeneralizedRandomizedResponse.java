@@ -22,7 +22,7 @@ public class GeneralizedRandomizedResponse<T> implements FrequencyOracle<T, T> {
         this.q = 1 / (Math.exp(epsilon) + this.size - 1);
 
         random = new Random();
-//        Arrays.sort(this.data);
+//        Arrays.quickSort(this.data);
     }
 
     /**

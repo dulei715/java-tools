@@ -217,6 +217,22 @@ public class BasicCalculation {
         return result;
     }
 
+    /**
+     *  计算 sum(vectorA(i) * radix^vectorB(i))
+     * @param vectorA
+     * @param exponentVectorB
+     * @param radix
+     * @return
+     */
+    public static Double getInnerProduct(Integer[] vectorA, Double[] exponentVectorB, double radix) {
+        int size = vectorA.length;
+        Double result = 0.0;
+        for (int i = 0; i < size; i++) {
+            result += vectorA[i] * Math.pow(radix, exponentVectorB[i]);
+        }
+        return result;
+    }
+
 
 
 

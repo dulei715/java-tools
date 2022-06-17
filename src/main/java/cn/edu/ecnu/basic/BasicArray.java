@@ -4,8 +4,12 @@ package cn.edu.ecnu.basic;
 import javafx.util.Pair;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 public class BasicArray {
     public static void setIntArrayTo(int[] element, int value) {
@@ -26,6 +30,14 @@ public class BasicArray {
 
     public static void setIntArrayToZero(Integer[] element) {
         setIntArrayTo(element, 0);
+    }
+
+    public static void setIntArrayTo(Integer[][] element, int value) {
+        for (int i = 0; i < element.length; i++) {
+            for (int j = 0; j < element[0].length; j++) {
+                element[i][j] = value;
+            }
+        }
     }
 
     public static void setDoubleArrayTo(double[] element, double value) {
@@ -56,16 +68,52 @@ public class BasicArray {
         }
     }
 
-    public static void setListArrayToEmptyList(List[] element) {
-        for (int i = 0; i < element.length; i++) {
-            element[i] = new ArrayList();
+//    public static void setListArrayToEmptyList(List[] element) {
+//        for (int i = 0; i < element.length; i++) {
+//            element[i] = new ArrayList();
+//        }
+//    }
+
+    /**
+     * 初始化数组每个值为一个集合。该集合不能是抽象类或接口
+     * @param collectionArray
+     * @param clazz
+     * @param <T>
+     * @throws IllegalAccessException
+     * @throws InstantiationException
+     */
+    public static <T extends Collection> void setToEmptyGroup(T[]  collectionArray, Class<T> clazz) throws IllegalAccessException, InstantiationException {
+
+        for (int i = 0; i < collectionArray.length; i++) {
+            collectionArray[i] = clazz.newInstance();
+        }
+    }
+
+    public static <T extends Map> void setToEmptyGroup(T[]  mapArray, Class<T> clazz) throws IllegalAccessException, InstantiationException {
+
+        for (int i = 0; i < mapArray.length; i++) {
+            mapArray[i] = clazz.newInstance();
         }
     }
 
 
-    public static void setListArrayTo(List[] element, List list) {
-        for (int i = 0; i < element.length; i++) {
-            element[i] = new ArrayList(list);
+//    public static void setListArrayTo(List[] element, List list) {
+//        for (int i = 0; i < element.length; i++) {
+//            element[i] = new ArrayList(list);
+//        }
+//    }
+
+    public static <T extends Collection> void setGroupArrayTo(T[] elementArray, T initCollection, Class<T> clazz) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        Constructor<T> constructor = clazz.getConstructor(Collection.class);
+        for (int i = 0; i < elementArray.length; i++) {
+            elementArray[i] = constructor.newInstance(initCollection);
+        }
+    }
+
+    public static <T extends Map> void setGroupArrayTo(T[] elementArray, T initMap, Class<T> clazz) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        Constructor<T> constructor = clazz.getConstructor(Map.class);
+        for (int i = 0; i < elementArray.length; i++) {
+            elementArray[i] = constructor.newInstance(initMap);
         }
     }
 
