@@ -194,6 +194,15 @@ public class BasicArray {
         return result;
     }
 
+    public static List<Integer> getIncreaseIntegerNumberList(Integer startValue, int step, Integer maxValue) {
+        int size = (maxValue - startValue) / step + 1;
+        List<Integer> result = new ArrayList<>(size);
+        for (int value = startValue; value <= maxValue; value += step) {
+            result.add(value);
+        }
+        return result;
+    }
+
 
     public static int getFirstFindValueIndex(int[] data, int value) {
         for (int i = 0; i < data.length; i++) {
@@ -212,6 +221,14 @@ public class BasicArray {
             }
         }
         return resultList;
+    }
+
+    public static <T> List<T> getElementListInGivenIndexes(List<T> elementList, List<Integer> indexList) {
+        List<T> result = new ArrayList<>(indexList.size());
+        for (Integer index : indexList) {
+            result.add(elementList.get(index));
+        }
+        return result;
     }
 
     public static <T> int getFirstFindValueIndex(T[] data, T value) {

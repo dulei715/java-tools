@@ -1,7 +1,9 @@
 package cn.edu.ecnu.collection;
 
 import java.lang.reflect.Array;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 public class SetUtils {
@@ -16,4 +18,13 @@ public class SetUtils {
         }
         return arr;
     }
+
+    public static <T> Set<T> combine(List<T>[] listArray, int fromIndex, int endIndex) {
+        Set<T> set = new HashSet<>();
+        for (int i = fromIndex; i <= endIndex; i++) {
+            set.addAll(listArray[i]);
+        }
+        return set;
+    }
+
 }

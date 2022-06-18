@@ -9,7 +9,7 @@ public class MathUtils {
      * @param m 小于n的非负数
      * @return
      */
-    public static int getBinaomialResult(int n, int m) {
+    public static int getBinomialResult(int n, int m) {
         int [] tempArr;
         if (m == 0) {
             return 1;

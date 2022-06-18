@@ -65,6 +65,13 @@ public class ListUtils {
         quickSort(elementList, 0, end);
     }
 
+    public static <T> List<T> combine(List<T>[] listArray, int fromIndex, int endIndex) {
+        List<T> list = new ArrayList<>();
+        for (int i = fromIndex; i <= endIndex; i++) {
+            list.addAll(listArray[i]);
+        }
+        return list;
+    }
 
 
 }

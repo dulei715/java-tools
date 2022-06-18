@@ -86,6 +86,14 @@ public class BasicCalculation {
         return sum;
     }
 
+    public static double getSum(Double ... values) {
+        double sum = 0;
+        for (int i = 0; i < values.length; i++) {
+            sum += values[i];
+        }
+        return sum;
+    }
+
 
     public static double radians(double d) {
         return d * Math.PI / 180.0;

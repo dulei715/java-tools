@@ -19,4 +19,24 @@ public class CumulativeFunction {
         return result;
     }
 
+    public static Double[] getCumulativeDistribution(Double[] statisticDistribution) {
+        int len = statisticDistribution.length;
+        Double[] result = new Double[len];
+        result[0] = statisticDistribution[0];
+        for (int i = 1; i < len; i++) {
+            result[i] = result[i-1] + statisticDistribution[i];
+        }
+        return result;
+    }
+
+    public static Integer[] getCumulativeDistribution(Integer[] statisticDistribution) {
+        int len = statisticDistribution.length;
+        Integer[] result = new Integer[len];
+        result[0] = statisticDistribution[0];
+        for (int i = 1; i < len; i++) {
+            result[i] = result[i-1] + statisticDistribution[i];
+        }
+        return result;
+    }
+
 }
