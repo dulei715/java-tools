@@ -95,5 +95,26 @@ public class BasicArrayTest {
 
     }
 
+    @Test
+    public void fun5() {
+        List<Integer> data = new ArrayList<>();
+        data.add(3);
+        MyPrint.showList(data);
+
+        ListUtils.quickSort(data);
+        MyPrint.showList(data);
+
+    }
+
+    @Test
+    public void fun6() {
+        List<Integer> data = new ArrayList<>();
+        MyPrint.showList(data);
+
+        ListUtils.quickSort(data);
+        MyPrint.showList(data);
+
+    }
+
 
 }
