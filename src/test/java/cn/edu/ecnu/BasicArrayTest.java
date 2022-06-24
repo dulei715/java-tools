@@ -116,5 +116,15 @@ public class BasicArrayTest {
 
     }
 
+    @Test
+    public void fun7() {
+        TreeMap<String, String> treeMap = new TreeMap<>();
+        treeMap.put("aaaa", "bbbb");
+        String cccc = treeMap.get("cccc");
+        System.out.println(cccc);
+//        String c = treeMap.get(null);
+//        System.out.println(c);
+    }
+
 
 }

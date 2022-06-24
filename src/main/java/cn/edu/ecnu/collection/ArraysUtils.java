@@ -2,6 +2,7 @@ package cn.edu.ecnu.collection;
 
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class ArraysUtils {
     /**
      * @param a
@@ -157,6 +158,36 @@ public class ArraysUtils {
             }
         }
         return resultIndex;
+    }
+
+    public static <T> void shiftAndSet(T[][] inputArray, T[] outputArray) {
+        int rowLen = inputArray.length;
+        int colLen = inputArray[0].length;
+        int outputSize = outputArray.length;
+        if (rowLen * colLen != outputSize) {
+            throw new RuntimeException("The quantity of inputArray is not equal to that of outputArray!");
+        }
+        int k = 0;
+        for (int i = 0; i < rowLen; i++) {
+            for (int j = 0; j < colLen; j++) {
+                outputArray[k++] = inputArray[i][j];
+            }
+        }
+    }
+
+    public static <T> void reshapeAndSet(T[] inputArray, T[][] outputArray) {
+        int rowLen = outputArray.length;
+        int colLen = outputArray[0].length;
+        int inputSize = inputArray.length;
+        if (rowLen * colLen != inputSize) {
+            throw new RuntimeException("The quantity of inputArray is not equal to that of outputArray!");
+        }
+        int k = 0;
+        for (int i = 0; i < rowLen; i++) {
+            for (int j = 0; j < colLen; j++) {
+                 outputArray[i][j] = inputArray[k++];
+            }
+        }
     }
 
     public static void main(String[] args) {

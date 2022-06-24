@@ -5,7 +5,7 @@ import cn.edu.ecnu.basic.BasicArray;
 
 import java.util.Arrays;
 
-public abstract class IntegerPoint {
+public class IntegerPoint {
     protected Integer dimensionalSize = null;
     protected Integer[] valueArray = null;
 

@@ -40,6 +40,11 @@ public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparab
         return new int[]{this.valueArray[0], this.valueArray[1]};
     }
 
+    public static TwoDimensionalIntegerPoint valueOf(IntegerPoint point) {
+        Integer[] indexes = point.getValueArray();
+        return new TwoDimensionalIntegerPoint(indexes[0], indexes[1]);
+    }
+
     @Override
     public String toString() {
         return "TwoDimensionalIntegerPoint{" +

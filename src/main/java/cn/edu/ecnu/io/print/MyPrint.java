@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+@SuppressWarnings("ALL")
 public class MyPrint {
 
     public static void showSplitLine(String unitString, int number) {
@@ -148,7 +149,37 @@ public class MyPrint {
         }
     }
 
+    public static void show2DimensionDoubleArray(Double[][] data, String split, int precision) {
+        int i, j;
+        if (precision >= 0) {
+            StringBuilder pattern = null;
+            pattern = new StringBuilder("0.");
+            for (int k = 0; k < precision; k++) {
+                pattern.append("0");
+            }
+//            System.out.println(pattern.toString());
+            DecimalFormat df = new DecimalFormat(pattern.toString());
+            for (i = 0; i < data.length; i++) {
+                for (j = 0; j < data[0].length - 1; j++) {
+                    System.out.print(df.format(data[i][j]) + split);
+                }
+                System.out.println(df.format(data[i][j]));
+            }
+        } else {
+            for (i = 0; i < data.length; i++) {
+                for (j = 0; j < data[0].length - 1; j++) {
+                    System.out.print(data[i][j] + split);
+                }
+                System.out.println(data[i][j]);
+            }
+        }
+    }
+
     public static void show2DimensionDoubleArray(double[][] data) {
+        show2DimensionDoubleArray(data, ", ", -1);
+    }
+
+    public static void show2DimensionDoubleArray(Double[][] data) {
         show2DimensionDoubleArray(data, ", ", -1);
     }
 
@@ -178,7 +209,36 @@ public class MyPrint {
         }
     }
 
+    public static void show2DimensionIntegerArray(Integer[][] data, String split, int precision) {
+        int i, j;
+        if (precision >= 0) {
+            StringBuilder pattern = null;
+            pattern = new StringBuilder("0.");
+            for (int k = 0; k < precision; k++) {
+                pattern.append("0");
+            }
+//            System.out.println(pattern.toString());
+            DecimalFormat df = new DecimalFormat(pattern.toString());
+            for (i = 0; i < data.length; i++) {
+                for (j = 0; j < data[0].length - 1; j++) {
+                    System.out.print(df.format(data[i][j]) + split);
+                }
+                System.out.println(df.format(data[i][j]));
+            }
+        } else {
+            for (i = 0; i < data.length; i++) {
+                for (j = 0; j < data[0].length - 1; j++) {
+                    System.out.print(data[i][j] + split);
+                }
+                System.out.println(data[i][j]);
+            }
+        }
+    }
+
     public static void show2DimensionIntegerArray(int[][] data) {
+        show2DimensionIntegerArray(data, ", ", -1);
+    }
+    public static void show2DimensionIntegerArray(Integer[][] data) {
         show2DimensionIntegerArray(data, ", ", -1);
     }
 

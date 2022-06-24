@@ -3,6 +3,11 @@ package cn.edu.ecnu.struct;
 
 import cn.edu.ecnu.basic.RandomUtil;
 import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.ecnu.struct.point.IntegerPoint;
+import cn.edu.ecnu.struct.point.Point;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Grid {
     public static Integer[] toGridIndex(Double gridLen, Double... indexes) {
@@ -11,6 +16,17 @@ public class Grid {
             result[i] = (int)Math.floor(indexes[i] / gridLen);
         }
         return result;
+    }
+
+    public static List<? extends IntegerPoint> toIntegerPoint(List<? extends Point> doubleValuePointList, double gridLength) {
+        int size = doubleValuePointList.size();
+        Integer[] indexes;
+        List<IntegerPoint> resultList = new ArrayList<>(size);
+        for (Point doubleValuePoint : doubleValuePointList) {
+            indexes = Grid.toGridIndex(gridLength, doubleValuePoint.getValueArray());
+            resultList.add(new IntegerPoint(indexes));
+        }
+        return resultList;
     }
 
     public static void main(String[] args) {
