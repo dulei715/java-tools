@@ -266,6 +266,18 @@ public class StatisticTool {
         } while (Math.abs(newLogLikelihood - beforeLogLikelihood) >= stopValue);
         return newValueArray;
     }
+
+    /**
+     * （该项注释中输入值是原始数据，输出值代表噪声数据。不是该函数的输入输出）
+     * @param matrix 概率矩阵。行是输出数据排成的一维数组，列是输入数据排成的一维数组
+     * @param noiseValueCountArray 统计到的输出数据排成一维数组的统计结果
+     * @param stopValue 控制最小误差的值
+     * @param initialValueCountArray 初始化输出统计值，默认为size 个 1/size
+     * @param kParameter 控制二维形式下输入值临近与其临近值得权重
+     * @param xIndexSize 输入数据排成二维数组的行数
+     * @param yIndexSize 输入数据排成二维数组的列数
+     * @return 估计出来的输出值
+     */
     public static Double[] getTwoDimensionalExpectationMaximizationSmooth(final Double[][] matrix, final Integer[] noiseValueCountArray, Double stopValue, final Double[] initialValueCountArray, double kParameter, int xIndexSize, int yIndexSize) {
         Double[] pValueArray = new Double[initialValueCountArray.length];
         Double[] beforeValueArray = new Double[initialValueCountArray.length];
