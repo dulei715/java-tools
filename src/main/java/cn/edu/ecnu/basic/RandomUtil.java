@@ -2,12 +2,14 @@ package cn.edu.ecnu.basic;
 
 
 import cn.edu.ecnu.basic.cumulate.CumulativeFunction;
+import cn.edu.ecnu.collection.ArraysUtils;
 import cn.edu.ecnu.io.print.MyPrint;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+@SuppressWarnings("Duplicates")
 public class RandomUtil {
 
     /**
@@ -123,6 +125,26 @@ public class RandomUtil {
         Double[] cumulatedValues = CumulativeFunction.getCumulativeDistribution(statisticValues);
         double randomValue = Math.random();
         return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
+    }
+
+    /**
+     * 这里的countValue可以是整数也可以是小数
+     * @param countValues
+     * @return
+     */
+    public static Integer getRandomIndexGivenCountPoint(final Double[] countValues) {
+        int len = countValues.length;
+        Double[] cumulatedValues = CumulativeFunction.getCumulativeDistribution(countValues);
+        BasicArray.linearTransform(cumulatedValues, 1.0/cumulatedValues[len-1], 0.0);
+        double randomValue = Math.random();
+        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
+    }
+
+    public static Integer getRandomIndexGivenCumulativeCountPoint(final Double[] cumulativeCountValues) {
+        int len = cumulativeCountValues.length;
+        Double[] cumulativeValues = BasicArray.getLinearTransform(cumulativeCountValues, 1.0 / cumulativeCountValues[len - 1], 0.0);
+        double randomValue = Math.random();
+        return BasicSearch.binarySearch(cumulativeValues, randomValue, BasicSearch.LATTER);
     }
 
 

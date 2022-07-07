@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("Duplicates")
 public class BasicArray {
     public static void setIntArrayTo(int[] element, int value) {
         for (int i = 0; i < element.length; i++) {
@@ -66,6 +67,35 @@ public class BasicArray {
                 element[i][j] = value;
             }
         }
+    }
+
+
+    public static void linearTransform(double[] element, double factorA, double constC) {
+        for (int i = 0; i < element.length; i++) {
+            element[i] = element[i] * factorA + constC;
+        }
+    }
+
+    public static void linearTransform(Double[] element, double factorA, double constC) {
+        for (int i = 0; i < element.length; i++) {
+            element[i] = element[i] * factorA + constC;
+        }
+    }
+
+    public static double[] getLinearTransform(double[] element, double factorA, double constC) {
+        double[] result = new double[element.length];
+        for (int i = 0; i < element.length; i++) {
+            result[i] = element[i] * factorA + constC;
+        }
+        return result;
+    }
+
+    public static Double[] getLinearTransform(Double[] element, double factorA, double constC) {
+        Double[] result = new Double[element.length];
+        for (int i = 0; i < element.length; i++) {
+            result[i] = element[i] * factorA + constC;
+        }
+        return result;
     }
 
 //    public static void setListArrayToEmptyList(List[] element) {
