@@ -37,15 +37,21 @@ public class RandomUtil {
         return result;
     }
 
-    public static <T> T getRandomElement(List<T> elementList, int sampleSize) {
+    public static <T> List<T> getRandomElement(List<T> elementList, int sampleSize) {
         int lowerBound = 0;
         int upperBound = elementList.size() - 1;
-        Integer index = getRandomInteger(lowerBound, upperBound);
-        return elementList.get(index);
+        Integer index;
+        List<T> sampleElementList = new ArrayList<>();
+        for (int i = 0; i < sampleSize; i++) {
+            index = getRandomInteger(lowerBound, upperBound);
+            sampleElementList.add(elementList.get(index));
+        }
+        return sampleElementList;
     }
 
     public static <T> T getRandomElement(List<T> elementList) {
-        return getRandomElement(elementList, 1);
+        List<T> randomElementList = getRandomElement(elementList, 1);
+        return randomElementList.get(0);
     }
 
 
@@ -135,6 +141,14 @@ public class RandomUtil {
     public static Integer getRandomIndexGivenCountPoint(final Double[] countValues) {
         int len = countValues.length;
         Double[] cumulatedValues = CumulativeFunction.getCumulativeDistribution(countValues);
+        BasicArray.linearTransform(cumulatedValues, 1.0/cumulatedValues[len-1], 0.0);
+        double randomValue = Math.random();
+        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
+    }
+
+    public static Integer getRandomIndexGivenCountPoint(final List<Double> countValueList) {
+        int len = countValueList.size();
+        Double[] cumulatedValues = CumulativeFunction.getCumulativeDistribution(countValueList.toArray(new Double[0]));
         BasicArray.linearTransform(cumulatedValues, 1.0/cumulatedValues[len-1], 0.0);
         double randomValue = Math.random();
         return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);

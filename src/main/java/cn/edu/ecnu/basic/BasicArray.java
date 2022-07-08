@@ -97,6 +97,13 @@ public class BasicArray {
         }
         return result;
     }
+    public static Double[] getLinearTransform(List<Double> element, double factorA, double constC) {
+        Double[] result = new Double[element.size()];
+        for (int i = 0; i < element.size(); i++) {
+            result[i] = element.get(i) * factorA + constC;
+        }
+        return result;
+    }
 
 //    public static void setListArrayToEmptyList(List[] element) {
 //        for (int i = 0; i < element.length; i++) {

@@ -126,5 +126,16 @@ public class BasicArrayTest {
 //        System.out.println(c);
     }
 
+    @Test
+    public void fun8() {
+        List<Integer> list = new ArrayList<>();
+        list.add(3);
+        list.add(5);
+        list.add(7);
+        list.add(9);
+        list.remove(new Integer(3));
+        MyPrint.showList(list);
+    }
+
 
 }

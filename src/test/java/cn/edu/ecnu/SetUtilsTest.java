@@ -34,4 +34,13 @@ public class SetUtilsTest {
         Integer[] result = SetUtils.toArray(data, Integer.class);
         MyPrint.showArray(result);
     }
+    @Test
+    public void fun3() {
+        TreeSet<Integer> data = new TreeSet<>();
+        data.add(3);
+        data.add(4);
+        data.add(6);
+        Integer result = SetUtils.getElementByIndex(data, 1);
+        System.out.println(result);
+    }
 }

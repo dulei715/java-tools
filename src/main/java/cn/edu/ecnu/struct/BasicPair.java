@@ -21,4 +21,5 @@ public class BasicPair<K extends Comparable<K>, V extends Comparable<V>> extends
         }
         return this.getValue().compareTo((V)basicPair.getValue());
     }
+
 }

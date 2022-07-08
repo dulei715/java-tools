@@ -1,10 +1,7 @@
 package cn.edu.ecnu.collection;
 
 import java.lang.reflect.Array;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class SetUtils {
     public static <T> T[] toArray(Set<T> elementSet, Class<T> clazz) {
@@ -25,6 +22,22 @@ public class SetUtils {
             set.addAll(listArray[i]);
         }
         return set;
+    }
+
+    public static <T> T getElementByIndex(TreeSet<T> elementSet, int index) {
+        Iterator<T> iterator = elementSet.iterator();
+        T tempElement = null;
+        for (int i = 0; i <= index; i++) {
+            tempElement = iterator.next();
+        }
+        return tempElement;
+    }
+
+    public static <T> TreeSet<T> getResidualOrderedElement(final List<T> originalList, Collection<T> removeCollection) {
+        TreeSet<T> treeSet = new TreeSet<>(originalList);
+        treeSet.removeAll(removeCollection);
+        return treeSet;
+
     }
 
 }
