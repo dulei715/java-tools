@@ -20,7 +20,7 @@ public class PointWrite extends BasicWrite {
         super(OUTPUT_SPLIT_SYMBOL);
     }
 
-    public void writePoint(Collection<Point> dataCollection) {
+    public void writePoint(Collection<? extends Point> dataCollection) {
         int i = 0;
         Point tempPoint;
         Integer pointDimensionSize;

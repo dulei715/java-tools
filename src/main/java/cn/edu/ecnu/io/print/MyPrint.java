@@ -1,5 +1,7 @@
 package cn.edu.ecnu.io.print;
 
+import cn.edu.ecnu.constant_values.ConstantValues;
+
 import java.text.DecimalFormat;
 import java.util.Iterator;
 import java.util.List;
@@ -331,9 +333,15 @@ public class MyPrint {
         }
     }
 
-    public static void showArray(Object[] objects) {
-        for (int i = 0; i < objects.length; i++) {
-            System.out.println(objects[i]);
+    public static void showArray(Object[] objects, String splitString) {
+        int i = 0;
+        for (; i < objects.length - 1; i++) {
+            System.out.print(objects[i] + splitString);
         }
+        System.out.println(objects[i]);
+    }
+
+    public static void showArray(Object[] objects) {
+        showArray(objects, ConstantValues.LINE_SPLIT);
     }
 }
