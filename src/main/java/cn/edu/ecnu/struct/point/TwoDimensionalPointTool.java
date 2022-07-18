@@ -2,8 +2,6 @@ package cn.edu.ecnu.struct.point;
 
 
 import cn.edu.ecnu.basic.BasicCalculation;
-import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.io.read.PointRead;
 
 import java.util.List;
 import java.util.Map;

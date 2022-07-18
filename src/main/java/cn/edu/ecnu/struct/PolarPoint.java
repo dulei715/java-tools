@@ -1,6 +1,5 @@
 package cn.edu.ecnu.struct;
 
-import cn.edu.ecnu.struct.point.Point;
 import cn.edu.ecnu.struct.point.TwoDimensionalDoublePoint;
 
 public class PolarPoint {

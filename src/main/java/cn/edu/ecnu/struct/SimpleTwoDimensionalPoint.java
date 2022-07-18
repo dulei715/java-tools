@@ -2,6 +2,7 @@ package cn.edu.ecnu.struct;
 
 import java.util.Objects;
 
+@Deprecated
 public class SimpleTwoDimensionalPoint implements Comparable<SimpleTwoDimensionalPoint> {
     private Double xIndex;
     private Double yIndex;

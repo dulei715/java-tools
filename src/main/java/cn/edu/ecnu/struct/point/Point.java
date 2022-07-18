@@ -2,8 +2,11 @@ package cn.edu.ecnu.struct.point;
 
 
 import cn.edu.ecnu.basic.BasicArray;
+import cn.edu.ecnu.basic.BasicCalculation;
+import cn.edu.ecnu.differential_privacy.cdp.basic_struct.DistanceAble;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Point {
     protected Integer dimensionalSize = null;
@@ -29,6 +32,23 @@ public class Point {
         for (int i = 0; i < this.dimensionalSize; i++) {
             this.valueArray[i] = values[i];
         }
+    }
+
+    public static <T extends Point> Double getMSE(List<T> estimationPointList, List<T> originalPointList) {
+        int lenE = estimationPointList.size();
+        int lenO = originalPointList.size();
+        Double[] valueArrayA, valueArrayB;
+        Double result = 0.0;
+        if (lenE != lenO) {
+            throw new RuntimeException("The size of two inputList is not equal!");
+        }
+        for (int i = 0; i < lenE; i++) {
+            valueArrayA = estimationPointList.get(i).getValueArray();
+            valueArrayB = originalPointList.get(i).getValueArray();
+            result += BasicCalculation.getSquareValue(BasicCalculation.getDifference(valueArrayA, valueArrayB));
+        }
+        result /= lenE;
+        return result;
     }
 
 
@@ -72,15 +92,6 @@ public class Point {
                 "dimensionalSize=" + dimensionalSize +
                 ", valueArray=" + Arrays.toString(valueArray) +
                 '}';
-    }
-
-    public static void main(String[] args) {
-        Double value = new Double(7.8);
-        Point point = new BasicPoint(1);
-        point.setDeclaredIndexValue(0, value);
-        System.out.println(point);
-        value = 9.0;
-        System.out.println(point);
     }
 
 }

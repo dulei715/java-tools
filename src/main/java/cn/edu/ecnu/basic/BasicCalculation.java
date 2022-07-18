@@ -7,6 +7,7 @@ import cn.edu.ecnu.struct.point.Point;
 import java.text.DecimalFormat;
 import java.util.Arrays;
 
+@SuppressWarnings("ALL")
 public class BasicCalculation {
     public static final int ESTIMATION_VALUE_INDEX = 0;
     public static final int WEIGHTED_INDEX = 1;
@@ -17,6 +18,42 @@ public class BasicCalculation {
         }
         int len = pointA.length;
         double result = 0;
+        for (int i = 0; i < len; i++) {
+            result += Math.abs(pointA[i]-pointB[i]);
+        }
+        return result;
+    }
+
+    public static Double get1Norm(Double[] pointA, Double[] pointB) {
+        if (pointA.length != pointB.length) {
+            throw new RuntimeException("The dimensionality of two points are not equal!");
+        }
+        int len = pointA.length;
+        Double result = 0.0;
+        for (int i = 0; i < len; i++) {
+            result += Math.abs(pointA[i]-pointB[i]);
+        }
+        return result;
+    }
+
+    public static int get1Norm(int[] pointA, int[] pointB) {
+        if (pointA.length != pointB.length) {
+            throw new RuntimeException("The dimensionality of two points are not equal!");
+        }
+        int len = pointA.length;
+        int result = 0;
+        for (int i = 0; i < len; i++) {
+            result += Math.abs(pointA[i]-pointB[i]);
+        }
+        return result;
+    }
+
+    public static Integer get1Norm(Integer[] pointA, Integer[] pointB) {
+        if (pointA.length != pointB.length) {
+            throw new RuntimeException("The dimensionality of two points are not equal!");
+        }
+        int len = pointA.length;
+        Integer result = 0;
         for (int i = 0; i < len; i++) {
             result += Math.abs(pointA[i]-pointB[i]);
         }
@@ -77,6 +114,109 @@ public class BasicCalculation {
         }
         return Math.sqrt(result);
     }
+
+    public static double[] getDifference(double[] pointA, double[] pointB) {
+        if (pointA.length != pointB.length) {
+            throw new RuntimeException("The dimensionality of two points are not equal!");
+        }
+        int len = pointA.length;
+        double[] result = new double[len];
+        for (int i = 0; i < len; i++) {
+            result[i] = pointA[i] - pointB[i];
+        }
+        return result;
+    }
+
+    public static Double[] getDifference(Double[] pointA, Double[] pointB) {
+        if (pointA.length != pointB.length) {
+            throw new RuntimeException("The dimensionality of two points are not equal!");
+        }
+        int len = pointA.length;
+        Double[] result = new Double[len];
+        for (int i = 0; i < len; i++) {
+            result[i] = pointA[i] - pointB[i];
+        }
+        return result;
+    }
+
+    public static Integer[] getDifference(Integer[] pointA, Integer[] pointB) {
+        if (pointA.length != pointB.length) {
+            throw new RuntimeException("The dimensionality of two points are not equal!");
+        }
+        int len = pointA.length;
+        Integer[] result = new Integer[len];
+        for (int i = 0; i < len; i++) {
+            result[i] = pointA[i] - pointB[i];
+        }
+        return result;
+    }
+
+    public static int[] getDifference(int[] pointA, int[] pointB) {
+        if (pointA.length != pointB.length) {
+            throw new RuntimeException("The dimensionality of two points are not equal!");
+        }
+        int len = pointA.length;
+        int[] result = new int[len];
+        for (int i = 0; i < len; i++) {
+            result[i] = pointA[i] - pointB[i];
+        }
+        return result;
+    }
+
+    public static double getSquareValue(double[] point) {
+        int len = point.length;
+        double result = 0;
+        for (int i = 0; i < len; i++) {
+            result += Math.pow(point[i], 2);
+        }
+        return result;
+    }
+
+    public static Double getSquareValue(Double[] point) {
+        int len = point.length;
+        Double result = 0.0;
+        for (int i = 0; i < len; i++) {
+            result += Math.pow(point[i], 2);
+        }
+        return result;
+    }
+
+    public static Integer getSquareValue(Integer[] point) {
+        int len = point.length;
+        Integer result = 0;
+        for (int i = 0; i < len; i++) {
+            result += (int)Math.pow(point[i], 2);
+        }
+        return result;
+    }
+
+    public static int getSquareValue(int[] point) {
+        int len = point.length;
+        int result = 0;
+        for (int i = 0; i < len; i++) {
+            result += (int)Math.pow(point[i], 2);
+        }
+        return result;
+    }
+
+    public static double get2NormSquare(double[] pointA, double[] pointB) {
+        double[] difference = getDifference(pointA, pointB);
+        return getSquareValue(difference);
+    }
+    public static double get2NormSquare(Double[] pointA, Double[] pointB) {
+        Double[] difference = getDifference(pointA, pointB);
+        return getSquareValue(difference);
+    }
+    public static int get2NormSquare(int[] pointA, int[] pointB) {
+        int[] difference = getDifference(pointA, pointB);
+        return getSquareValue(difference);
+    }
+
+    public static Integer get2NormSquare(Integer[] pointA, Integer[] pointB) {
+        Integer[] difference = getDifference(pointA, pointB);
+        return getSquareValue(difference);
+    }
+
 
     public static double getSum(double ... values) {
         double sum = 0;

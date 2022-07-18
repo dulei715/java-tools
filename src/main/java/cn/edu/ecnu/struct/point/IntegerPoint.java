@@ -2,9 +2,12 @@ package cn.edu.ecnu.struct.point;
 
 
 import cn.edu.ecnu.basic.BasicArray;
+import cn.edu.ecnu.basic.BasicCalculation;
 
 import java.util.Arrays;
+import java.util.List;
 
+@SuppressWarnings("ALL")
 public class IntegerPoint {
     protected Integer dimensionalSize = null;
     protected Integer[] valueArray = null;
@@ -31,6 +34,22 @@ public class IntegerPoint {
         }
     }
 
+    public static <T extends IntegerPoint> Integer getMSE(List<T> estimationPointList, List<T> originalPointList) {
+        int lenE = estimationPointList.size();
+        int lenO = originalPointList.size();
+        Integer[] valueArrayA, valueArrayB;
+        Integer result = 0;
+        if (lenE != lenO) {
+            throw new RuntimeException("The size of two inputList is not equal!");
+        }
+        for (int i = 0; i < lenE; i++) {
+            valueArrayA = estimationPointList.get(i).getValueArray();
+            valueArrayB = originalPointList.get(i).getValueArray();
+            result += BasicCalculation.getSquareValue(BasicCalculation.getDifference(valueArrayA, valueArrayB));
+        }
+        result /= lenE;
+        return result;
+    }
 
     public Integer getDimensionalSize() {
         return dimensionalSize;

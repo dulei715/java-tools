@@ -4,6 +4,7 @@ package cn.edu.ecnu.statistic;
 import cn.edu.ecnu.basic.BasicArray;
 import cn.edu.ecnu.collection.ArraysUtils;
 import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.ecnu.struct.point.IntegerPoint;
 import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
 
 import java.util.*;
@@ -371,6 +372,64 @@ public class StatisticTool {
     }
 
     /**
+     * 统计频率。元素的种类由elementTypeList指定
+     * @param elementTypeList
+     * @param collection
+     * @param <T>
+     * @return
+     */
+    public static <T> Double[] countHistogramRatio(List<T> elementTypeList, Collection<T> collection) {
+        Map<T, Integer> resultMap = new TreeMap<>();
+        TwoDimensionalIntegerPoint tempPoint;
+        Integer tempCount;
+        int totalSize = 0;
+        for (T element : elementTypeList) {
+            resultMap.put(element, 0);
+        }
+        for (T point : collection) {
+            tempCount = resultMap.get(point);
+            if (tempCount != null) {
+                ++tempCount;
+                resultMap.put(point, tempCount);
+                ++totalSize;
+            }
+        }
+        Double[] resultArray = new Double[elementTypeList.size()];
+        int k = 0;
+        for (T element : elementTypeList) {
+            resultArray[k++] = resultMap.get(element) * 1.0 / totalSize;
+        }
+        return resultArray;
+    }
+
+    public static <T> TreeMap<T, Double> countHistogramRatioMap(List<T> elementTypeList, Collection<T> collection) {
+        Map<T, Integer> countMap = new TreeMap<>();
+        TwoDimensionalIntegerPoint tempPoint;
+        Integer tempCount;
+        int totalSize = 0;
+        for (T element : elementTypeList) {
+            countMap.put(element, 0);
+        }
+        for (T point : collection) {
+            tempCount = countMap.get(point);
+            if (tempCount != null) {
+                ++tempCount;
+                countMap.put(point, tempCount);
+                ++totalSize;
+            }
+        }
+        TreeMap<T, Double> resultMap = new TreeMap<>();
+        T tempKey;
+        Integer tempValue;
+        for (Map.Entry<T, Integer> countEntry : countMap.entrySet()) {
+            tempKey  = countEntry.getKey();
+            tempValue = countEntry.getValue();
+            resultMap.put(tempKey, tempValue * 1.0 / totalSize);
+        }
+        return resultMap;
+    }
+
+    /**
      * 统计占比
      * @param collection
      * @return
@@ -417,6 +476,8 @@ public class StatisticTool {
 //
 //
 //    }
+
+
 
     public static void main1(String[] args) {
 //        Double[] values = new Double[]{4.0, 12.0, 8.0, 4.0, 16.0, 12.0};

@@ -10,15 +10,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PointRead {
+public class TwoDimensionalPointRead {
 
     public static final String SPLIT_TAG = " ";
 
-    protected List<Point> pointList = null;
+    protected List<TwoDimensionalDoublePoint> pointList = null;
     protected String filePath;
     protected Integer dataSize = null;
 
-    public PointRead(String filePath) {
+    public TwoDimensionalPointRead(String filePath) {
         this.filePath = filePath;
     }
 
@@ -82,12 +82,12 @@ public class PointRead {
         this.readPointWithFirstLineCount(1);
     }
 
-    public static List<Point> readPointWithFirstLineCount(String filePath) {
+    public static List<TwoDimensionalDoublePoint> readPointWithFirstLineCount(String filePath) {
         BufferedReader bufferedReader = null;
         String line = null;
         String[] dataElement;
         int dataSize;
-        List<Point> pointList = null;
+        List<TwoDimensionalDoublePoint> pointList = null;
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
             dataSize = Integer.valueOf(bufferedReader.readLine());
@@ -149,7 +149,7 @@ public class PointRead {
         return pointList;
     }
 
-    public List<Point> getPointList() {
+    public List<TwoDimensionalDoublePoint> getPointList() {
         return pointList;
     }
 
@@ -211,10 +211,10 @@ public class PointRead {
 //        String filePath = "E:\\1.学习\\4.数据集\\dataset\\original\\chengdu_total_dataset_km\\total_dataset\\task_point.txt";
         String filePath = "E:\\1.学习\\4.数据集\\dataset\\original\\chengdu_total_dataset_km\\batch_dataset\\batch_007_worker_point.txt";
 
-        List<Point> allPointList = PointRead.readPointWithFirstLineCount(filePath);
+        List<TwoDimensionalDoublePoint> allPointList = TwoDimensionalPointRead.readPointWithFirstLineCount(filePath);
         System.out.println(allPointList.size());
 
-        Set<Point> allPointSet = PointRead.readPointWithoutRepeat(filePath);
+        Set<Point> allPointSet = TwoDimensionalPointRead.readPointWithoutRepeat(filePath);
         System.out.println(allPointSet.size());
     }
 }

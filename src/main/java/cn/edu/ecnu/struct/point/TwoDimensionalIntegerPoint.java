@@ -3,7 +3,9 @@ package cn.edu.ecnu.struct.point;
 
 import cn.edu.ecnu.io.print.MyPrint;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparable<TwoDimensionalIntegerPoint>{
@@ -43,6 +45,14 @@ public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparab
     public static TwoDimensionalIntegerPoint valueOf(IntegerPoint point) {
         Integer[] indexes = point.getValueArray();
         return new TwoDimensionalIntegerPoint(indexes[0], indexes[1]);
+    }
+
+    public static List<TwoDimensionalIntegerPoint> valueOf(List<? extends IntegerPoint> pointList) {
+        List<TwoDimensionalIntegerPoint> resultList = new ArrayList<>(pointList.size());
+        for (int i = 0; i < pointList.size(); i++) {
+            resultList.add(valueOf(pointList.get(i)));
+        }
+        return resultList;
     }
 
     @Override
