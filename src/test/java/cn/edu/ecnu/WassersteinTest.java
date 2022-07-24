@@ -57,4 +57,6 @@ public class WassersteinTest {
         System.out.println(result);
     }
 
+
+
 }
