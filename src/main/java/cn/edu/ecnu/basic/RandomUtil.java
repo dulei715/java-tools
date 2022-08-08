@@ -155,6 +155,11 @@ public class RandomUtil {
         return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
     }
 
+    /**
+     * 给定一组累积值，最后一个是所有的和。先将所有元素除以最后一个元素，再调用getRandomIndexGivenCumulativePoint
+     * @param cumulativeCountValues
+     * @return
+     */
     public static Integer getRandomIndexGivenCumulativeCountPoint(final Double[] cumulativeCountValues) {
         int len = cumulativeCountValues.length;
         Double[] cumulativeValues = BasicArray.getLinearTransform(cumulativeCountValues, 1.0 / cumulativeCountValues[len - 1], 0.0);

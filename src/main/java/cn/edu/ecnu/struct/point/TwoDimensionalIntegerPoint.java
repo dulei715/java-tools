@@ -2,11 +2,9 @@ package cn.edu.ecnu.struct.point;
 
 
 import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.ecnu.struct.pair.IdentityPair;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparable<TwoDimensionalIntegerPoint>{
     public TwoDimensionalIntegerPoint() {
@@ -90,6 +88,14 @@ public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparab
         }
         TwoDimensionalIntegerPoint comparePoint = (TwoDimensionalIntegerPoint)obj;
         return (this.valueArray[0].equals(comparePoint.valueArray[0]) && this.valueArray[1].equals(comparePoint.valueArray[1]));
+    }
+
+    public static Collection<IdentityPair<Integer>> toIdentityPair(Collection<TwoDimensionalIntegerPoint> originalCollection) {
+        TreeSet<IdentityPair<Integer>> resultSet = new TreeSet<>();
+        for (TwoDimensionalIntegerPoint point : originalCollection) {
+            resultSet.add(new IdentityPair<>(point.getXIndex(), point.getYIndex()));
+        }
+        return resultSet;
     }
 
     public static void main(String[] args) {

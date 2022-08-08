@@ -3,6 +3,7 @@ package cn.edu.ecnu.basic;
 public class BasicSearch {
     public static final Boolean FORMER = false;
     public static final Boolean LATTER = true;
+    //todo: 测试有相邻重复值时（存在两个差为0的时候，是否返回前者）！！！！！！！！！！！
     public static int binarySearch(Comparable[] arr, Comparable element, Boolean border) {
         int len = arr.length;
         int from = 0, end = len - 1;
