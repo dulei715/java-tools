@@ -21,5 +21,4 @@ public class IdentityPair <T extends Comparable<T>> extends BasicPair<T, T> {
     }
 
 
-
 }

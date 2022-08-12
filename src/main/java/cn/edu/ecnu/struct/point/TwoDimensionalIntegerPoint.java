@@ -6,6 +6,7 @@ import cn.edu.ecnu.struct.pair.IdentityPair;
 
 import java.util.*;
 
+@SuppressWarnings("ALL")
 public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparable<TwoDimensionalIntegerPoint>{
     public TwoDimensionalIntegerPoint() {
         super(0,0);
@@ -17,6 +18,14 @@ public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparab
 
     public TwoDimensionalIntegerPoint(int[] indexes) {
         super(indexes);
+    }
+
+    public TwoDimensionalIntegerPoint(Integer[] indexes) {
+        super(indexes);
+    }
+
+    public TwoDimensionalIntegerPoint(IdentityPair<Integer> identityPair) {
+        super(identityPair.getKey(), identityPair.getValue());
     }
 
 
@@ -97,6 +106,12 @@ public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparab
         }
         return resultSet;
     }
+
+    public IdentityPair<Integer> toIdentityPair() {
+        return new IdentityPair<>(this.getXIndex(), this.getYIndex());
+    }
+
+
 
     public static void main(String[] args) {
         TwoDimensionalIntegerPoint pointA = new TwoDimensionalIntegerPoint(2, 3);
