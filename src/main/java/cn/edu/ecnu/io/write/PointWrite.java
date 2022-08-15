@@ -1,6 +1,7 @@
 package cn.edu.ecnu.io.write;
 
 
+import cn.edu.ecnu.struct.point.DoublePoint;
 import cn.edu.ecnu.struct.point.Point;
 import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
 
@@ -20,15 +21,15 @@ public class PointWrite extends BasicWrite {
         super(OUTPUT_SPLIT_SYMBOL);
     }
 
-    public void writePoint(Collection<? extends Point> dataCollection) {
+    public void writePoint(Collection<? extends DoublePoint> dataCollection) {
         int i = 0;
-        Point tempPoint;
+        DoublePoint tempPoint;
         Integer pointDimensionSize;
         try {
             super.bufferedWriter.write(String.valueOf(dataCollection.size()));
             super.bufferedWriter.newLine();
 
-            for (Point point : dataCollection) {
+            for (DoublePoint point : dataCollection) {
 //                super.bufferedWriter.write(String.valueOf(point.getxIndex()));
 //                super.bufferedWriter.write(super.OUTPUT_SPLIT_SYMBOL);
 //                super.bufferedWriter.write(String.valueOf(point.getyIndex()));
@@ -48,8 +49,8 @@ public class PointWrite extends BasicWrite {
         }
     }
 
-    public void writePoint(List<Point> dataList, Set<Integer> declaredIndexSet) {
-        Point point;
+    public void writePoint(List<DoublePoint> dataList, Set<Integer> declaredIndexSet) {
+        DoublePoint point;
         Integer pointDimensionSize;
         try {
             super.bufferedWriter.write(String.valueOf(declaredIndexSet.size()));
@@ -75,8 +76,8 @@ public class PointWrite extends BasicWrite {
         }
     }
 
-    public void writePoint(List<Point> dataList, Set<Integer> declaredIndexSet, double factorK, double constA) {
-        Point point;
+    public void writePoint(List<DoublePoint> dataList, Set<Integer> declaredIndexSet, double factorK, double constA) {
+        DoublePoint point;
         Integer pointDimensionSize;
         try {
             super.bufferedWriter.write(String.valueOf(declaredIndexSet.size()));
@@ -103,17 +104,23 @@ public class PointWrite extends BasicWrite {
         }
     }
 
-    public void writeStatisticIntegerPoint(Map<TwoDimensionalIntegerPoint, Integer> dataCollection) {
-        TwoDimensionalIntegerPoint tempPoint;
-        Integer tempInteger;
+    public <T extends Point> void writeStatisticIntegerPoint(Map<T, Integer> dataCollection) {
+        T tempPoint;
+        Integer tempInteger, pointDimensionSize;
         try {
             super.bufferedWriter.write(String.valueOf(dataCollection.size()));
             super.bufferedWriter.newLine();
-            for (Map.Entry<TwoDimensionalIntegerPoint, Integer> entry : dataCollection.entrySet()) {
+            for (Map.Entry<T, Integer> entry : dataCollection.entrySet()) {
                 tempPoint = entry.getKey();
                 tempInteger = entry.getValue();
-                super.bufferedWriter.write(tempPoint.getXIndex() + OUTPUT_SPLIT_SYMBOL);
-                super.bufferedWriter.write(tempPoint.getYIndex() + OUTPUT_SPLIT_SYMBOL);
+                pointDimensionSize = tempPoint.getDimensionalSize();
+                if (pointDimensionSize < 1) {
+                    continue;
+                }
+                for (int j = 0; j < pointDimensionSize; j++) {
+                    super.bufferedWriter.write(String.valueOf(tempPoint.getDeclaredIndexValue(j)));
+                    super.bufferedWriter.write(super.OUTPUT_SPLIT_SYMBOL);
+                }
                 super.bufferedWriter.write(String.valueOf(tempInteger));
                 super.bufferedWriter.newLine();
             }

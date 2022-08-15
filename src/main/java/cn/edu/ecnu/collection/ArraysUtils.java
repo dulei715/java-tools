@@ -1,5 +1,7 @@
 package cn.edu.ecnu.collection;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 @SuppressWarnings("ALL")
@@ -188,6 +190,21 @@ public class ArraysUtils {
                  outputArray[i][j] = inputArray[k++];
             }
         }
+    }
+
+    /**
+     * 将给定element引用在生成数组的每个元素上
+     * @param element
+     * @param size
+     * @param <T>
+     * @return
+     */
+    public static <T> T[] copyToArrayGivenElement(T element, int size) {
+        T[] resultArray = (T[]) Array.newInstance(element.getClass(), size);
+        for (int i = 0; i < resultArray.length; i++) {
+            resultArray[i] = element;
+        }
+        return resultArray;
     }
 
     public static void main(String[] args) {

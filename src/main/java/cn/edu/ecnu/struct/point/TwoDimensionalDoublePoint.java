@@ -4,7 +4,7 @@ import cn.edu.ecnu.struct.PolarPoint;
 
 import java.util.Objects;
 
-public class TwoDimensionalDoublePoint extends Point implements Comparable<TwoDimensionalDoublePoint> {
+public class TwoDimensionalDoublePoint extends DoublePoint implements Comparable<TwoDimensionalDoublePoint> {
 
     public TwoDimensionalDoublePoint() {
         super(0.0, 0.0);

@@ -1,7 +1,7 @@
 package cn.edu.ecnu.io.read;
 
 
-import cn.edu.ecnu.struct.point.Point;
+import cn.edu.ecnu.struct.point.DoublePoint;
 import cn.edu.ecnu.struct.point.TwoDimensionalDoublePoint;
 
 import java.io.*;
@@ -115,12 +115,12 @@ public class TwoDimensionalPointRead {
         return pointList;
     }
 
-    public static List<Point> readTopKPointWithFirstLineCount(String filePath, int k) {
+    public static List<DoublePoint> readTopKPointWithFirstLineCount(String filePath, int k) {
         BufferedReader bufferedReader = null;
         String line = null;
         String[] dataElement;
         int dataSize;
-        List<Point> pointList = null;
+        List<DoublePoint> pointList = null;
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
             dataSize = Integer.valueOf(bufferedReader.readLine());
@@ -171,13 +171,13 @@ public class TwoDimensionalPointRead {
      * @param lineNumberSet
      * @return
      */
-    public static List<Point> readPointByDeclaredLines(String filePath, Set<Integer> lineNumberSet) {
+    public static List<DoublePoint> readPointByDeclaredLines(String filePath, Set<Integer> lineNumberSet) {
         BasicRead basicRead = new BasicRead(SPLIT_TAG);
         basicRead.startReading(filePath);
         String line;
         Integer size = Integer.valueOf(basicRead.readOneLine());
         int dataLineNumber = -1;
-        List<Point> pointList = new ArrayList<>(lineNumberSet.size());
+        List<DoublePoint> pointList = new ArrayList<>(lineNumberSet.size());
         String[] lineData;
         while ((line = basicRead.readOneLine()) != null) {
             ++ dataLineNumber;
@@ -191,12 +191,12 @@ public class TwoDimensionalPointRead {
         return pointList;
     }
 
-    public static Set<Point> readPointWithoutRepeat(String filePath) {
+    public static Set<DoublePoint> readPointWithoutRepeat(String filePath) {
         BasicRead basicRead = new BasicRead(SPLIT_TAG);
         basicRead.startReading(filePath);
         String line;
         Integer size = Integer.valueOf(basicRead.readOneLine());
-        Set<Point> pointSet = new HashSet<>();
+        Set<DoublePoint> pointSet = new HashSet<>();
         String[] lineData;
         while ((line = basicRead.readOneLine()) != null) {
             lineData = line.split(SPLIT_TAG);
@@ -214,7 +214,7 @@ public class TwoDimensionalPointRead {
         List<TwoDimensionalDoublePoint> allPointList = TwoDimensionalPointRead.readPointWithFirstLineCount(filePath);
         System.out.println(allPointList.size());
 
-        Set<Point> allPointSet = TwoDimensionalPointRead.readPointWithoutRepeat(filePath);
+        Set<DoublePoint> allPointSet = TwoDimensionalPointRead.readPointWithoutRepeat(filePath);
         System.out.println(allPointSet.size());
     }
 }

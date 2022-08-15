@@ -105,11 +105,6 @@ public class BasicArray {
         return result;
     }
 
-//    public static void setListArrayToEmptyList(List[] element) {
-//        for (int i = 0; i < element.length; i++) {
-//            element[i] = new ArrayList();
-//        }
-//    }
 
     /**
      * 初始化数组每个值为一个集合。该集合不能是抽象类或接口
@@ -133,12 +128,6 @@ public class BasicArray {
         }
     }
 
-
-//    public static void setListArrayTo(List[] element, List list) {
-//        for (int i = 0; i < element.length; i++) {
-//            element[i] = new ArrayList(list);
-//        }
-//    }
 
     public static <T extends Collection> void setGroupArrayTo(T[] elementArray, T initCollection, Class<T> clazz) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Constructor<T> constructor = clazz.getConstructor(Collection.class);

@@ -2,10 +2,10 @@ package cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities;
 
 
 import cn.edu.ecnu.basic.cumulate.CumulativeFunction;
-import cn.edu.ecnu.struct.point.Point;
+import cn.edu.ecnu.struct.point.DoublePoint;
 
 public class OneDimensionalWassersteinDistance {
-    private Point[] points = null;
+    private DoublePoint[] points = null;
 
     /**
      * Get Wasserstein distance

@@ -4,7 +4,6 @@ package cn.edu.ecnu.statistic;
 import cn.edu.ecnu.basic.BasicArray;
 import cn.edu.ecnu.collection.ArraysUtils;
 import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.struct.point.IntegerPoint;
 import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
 
 import java.util.*;
@@ -325,7 +324,6 @@ public class StatisticTool {
      * @param collection
      * @return
      */
-    @Deprecated
     public static <T> Map<T, Integer> countHistogramNumber(Collection<T> collection) {
         Map<T, Integer> resultMap = new TreeMap<>();
         TwoDimensionalIntegerPoint tempPoint;

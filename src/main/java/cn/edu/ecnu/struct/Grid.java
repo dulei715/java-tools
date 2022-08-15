@@ -3,11 +3,10 @@ package cn.edu.ecnu.struct;
 
 import cn.edu.ecnu.basic.RandomUtil;
 import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.struct.point.Point;
+import cn.edu.ecnu.struct.point.DoublePoint;
 import cn.edu.ecnu.struct.point.IntegerPoint;
 import cn.edu.ecnu.struct.point.TwoDimensionalDoublePoint;
 import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
-import org.apache.commons.math3.ml.clustering.DoublePoint;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,9 +45,30 @@ public class Grid {
         int size = doubleValuePointList.size();
         Integer[] indexes;
         List<TwoDimensionalIntegerPoint> resultList = new ArrayList<>(size);
-        for (Point doubleValuePoint : doubleValuePointList) {
+        for (DoublePoint doubleValuePoint : doubleValuePointList) {
             indexes = Grid.toGridIndex(gridLength, leftBoundArray, doubleValuePoint.getValueArray());
             resultList.add(new TwoDimensionalIntegerPoint(indexes));
+        }
+        return resultList;
+    }
+
+    /**
+     * 将给定的cell中心点随机化到对应的网格中的任意点
+     * @param centralPointList
+     * @return
+     */
+    public static List<TwoDimensionalDoublePoint> randomizeInGrid(List<TwoDimensionalIntegerPoint> centralPointList) {
+        int size = centralPointList.size();
+        Integer[] valueArray;
+        Double tempInnerX, tempInnerY;
+        TwoDimensionalDoublePoint tempIntegerPoint;
+        List<TwoDimensionalDoublePoint> resultList = new ArrayList<>(size);
+        for (TwoDimensionalIntegerPoint centerPoint : centralPointList) {
+            valueArray = centerPoint.getValueArray();
+            tempInnerX = RandomUtil.getRandomDouble(0.0, 1.0);
+            tempInnerY = RandomUtil.getRandomDouble(0.0, 1.0);
+            tempIntegerPoint = new TwoDimensionalDoublePoint(tempInnerX+valueArray[0], tempInnerY+valueArray[1]);
+            resultList.add(tempIntegerPoint);
         }
         return resultList;
     }
@@ -63,7 +83,6 @@ public class Grid {
      */
     public static List<TwoDimensionalDoublePoint> toDoublePoint(List<TwoDimensionalIntegerPoint> integerValuePointList, Double[] leftBoundArray, double gridLength, boolean isCenter) {
         int size = integerValuePointList.size();
-        int tempX, tempY;
         double tempInnerX, tempInnerY;
         TwoDimensionalDoublePoint tempDoublePoint;
         Integer[] valueArray;
@@ -71,7 +90,7 @@ public class Grid {
         if (isCenter) {
             for (IntegerPoint integerValuePoint : integerValuePointList) {
                 valueArray = integerValuePoint.getValueArray();
-                tempDoublePoint = new TwoDimensionalDoublePoint(leftBoundArray[0]+0.5+valueArray[0], leftBoundArray[0]+0.5+valueArray[1]);
+                tempDoublePoint = new TwoDimensionalDoublePoint(leftBoundArray[0]+(0.5+valueArray[0])*gridLength, leftBoundArray[0]+(0.5+valueArray[1])*gridLength);
                 resultList.add(tempDoublePoint);
             }
         } else {
@@ -79,7 +98,7 @@ public class Grid {
                 valueArray = integerValuePoint.getValueArray();
                 tempInnerX = RandomUtil.getRandomDouble(0.0, gridLength);
                 tempInnerY = RandomUtil.getRandomDouble(0.0, gridLength);
-                tempDoublePoint = new TwoDimensionalDoublePoint(leftBoundArray[0]+tempInnerX+valueArray[0], leftBoundArray[0]+tempInnerY+valueArray[1]);
+                tempDoublePoint = new TwoDimensionalDoublePoint(leftBoundArray[0]+tempInnerX+valueArray[0]*gridLength, leftBoundArray[0]+tempInnerY+valueArray[1]*gridLength);
                 resultList.add(tempDoublePoint);
             }
         }

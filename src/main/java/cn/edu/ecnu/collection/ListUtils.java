@@ -1,6 +1,7 @@
 package cn.edu.ecnu.collection;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ListUtils {
@@ -73,5 +74,16 @@ public class ListUtils {
         return list;
     }
 
+    /**
+     * 将给定的element关联到生成了List中的每个元素
+     * @param element
+     * @param size
+     * @param <T>
+     * @return
+     */
+    public static <T> List<T> copyToListGivenElement(T element, int size) {
+        T[] resultArray = ArraysUtils.copyToArrayGivenElement(element, size);
+        return Arrays.asList(resultArray);
+    }
 
 }

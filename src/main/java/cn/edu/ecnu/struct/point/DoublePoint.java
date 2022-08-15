@@ -8,17 +8,17 @@ import java.util.Arrays;
 import java.util.List;
 
 @SuppressWarnings("ALL")
-public abstract class IntegerPoint extends Point {
+public abstract class DoublePoint extends Point {
     protected Integer dimensionalSize = null;
-    protected Integer[] valueArray = null;
+    protected Double[] valueArray = null;
 
-    public IntegerPoint(Integer dimensionalSize) {
+    public DoublePoint(Integer dimensionalSize) {
         this.dimensionalSize = dimensionalSize;
-        this.valueArray = new Integer[this.dimensionalSize];
-        BasicArray.setIntArrayToZero(this.valueArray);
+        this.valueArray = new Double[this.dimensionalSize];
+        BasicArray.setDoubleArrayToZero(this.valueArray);
     }
 
-    public IntegerPoint(Integer[] valueArray) {
+    public DoublePoint(Double[] valueArray) {
         if (valueArray == null || valueArray.length < 1) {
             throw new RuntimeException("The parameter is not valid!");
         }
@@ -26,19 +26,19 @@ public abstract class IntegerPoint extends Point {
         this.valueArray = valueArray;
     }
 
-    public IntegerPoint(int... values) {
+    public DoublePoint(double... values) {
         this.dimensionalSize = values.length;
-        this.valueArray = new Integer[this.dimensionalSize];
+        this.valueArray = new Double[this.dimensionalSize];
         for (int i = 0; i < this.dimensionalSize; i++) {
             this.valueArray[i] = values[i];
         }
     }
 
-    public static <T extends IntegerPoint> Integer getMSE(List<T> estimationPointList, List<T> originalPointList) {
+    public static <T extends DoublePoint> Double getMSE(List<T> estimationPointList, List<T> originalPointList) {
         int lenE = estimationPointList.size();
         int lenO = originalPointList.size();
-        Integer[] valueArrayA, valueArrayB;
-        Integer result = 0;
+        Double[] valueArrayA, valueArrayB;
+        Double result = 0.0;
         if (lenE != lenO) {
             throw new RuntimeException("The size of two inputList is not equal!");
         }
@@ -51,16 +51,17 @@ public abstract class IntegerPoint extends Point {
         return result;
     }
 
+
     @Override
     public Integer getDimensionalSize() {
         return dimensionalSize;
     }
 
-    public Integer[] getValueArray() {
+    public Double[] getValueArray() {
         return valueArray;
     }
 
-    public void setValueArray(Integer[] valueArray) {
+    public void setValueArray(Double[] valueArray) {
         if (valueArray == null || valueArray.length < 1) {
             throw new RuntimeException("The parameter is not valid!");
         }
@@ -68,7 +69,7 @@ public abstract class IntegerPoint extends Point {
         this.valueArray = valueArray;
     }
 
-    public void setValues(int... values) {
+    public void setValues(double... values) {
         if (values.length != this.dimensionalSize) {
             throw new RuntimeException("The number of values is not equaled to the dimension!");
         }
@@ -82,7 +83,7 @@ public abstract class IntegerPoint extends Point {
         return this.valueArray[dimensionIndex];
     }
 
-    public void setDeclaredIndexValue(int dimensionIndex, int value) {
+    public void setDeclaredIndexValue(int dimensionIndex, double value) {
         this.valueArray[dimensionIndex] = value;
     }
 

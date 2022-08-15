@@ -2,7 +2,7 @@ package cn.edu.ecnu.basic;
 
 
 import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.struct.point.Point;
+import cn.edu.ecnu.struct.point.DoublePoint;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -69,7 +69,7 @@ public class BasicCalculation {
         return result;
     }
 
-    public static double get1Norm(Point pointA, Point pointB) {
+    public static double get1Norm(DoublePoint pointA, DoublePoint pointB) {
         if (pointA.getDimensionalSize() != pointB.getDimensionalSize()) {
             throw new RuntimeException("The dimensionality of two points are not equal!");
         }
@@ -83,7 +83,7 @@ public class BasicCalculation {
         return result;
     }
 
-    public static double get1Norm(Point pointA) {
+    public static double get1Norm(DoublePoint pointA) {
         int len = pointA.getDimensionalSize();
         double result = 0;
         Double[] pointAArray = pointA.getValueArray();
