@@ -1,13 +1,14 @@
 package cn.edu.ecnu.struct.point;
 
 
+import cn.edu.ecnu.differential_privacy.cdp.basic_struct.DistanceAble;
 import cn.edu.ecnu.io.print.MyPrint;
 import cn.edu.ecnu.struct.pair.IdentityPair;
 
 import java.util.*;
 
 @SuppressWarnings("ALL")
-public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparable<TwoDimensionalIntegerPoint>{
+public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparable<TwoDimensionalIntegerPoint>, DistanceAble<TwoDimensionalIntegerPoint> {
     public TwoDimensionalIntegerPoint() {
         super(0,0);
     }
@@ -126,5 +127,12 @@ public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparab
 
         Integer a = 10;
         System.out.println(a.hashCode());
+    }
+
+    @Override
+    public Double getDistance(TwoDimensionalIntegerPoint element) {
+        double xIndexDiffer = this.getXIndex() - element.getXIndex();
+        double yIndexDiffer = this.getYIndex() - element.getYIndex();
+        return Math.sqrt(xIndexDiffer * xIndexDiffer + yIndexDiffer * yIndexDiffer);
     }
 }

@@ -105,6 +105,26 @@ public class Grid {
         return resultList;
     }
 
+    /**
+     * 根据给定的长度和区域左下角的整数cell点，生成边长为sizeD的正方形区域
+     * @param sizeD
+     * @param xLeft
+     * @param yLeft
+     * @return
+     */
+    public static List<TwoDimensionalIntegerPoint> generateTwoDimensionalIntegerPoint(Integer sizeD, Integer xLeft, Integer yLeft) {
+        List<TwoDimensionalIntegerPoint> resultList = new ArrayList<>(sizeD * sizeD);
+        Integer xIndex, yIndex;
+        for (int i = 0; i < sizeD; i++) {
+            xIndex = xLeft + i;
+            for (int j = 0; j < sizeD; j++) {
+                yIndex = yLeft + j;
+                resultList.add(new TwoDimensionalIntegerPoint(xIndex, yIndex));
+            }
+        }
+        return resultList;
+    }
+
     public static void main(String[] args) {
         int len = 10;
         double gridLen = 5.0;
