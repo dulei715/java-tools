@@ -69,6 +69,9 @@ public class ListUtils {
     public static <T> List<T> combine(List<T>[] listArray, int fromIndex, int endIndex) {
         List<T> list = new ArrayList<>();
         for (int i = fromIndex; i <= endIndex; i++) {
+            if (listArray[i] == null) {
+                continue;
+            }
             list.addAll(listArray[i]);
         }
         return list;

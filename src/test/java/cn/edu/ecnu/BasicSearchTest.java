@@ -14,38 +14,38 @@ public class BasicSearchTest {
         Boolean former = BasicSearch.FORMER;
         Boolean latter = BasicSearch.LATTER;
 
-        System.out.println(BasicSearch.binarySearch(pointValue, value, former));
-        System.out.println(BasicSearch.binarySearch(pointValue, value, latter));
+        System.out.println(BasicSearch.binaryFormerSearchWithMinimalIndex(pointValue, value));
+        System.out.println(BasicSearch.binaryLatterSearchWithMinimalIndex(pointValue, value));
         MyPrint.showSplitLine("*", 150);
 
         value = 0.21;
-        System.out.println(BasicSearch.binarySearch(pointValue, value, former));
-        System.out.println(BasicSearch.binarySearch(pointValue, value, latter));
+        System.out.println(BasicSearch.binaryFormerSearchWithMinimalIndex(pointValue, value));
+        System.out.println(BasicSearch.binaryLatterSearchWithMinimalIndex(pointValue, value));
         MyPrint.showSplitLine("*", 150);
 
         value = 0.91;
-        System.out.println(BasicSearch.binarySearch(pointValue, value, former));
-        System.out.println(BasicSearch.binarySearch(pointValue, value, latter));
+        System.out.println(BasicSearch.binaryFormerSearchWithMinimalIndex(pointValue, value));
+        System.out.println(BasicSearch.binaryLatterSearchWithMinimalIndex(pointValue, value));
         MyPrint.showSplitLine("*", 150);
 
         value = 0.0;
-        System.out.println(BasicSearch.binarySearch(pointValue, value, former));
-        System.out.println(BasicSearch.binarySearch(pointValue, value, latter));
+        System.out.println(BasicSearch.binaryFormerSearchWithMinimalIndex(pointValue, value));
+        System.out.println(BasicSearch.binaryLatterSearchWithMinimalIndex(pointValue, value));
         MyPrint.showSplitLine("*", 150);
 
         value = -0.2;
-        System.out.println(BasicSearch.binarySearch(pointValue, value, former));
-        System.out.println(BasicSearch.binarySearch(pointValue, value, latter));
+        System.out.println(BasicSearch.binaryFormerSearchWithMinimalIndex(pointValue, value));
+        System.out.println(BasicSearch.binaryLatterSearchWithMinimalIndex(pointValue, value));
         MyPrint.showSplitLine("*", 150);
 
         value = 0.35;
-        System.out.println(BasicSearch.binarySearch(pointValue, value, former));
-        System.out.println(BasicSearch.binarySearch(pointValue, value, latter));
+        System.out.println(BasicSearch.binaryFormerSearchWithMinimalIndex(pointValue, value));
+        System.out.println(BasicSearch.binaryLatterSearchWithMinimalIndex(pointValue, value));
         MyPrint.showSplitLine("*", 150);
 
         value = 0.37;
-        System.out.println(BasicSearch.binarySearch(pointValue, value, former));
-        System.out.println(BasicSearch.binarySearch(pointValue, value, latter));
+        System.out.println(BasicSearch.binaryFormerSearchWithMinimalIndex(pointValue, value));
+        System.out.println(BasicSearch.binaryLatterSearchWithMinimalIndex(pointValue, value));
         MyPrint.showSplitLine("*", 150);
     }
 }

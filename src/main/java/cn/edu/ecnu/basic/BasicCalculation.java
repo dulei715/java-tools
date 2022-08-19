@@ -6,6 +6,7 @@ import cn.edu.ecnu.struct.point.DoublePoint;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
+import java.util.Map;
 
 @SuppressWarnings("ALL")
 public class BasicCalculation {
@@ -438,6 +439,14 @@ public class BasicCalculation {
 
         }
         return result;
+    }
+
+    public static <T> Double getValueSum(Map<T, Double> map) {
+        Double sum = 0.0;
+        for (Map.Entry<T, Double> entry : map.entrySet()) {
+            sum += entry.getValue();
+        }
+        return sum;
     }
 
 

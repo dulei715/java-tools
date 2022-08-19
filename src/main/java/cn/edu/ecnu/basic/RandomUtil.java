@@ -115,7 +115,8 @@ public class RandomUtil {
      */
     public static Integer getRandomIndexGivenCumulatedPoint(Double[] cumulatedValues) {
         double randomValue = Math.random();
-        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.FORMER);
+//        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.FORMER);
+        return BasicSearch.binaryFormerSearchWithMinimalIndex(cumulatedValues, randomValue);
     }
 
     /**
@@ -131,7 +132,8 @@ public class RandomUtil {
         int len = statisticValues.length;
         Double[] cumulatedValues = CumulativeFunction.getCumulativeDistribution(statisticValues);
         double randomValue = Math.random();
-        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
+//        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
+        return BasicSearch.binaryLatterSearchWithMinimalIndex(cumulatedValues, randomValue);
     }
 
     /**
@@ -144,7 +146,8 @@ public class RandomUtil {
         Double[] cumulatedValues = CumulativeFunction.getCumulativeDistribution(countValues);
         BasicArray.linearTransform(cumulatedValues, 1.0/cumulatedValues[len-1], 0.0);
         double randomValue = Math.random();
-        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
+//        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
+        return BasicSearch.binaryLatterSearchWithMinimalIndex(cumulatedValues, randomValue);
     }
 
     public static Integer getRandomIndexGivenCountPoint(final List<Double> countValueList) {
@@ -152,7 +155,8 @@ public class RandomUtil {
         Double[] cumulatedValues = CumulativeFunction.getCumulativeDistribution(countValueList.toArray(new Double[0]));
         BasicArray.linearTransform(cumulatedValues, 1.0/cumulatedValues[len-1], 0.0);
         double randomValue = Math.random();
-        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
+//        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
+        return BasicSearch.binaryLatterSearchWithMinimalIndex(cumulatedValues, randomValue);
     }
 
     /**
@@ -164,7 +168,8 @@ public class RandomUtil {
         int len = cumulativeCountValues.length;
         Double[] cumulativeValues = BasicArray.getLinearTransform(cumulativeCountValues, 1.0 / cumulativeCountValues[len - 1], 0.0);
         double randomValue = Math.random();
-        return BasicSearch.binarySearch(cumulativeValues, randomValue, BasicSearch.LATTER);
+//        return BasicSearch.binarySearch(cumulativeValues, randomValue, BasicSearch.LATTER);
+        return BasicSearch.binaryLatterSearchWithMinimalIndex(cumulativeValues, randomValue);
     }
 
 
@@ -175,7 +180,8 @@ public class RandomUtil {
 //        double randomValue = Math.random();
 //        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.FORMER);
         Integer randomInteger = getRandomInteger(1, cumulatedValues[len - 1]);
-        return BasicSearch.binarySearch(cumulatedValues, randomInteger, BasicSearch.LATTER);
+//        return BasicSearch.binarySearch(cumulatedValues, randomInteger, BasicSearch.LATTER);
+        return BasicSearch.binaryLatterSearchWithMinimalIndex(cumulatedValues, randomInteger);
     }
 
 

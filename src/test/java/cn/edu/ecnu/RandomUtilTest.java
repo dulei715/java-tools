@@ -15,4 +15,19 @@ public class RandomUtilTest {
         List<Integer> result = RandomUtil.getRandomIntegerArrayWithoutRepeat(lowerBound, upperBound, size);
         MyPrint.showList(result);
     }
+
+    @Test
+    public void fun2() {
+        Integer[] partCounts = new Integer[]{
+                495, 0, 0, 0, 0
+        };
+//        while (true) {
+//            Integer index = RandomUtil.getRandomIndexGivenStatisticPoint(partCounts);
+//            if (index > 0) {
+//                System.out.println(index);
+//                break;
+//            }
+//        }
+    }
+
 }
