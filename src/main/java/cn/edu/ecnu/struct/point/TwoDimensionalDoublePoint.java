@@ -48,6 +48,19 @@ public class TwoDimensionalDoublePoint extends DoublePoint implements Comparable
         return PolarPoint.valueOf(radius, angle);
     }
 
+    public boolean inRange(TwoDimensionalDoublePoint leftBottomPoint, Double xLength, Double yLength) {
+        double leftBorder = leftBottomPoint.getXIndex();
+        double bottomBorder = leftBottomPoint.getYIndex();
+        double rightBorder = leftBorder + xLength;
+        double upBorder = bottomBorder + yLength;
+        double xIndex = this.getXIndex();
+        double yIndex = this.getYIndex();
+        if (xIndex >= leftBorder && xIndex <= rightBorder && yIndex >= bottomBorder && yIndex <= upBorder) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "TwoDimensionalPoint{" +
