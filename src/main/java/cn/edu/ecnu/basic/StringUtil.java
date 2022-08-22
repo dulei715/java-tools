@@ -1,5 +1,8 @@
 package cn.edu.ecnu.basic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringUtil {
     public static String concat(String split, Object ... objects) {
         int i = 0;
@@ -19,6 +22,22 @@ public class StringUtil {
         }
         stringBuilder.append(values[i]);
         return stringBuilder.toString();
+    }
+
+    public static String[] getStringArray(String... strs) {
+        String[] resultStringArray = new String[strs.length];
+        for (int i = 0; i < strs.length; i++) {
+            resultStringArray[i] = strs[i];
+        }
+        return resultStringArray;
+    }
+
+    public static List<String> getStringList(String... strs) {
+        List<String> resultStringList = new ArrayList<>(strs.length);
+        for (String str : strs) {
+            resultStringList.add(str);
+        }
+        return resultStringList;
     }
 
     public static void main(String[] args) {

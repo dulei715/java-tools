@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/dataset/DatasetHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalDoublePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalDoublePoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/StringUtil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,18 +15,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/statistic/StatisticTool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6237">
-              <caret line="297" column="35" selection-start-line="297" selection-start-column="35" selection-end-line="297" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicSearch.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -59,17 +45,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/cumulate/CumulativeFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
+            <state relative-caret-position="651">
               <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/dataset/DatasetHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            <state relative-caret-position="336">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/StringUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/accuracy/metrics/distance_quantities/TwoDimensionalWassersteinDistance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1869">
+              <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,7 +90,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalDoublePoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
+            <state relative-caret-position="882">
               <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
             </state>
           </provider>
@@ -86,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/DoublePoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="126">
               <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -132,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/CSVReader.java" />
         <option value="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/CSVReaderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/io/print/MyPrint.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/constant_values/ConstantValues.java" />
@@ -183,6 +195,7 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalDoublePoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/dataset/Handle.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/dataset/DatasetHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/StringUtil.java" />
       </list>
     </option>
   </component>
@@ -227,7 +240,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -305,12 +317,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1660986226772" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1661183288223" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SCDataGenerator" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -489,7 +502,8 @@
       <workItem from="1660789820044" duration="6082000" />
       <workItem from="1660835663108" duration="7000" />
       <workItem from="1660869340030" duration="13787000" />
-      <workItem from="1660960181720" duration="5667000" />
+      <workItem from="1660960181720" duration="5670000" />
+      <workItem from="1661132793150" duration="5017000" />
     </task>
     <servers />
   </component>
@@ -526,13 +540,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301974000" />
+    <option name="totallyTimeSpent" value="306994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -542,7 +555,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.505423" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28850326" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -592,13 +605,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/cn/edu/ecnu/clp-java-1.80/1.01.01/clp-java-1.80-1.01.01.jar!/edu/ecnu/dll/cpl/Goal.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -624,16 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/accuracy/metrics/distance_quantities/TwoDimensionalWassersteinDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1722">
-          <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -894,20 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/edu/ecnu/RandomUtilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="29" column="11" selection-start-line="23" selection-start-column="10" selection-end-line="29" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/edu/ecnu/BasicSearchTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/noise/LaplaceUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -948,7 +930,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/statistic/StatisticTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6237">
+        <state relative-caret-position="6132">
           <caret line="297" column="35" selection-start-line="297" selection-start-column="35" selection-end-line="297" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -963,16 +945,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cn/edu/ecnu/RandomUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="29" column="11" selection-start-line="23" selection-start-column="10" selection-end-line="29" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cn/edu/ecnu/BasicSearchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/cumulate/CumulativeFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
+        <state relative-caret-position="651">
           <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalDoublePoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/DoublePoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="126">
           <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -987,17 +990,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalDoublePoint.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/dataset/DatasetHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+        <state relative-caret-position="336">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/dataset/DatasetHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/StringUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        <state relative-caret-position="261">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/accuracy/metrics/distance_quantities/TwoDimensionalWassersteinDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1869">
+          <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
