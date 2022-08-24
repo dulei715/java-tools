@@ -44,4 +44,10 @@ public class MathUtilsTest {
 
     }
 
+    @Test
+    public void fun4() {
+        int result = MathUtils.getBinomialResult(0, 1);
+        System.out.println(result);
+    }
+
 }

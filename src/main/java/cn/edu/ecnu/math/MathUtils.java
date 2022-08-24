@@ -5,11 +5,17 @@ import cn.edu.ecnu.basic.BasicArray;
 public class MathUtils {
     /**
      *
-     * @param n 正数
+     * @param n 非负正数
      * @param m 小于n的非负数
      * @return
      */
     public static int getBinomialResult(int n, int m) {
+        if (n == 0) {
+            if (m == 0) {
+                return 1;
+            }
+            return 0;
+        }
         int [] tempArr;
         if (m == 0) {
             return 1;
