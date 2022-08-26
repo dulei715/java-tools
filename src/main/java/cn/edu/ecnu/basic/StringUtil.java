@@ -40,6 +40,15 @@ public class StringUtil {
         return resultStringList;
     }
 
+    public static String[] concatGiveString(String[] strArray, String addStr) {
+        int size = strArray.length;
+        String[] resultStrArray = new String[size];
+        for (int i = 0; i < size; i++) {
+            resultStrArray[i] = strArray[i] + addStr;
+        }
+        return resultStrArray;
+    }
+
     public static void main(String[] args) {
         Double[] values = new Double[]{
                 1.2, 4.2, 6.1

@@ -141,6 +141,20 @@ public class BasicWrite {
         }
     }
 
+    public void writeSimpleStringListData(List<String> dataList) {
+        int i;
+        try {
+            for (i = 0; i < dataList.size() - 1; i++) {
+                this.bufferedWriter.write(dataList.get(i));
+                this.bufferedWriter.newLine();
+            }
+            this.bufferedWriter.write(dataList.get(i));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void endWriting() {
         try {
             bufferedWriter.close();

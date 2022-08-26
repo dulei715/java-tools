@@ -77,6 +77,16 @@ public class ExperimentResult {
         return null;
     }
 
+    public static <T> List<ExperimentResult> getCombineResultList(Map<T, List<ExperimentResult>> rawMap) {
+        List<ExperimentResult> resultList = new ArrayList<>();
+        List<ExperimentResult> tempValue;
+        for (Map.Entry<T, List<ExperimentResult>> entry : rawMap.entrySet()) {
+            tempValue = entry.getValue();
+            resultList.addAll(tempValue);
+        }
+        return resultList;
+    }
+
     public List<String> getAttributeList() {
         return attributeList;
     }

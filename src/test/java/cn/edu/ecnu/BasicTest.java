@@ -16,4 +16,10 @@ public class BasicTest {
         int result = MathUtils.getBinomialResult(-1, 2);
         System.out.println(result);
     }
+    @Test
+    public void fun3() {
+        Double a = 0.07;
+        Double b = 0.01;
+        System.out.println(a/b);
+    }
 }

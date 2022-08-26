@@ -74,6 +74,23 @@ public class BasicRead {
 
     }
 
+    public List<String> readStringStartFromGivenLine(int lineNumber) {
+        List<String> result = new ArrayList<>();
+        String line;
+        int lineIndex;
+        try {
+            for (lineIndex = 0; lineIndex < lineNumber; lineIndex++) {
+                line = this.bufferedReader.readLine();
+            }
+            while ((line = this.bufferedReader.readLine()) != null) {
+                result.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     public void mark(int size) {
         try {
             this.bufferedReader.mark(size);
