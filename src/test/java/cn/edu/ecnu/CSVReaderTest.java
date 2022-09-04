@@ -9,7 +9,8 @@ import java.io.*;
 public class CSVReaderTest {
     @Test
     public void fun1() throws IOException {
-        String path = "F:\\dataset\\crime\\Chicago_Crimes_2022_01_06.csv";
+//        String path = "F:\\dataset\\crime\\Chicago_Crimes_2022_01_06.csv";
+        String path = "E:\\1.学习\\4.数据集\\2.dataset_for_spatial_estimation\\crime\\Chicago_Crimes_2022_01_06.csv";
         File file = new File(path);
 
         CsvReader reader = new CsvReader(path, ',');
