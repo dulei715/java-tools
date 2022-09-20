@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="" />
+    <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/StringUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/StringUtil.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +20,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaFXApplication" />
       </list>
     </option>
   </component>
@@ -44,6 +50,9 @@
         <option name="userSettingsFile" value="D:\software\maven\apache-maven-3.8.6\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="2EGFiqmVGGiyTktAl0gvjuF2NEV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -76,7 +85,7 @@
       <recent name="F:\github\java-tools\src\main\java\cn\edu\ecnu" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StatisticToolTest.fun1">
+  <component name="RunManager" selected="JUnit.StringUtilTest.fun1">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -101,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.result.FileTool" />
+    <configuration name="StringUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.basic.StringUtil" />
       <module name="java-tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.edu.ecnu.result.*" />
+          <option name="PATTERN" value="cn.edu.ecnu.basic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,22 +139,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MathUtilsTest.fun4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-tools" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.edu.ecnu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.MathUtilsTest" />
-      <option name="METHOD_NAME" value="fun4" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StatisticToolTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-tools" />
       <extension name="coverage">
@@ -162,13 +155,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StringUtilTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.ecnu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.StringUtilTest" />
+      <option name="METHOD_NAME" value="fun1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StringUtilTest.fun1" />
+        <item itemvalue="Application.StringUtil" />
         <item itemvalue="JUnit.StatisticToolTest.fun1" />
         <item itemvalue="Application.DecimalTool" />
         <item itemvalue="JUnit.BasicTest.fun3" />
-        <item itemvalue="Application.FileTool" />
-        <item itemvalue="JUnit.MathUtilsTest.fun4" />
       </list>
     </recent_temporary>
   </component>
@@ -242,6 +251,7 @@
       <workItem from="1662259024115" duration="680000" />
       <workItem from="1662259795972" duration="1590000" />
       <workItem from="1662339096885" duration="369000" />
+      <workItem from="1663653142777" duration="6437000" />
     </task>
     <servers />
   </component>
