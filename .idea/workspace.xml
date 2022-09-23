@@ -5,10 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/StringUtilTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ClassDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/configure/XMLConfigureUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/filter/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/filter/file_filter/DirectoryFileFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/reflect/JavaBeanTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/reflect/ReflectTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/result/BasicResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/result/BasicResultForReflect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/result/ResultTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/result/ColumnBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/result/ColumnList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/result_config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/ExperimentResultTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/FileFilterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/JavaBeanToolTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/ReflectTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/result/ExperimentResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/result/ExperimentResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/result/FileTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/result/FileTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/NormalizationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/NormalizationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,18 +93,19 @@
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.edu.ecnu.differential_privacy.cdp.basic_struct" />
-      <recent name="cn.edu.ecnu.differential_privacy.cdp.exponential_mechanism" />
-      <recent name="cn.edu.ecnu.basic" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\github\java-tools\src\main\java\cn\edu\ecnu\spatial" />
       <recent name="F:\github\java-tools\src\main\java\cn\edu\ecnu\struct" />
       <recent name="F:\github\java-tools\src\main\java\cn\edu\ecnu" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.edu.ecnu.result" />
+      <recent name="cn.edu.ecnu.differential_privacy.cdp.basic_struct" />
+      <recent name="cn.edu.ecnu.differential_privacy.cdp.exponential_mechanism" />
+      <recent name="cn.edu.ecnu.basic" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.StringUtilTest.fun1">
+  <component name="RunManager" selected="Application.BasicResult">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -97,12 +117,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DecimalTool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.DecimalTool" />
+    <configuration name="BasicResult" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.result.BasicResult" />
       <module name="java-tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.edu.ecnu.*" />
+          <option name="PATTERN" value="cn.edu.ecnu.result.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,12 +130,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.basic.StringUtil" />
+    <configuration name="ReflectTool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.reflect.ReflectTool" />
       <module name="java-tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.edu.ecnu.basic.*" />
+          <option name="PATTERN" value="cn.edu.ecnu.reflect.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,7 +143,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicTest.fun3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JavaBeanToolTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-tools" />
       <extension name="coverage">
         <pattern>
@@ -132,40 +152,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.BasicTest" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.JavaBeanToolTest" />
+      <option name="METHOD_NAME" value="fun1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReflectTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.ecnu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.ReflectTest" />
+      <option name="METHOD_NAME" value="fun1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReflectTest.fun3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.ecnu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.ReflectTest" />
       <option name="METHOD_NAME" value="fun3" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StatisticToolTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-tools" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.edu.ecnu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.StatisticToolTest" />
-      <option name="METHOD_NAME" value="fun1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringUtilTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-tools" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.edu.ecnu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.StringUtilTest" />
-      <option name="METHOD_NAME" value="fun1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -173,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StringUtilTest.fun1" />
-        <item itemvalue="Application.StringUtil" />
-        <item itemvalue="JUnit.StatisticToolTest.fun1" />
-        <item itemvalue="Application.DecimalTool" />
-        <item itemvalue="JUnit.BasicTest.fun3" />
+        <item itemvalue="Application.BasicResult" />
+        <item itemvalue="JUnit.ReflectTest.fun3" />
+        <item itemvalue="Application.ReflectTool" />
+        <item itemvalue="JUnit.JavaBeanToolTest.fun1" />
+        <item itemvalue="JUnit.ReflectTest.fun1" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +271,7 @@
       <workItem from="1662259024115" duration="680000" />
       <workItem from="1662259795972" duration="1590000" />
       <workItem from="1662339096885" duration="369000" />
-      <workItem from="1663653142777" duration="6437000" />
+      <workItem from="1663653142777" duration="62563000" />
     </task>
     <servers />
   </component>
@@ -316,6 +336,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="DynamicClass.class.getName()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

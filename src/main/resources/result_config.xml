@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <parameterConfig>
+
+    </parameterConfig>
+
+    <resultOutputFileConfig>
+        <fileConfig name="default">
+            <resultName>compose</resultName>
+            <resultAttributes>
+                <attribute>
+                    <sequenceNumber>0</sequenceNumber>
+                    <name>DataSetName</name>
+                    <dataType>java.lang.String</dataType>
+                    <composable>false</composable>
+                </attribute>
+                <attribute>
+                    <sequenceNumber>1</sequenceNumber>
+                    <name>DataPointSize</name>
+                    <dataType>java.lang.Integer</dataType>
+                    <composable>true</composable>
+                </attribute>
+                <attribute>
+                    <sequenceNumber>2</sequenceNumber>
+                    <name>AreaLength</name>
+                    <dataType>java.lang.Double</dataType>
+                    <composable>true</composable>
+                </attribute>
+                <attribute>
+                    <sequenceNumber>3</sequenceNumber>
+                    <name>PostProcessTime</name>
+                    <dataType>java.lang.Long</dataType>
+                    <composable>true</composable>
+                </attribute>
+                <attribute>
+                    <sequenceNumber>4</sequenceNumber>
+                    <name>DataTypeSize</name>
+                    <dataType>java.lang.Integer</dataType>
+                    <composable>false</composable>
+                </attribute>
+                <attribute>
+                    <sequenceNumber>5</sequenceNumber>
+                    <name>SizeB</name>
+                    <dataType>java.lang.Integer</dataType>
+                    <composable>false</composable>
+                </attribute>
+                <attribute>
+                    <sequenceNumber>6</sequenceNumber>
+                    <name>PrivacyBudget</name>
+                    <dataType>java.lang.Double</dataType>
+                    <composable>false</composable>
+                </attribute>
+                <attribute>
+                    <sequenceNumber>7</sequenceNumber>
+                    <name>ContributionK</name>
+                    <dataType>java.lang.Double</dataType>
+                    <composable>false</composable>
+                </attribute>
+                <attribute>
+                    <sequenceNumber>8</sequenceNumber>
+                    <name>WassersteinDistance</name>
+                    <dataType>java.lang.Double</dataType>
+                    <composable>true</composable>
+                </attribute>
+            </resultAttributes>
+        </fileConfig>
+
+
+        <fileConfig name="1">
+
+        </fileConfig>
+
+
+
+    </resultOutputFileConfig>
+
+
+
+</root>

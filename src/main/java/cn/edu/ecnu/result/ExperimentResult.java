@@ -1,10 +1,13 @@
 package cn.edu.ecnu.result;
 
+import cn.edu.ecnu.configure.XMLConfigureUtils;
 import cn.edu.ecnu.constant_values.ConstantValues;
+import cn.edu.ecnu.struct.result.ColumnBean;
+import org.apache.commons.beanutils.BeanUtils;
+import org.dom4j.Element;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.InvocationTargetException;
+import java.util.*;
 
 @SuppressWarnings("Duplicates")
 public class ExperimentResult {
@@ -31,6 +34,8 @@ public class ExperimentResult {
             valueList.add(value);
         }
     }
+
+
 
     public void addPair(String key, String value) {
         this.attributeList.add(key);

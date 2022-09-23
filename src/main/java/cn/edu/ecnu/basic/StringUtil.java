@@ -50,11 +50,16 @@ public class StringUtil {
         return resultStringList;
     }
 
-    public static String[] concatGiveString(String[] strArray, String addStr) {
+    public static String[] concatGiveString(String[] strArray, String... addStrs) {
         int size = strArray.length;
         String[] resultStrArray = new String[size];
+        StringBuilder stringBuilder;
         for (int i = 0; i < size; i++) {
-            resultStrArray[i] = strArray[i] + addStr;
+            stringBuilder = new StringBuilder(strArray[i]);
+            for (int j = 0; j < addStrs.length; j++) {
+                stringBuilder.append(addStrs[j]);
+            }
+            resultStrArray[i] = stringBuilder.toString();
         }
         return resultStrArray;
     }

@@ -2,11 +2,18 @@ package cn.edu.ecnu.result;
 
 import cn.edu.ecnu.io.read.BasicRead;
 import cn.edu.ecnu.io.write.BasicWrite;
+import cn.edu.ecnu.struct.result.ColumnBean;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileTool {
+
+    private static File resultConfigFile = new File(FileTool.class.getResource("/").getPath(), "result_config.xml");
+    public static final Integer SUM_COMPOSE = 1;
+    public static final Integer AVERAGE_COMPOSE = 2;
+
     /**
      * 简单地合并，并不会识别键值对
      * @param originalInputFilePath
@@ -31,11 +38,39 @@ public class FileTool {
         basicWrite.endWriting();
     }
 
-    public static void main(String[] args) {
-        String[] pathArray = new String[]{
-                "F:\\dataset\\test\\result\\crime\\crimeA\\alteringB.csv"
-        };
-        combineFilesWithTheSameFirstLine(pathArray, null);
+    /**
+     *
+     * @param originalInputFilePath
+     * @param outputFilePath
+     * @param columnList
+     * @param composeType 只有sum和average两种，默认是sum
+     */
+    public static void composeCSVFileWithTheSameFirstLine(String[] originalInputFilePath, String outputFilePath, List<ColumnBean> columnList, Integer composeType) {
+        int length = originalInputFilePath.length;
+        BasicRead basicRead = new BasicRead();
+        List<String> resultData = new ArrayList<>();
+        basicRead.startReading(originalInputFilePath[0]);
+    }
 
+    public static String[] toStringArray(File[] fileArray) {
+        int length = fileArray.length;
+        String[] resultArray = new String[length];
+        for (int i = 0; i < length; i++) {
+            resultArray[i] = fileArray[i].getAbsolutePath();
+        }
+        return resultArray;
+    }
+
+    public static File[] toFileArray(String[] fileArray) {
+        int length = fileArray.length;
+        File[] resultArray = new File[length];
+        for (int i = 0; i < length; i++) {
+            resultArray[i] = new File(fileArray[i]);
+        }
+        return resultArray;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(resultConfigFile.getPath());
     }
 }
