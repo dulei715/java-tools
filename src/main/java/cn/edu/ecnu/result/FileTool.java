@@ -42,14 +42,15 @@ public class FileTool {
      *
      * @param originalInputFilePath
      * @param outputFilePath
-     * @param columnList
+     * @param columnBeanList
      * @param composeType 只有sum和average两种，默认是sum
      */
-    public static void composeCSVFileWithTheSameFirstLine(String[] originalInputFilePath, String outputFilePath, List<ColumnBean> columnList, Integer composeType) {
+    public static void composeCSVFileWithTheSameFirstLine(String[] originalInputFilePath, String outputFilePath, List<ColumnBean> columnBeanList, Integer composeType) {
         int length = originalInputFilePath.length;
         BasicRead basicRead = new BasicRead();
         List<String> resultData = new ArrayList<>();
         basicRead.startReading(originalInputFilePath[0]);
+        //todo: 继续
     }
 
     public static String[] toStringArray(File[] fileArray) {

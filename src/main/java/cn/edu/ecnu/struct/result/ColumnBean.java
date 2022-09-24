@@ -80,4 +80,7 @@ public class ColumnBean implements Serializable, Comparable<ColumnBean> {
     public int hashCode() {
         return Objects.hash(sequenceNumber);
     }
+
+
+
 }
