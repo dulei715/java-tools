@@ -11,9 +11,22 @@ public class ResultItem {
     public ResultItem() {
     }
 
-    public ResultItem(Integer columnSize, TreeMap<ColumnBean, Object> itemData) {
-        this.columnSize = columnSize;
+    public ResultItem(TreeMap<ColumnBean, Object> itemData) {
+        this.columnSize = itemData.size();
         this.itemData = itemData;
+    }
+
+    public Integer getColumnSize() {
+        return columnSize;
+    }
+
+    public TreeMap<ColumnBean, Object> getItemData() {
+        return itemData;
+    }
+
+    public void setItemData(TreeMap<ColumnBean, Object> itemData) {
+        this.itemData = itemData;
+        this.columnSize = this.itemData.size();
     }
 
     public List<ColumnBean> getColumnBeanList() {
@@ -47,7 +60,7 @@ public class ResultItem {
         return null;
     }
 
-    public Object plus(ResultItem addedResultItem) {
+    public ResultItem plus(ResultItem addedResultItem) {
         if (!this.columnSize.equals(addedResultItem.columnSize)) {
             throw new RuntimeException("The column size of these two ResultItem instances is not consistent!");
         }
@@ -126,7 +139,40 @@ public class ResultItem {
             resultItemData.put(thisColumnBean, resultValue);
 
         }
-        return new ResultItem(this.columnSize, resultItemData);
+        return new ResultItem(resultItemData);
+    }
+
+    public static ResultItem toItem(List<ColumnBean> columnBeanList, List<String> valueStringList) {
+        ColumnBean tempColumnBean;
+        String tempType, stringValue;
+        Object tempObject;
+        TreeMap<ColumnBean, Object> map = new TreeMap();
+        for (int i = 0; i < columnBeanList.size(); i++) {
+            tempColumnBean = columnBeanList.get(i);
+            tempType = tempColumnBean.getDataType();
+            stringValue = valueStringList.get(i);
+            switch (tempType) {
+                case "java.lang.Integer":
+                    tempObject = Integer.valueOf(stringValue);
+                    break;
+                case "java.lang.Long":
+                    tempObject = Long.valueOf(stringValue);
+                    break;
+                case "java.lang.Double":
+                    tempObject = Double.valueOf(stringValue);
+                    break;
+                case "java.lang.float":
+                    tempObject = Float.valueOf(stringValue);
+                    break;
+                case "java.lang.String":
+                    tempObject = stringValue;
+                    break;
+                default:
+                    throw new RuntimeException("Not supporting type for \"" + tempType + "\"");
+            }
+            map.put(tempColumnBean, tempObject);
+        }
+        return new ResultItem(map);
     }
 
 

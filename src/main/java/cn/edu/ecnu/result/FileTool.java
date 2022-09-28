@@ -39,7 +39,7 @@ public class FileTool {
     }
 
     /**
-     *
+     * 要保证所有文件的第一行一致，且和ColumnBean的name一致
      * @param originalInputFilePath
      * @param outputFilePath
      * @param columnBeanList
@@ -49,7 +49,11 @@ public class FileTool {
         int length = originalInputFilePath.length;
         BasicRead basicRead = new BasicRead();
         List<String> resultData = new ArrayList<>();
-        basicRead.startReading(originalInputFilePath[0]);
+//        basicRead.startReading(originalInputFilePath[0]);
+        for (int i = 0; i < length; i++) {
+            basicRead.startReading(originalInputFilePath[i]);
+
+        }
         //todo: 继续
     }
 
