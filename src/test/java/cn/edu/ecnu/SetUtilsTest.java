@@ -16,7 +16,7 @@ public class SetUtilsTest {
         data.add(5);
         data.add(2);
         data.add(9);
-        MyPrint.showSet(data);
+        MyPrint.showCollection(data);
         MyPrint.showSplitLine("*", 150);
         Integer[] result = SetUtils.toArray(data, Integer.class);
         MyPrint.showArray(result);
@@ -29,7 +29,7 @@ public class SetUtilsTest {
         data.add(5);
         data.add(2);
         data.add(9);
-        MyPrint.showSet(data);
+        MyPrint.showCollection(data);
         MyPrint.showSplitLine("*", 150);
         Integer[] result = SetUtils.toArray(data, Integer.class);
         MyPrint.showArray(result);

@@ -40,4 +40,50 @@ public class SetUtils {
 
     }
 
+//    public static <T extends Collection> T collectionMinus(T collectionA, T collectionB) throws InstantiationException, IllegalAccessException {
+//        T resultCollection = (T) collectionA.getClass().newInstance();
+//        resultCollection.addAll(collectionA);
+//        Iterator iterator = resultCollection.iterator();
+//        Object element;
+//        while (iterator.hasNext()) {
+//            element = iterator.next();
+//            if (collectionB.contains(element)) {
+//                iterator.remove();
+//            }
+//        }
+//        return resultCollection;
+//    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

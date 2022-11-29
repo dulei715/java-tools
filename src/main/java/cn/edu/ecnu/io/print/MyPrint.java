@@ -3,10 +3,7 @@ package cn.edu.ecnu.io.print;
 import cn.edu.ecnu.constant_values.ConstantValues;
 
 import java.text.DecimalFormat;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @SuppressWarnings("ALL")
 public class MyPrint {
@@ -325,12 +322,23 @@ public class MyPrint {
     }
 
 
-    public static void showSet(Set set) {
-        Iterator iterator = set.iterator();
+    public static void showCollection(Collection collection, String splitString) {
+        Iterator iterator = collection.iterator();
+        int size = collection.size();
+        int index = 0;
         while (iterator.hasNext()) {
             Object obj = iterator.next();
-            System.out.println(obj);
+            ++index;
+            if (index < size) {
+                System.out.print(obj + splitString);
+            } else {
+                System.out.println(obj);
+            }
         }
+    }
+
+    public static void showCollection(Collection collection) {
+        showCollection(collection, ConstantValues.LINE_SPLIT);
     }
 
     public static void showArray(Object[] objects, String splitString) {

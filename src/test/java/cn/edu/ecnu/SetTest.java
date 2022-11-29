@@ -15,9 +15,9 @@ public class SetTest {
         treeSet.add(4);
         treeSet.add(7);
         treeSet.add(5);
-        MyPrint.showSet(treeSet);
+        MyPrint.showCollection(treeSet);
         treeSet.remove(7);
-        MyPrint.showSet(treeSet);
+        MyPrint.showCollection(treeSet);
         List list = new ArrayList(treeSet);
     }
 }
