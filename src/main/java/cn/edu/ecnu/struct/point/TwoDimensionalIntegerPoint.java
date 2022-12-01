@@ -71,6 +71,10 @@ public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparab
                 '}';
     }
 
+    public static TwoDimensionalIntegerPoint integerLinearCompose(TwoDimensionalIntegerPoint pointA, int paramA, TwoDimensionalIntegerPoint pointB, int paramB) {
+        return new TwoDimensionalIntegerPoint(pointA.getXIndex() * paramA + pointB.getXIndex() * paramB, pointA.getYIndex() * paramA + pointB.getYIndex() * paramB);
+    }
+
     @Override
     public int compareTo(TwoDimensionalIntegerPoint twoDimensionalIntegerPoint) {
         if (this == twoDimensionalIntegerPoint) return 0;
