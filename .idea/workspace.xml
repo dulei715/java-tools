@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="" />
+    <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,20 +57,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/workspace/5.github/java-tools/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/impl",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.keymap"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workspace\5.github\java-tools\src\main\java\cn\edu\ecnu\differential_privacy\cdp\basic_struct\impl" />
@@ -84,7 +83,7 @@
       <recent name="cn.edu.ecnu.differential_privacy.cdp.exponential_mechanism" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StructureTest.fun1">
+  <component name="RunManager" selected="JUnit.ArraysUtilsTest.fun1">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -109,6 +108,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ArraysUtilsTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.ecnu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.ArraysUtilsTest" />
+      <option name="METHOD_NAME" value="fun1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ResultItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-tools" />
       <extension name="coverage">
@@ -120,22 +135,6 @@
       <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
       <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.ResultItemTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ResultItemTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-tools" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.edu.ecnu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.ResultItemTest" />
-      <option name="METHOD_NAME" value="fun1" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ArraysUtilsTest.fun1" />
         <item itemvalue="JUnit.StructureTest.fun1" />
         <item itemvalue="Application.TwoDimensionalOneNormIntegerPoint" />
         <item itemvalue="JUnit.ResultItemTest.fun2" />
         <item itemvalue="JUnit.ResultItemTest" />
-        <item itemvalue="JUnit.ResultItemTest.fun1" />
       </list>
     </recent_temporary>
   </component>
@@ -259,6 +258,11 @@
       <workItem from="1669688834123" duration="5005000" />
       <workItem from="1669864211266" duration="7963000" />
       <workItem from="1670046123707" duration="3739000" />
+      <workItem from="1670072330187" duration="1148000" />
+      <workItem from="1670073493062" duration="155000" />
+      <workItem from="1670073665868" duration="418000" />
+      <workItem from="1670074143509" duration="1262000" />
+      <workItem from="1670075984647" duration="855000" />
     </task>
     <servers />
   </component>
@@ -307,6 +311,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -319,6 +324,10 @@
         <watch expression="DynamicClass.class.getName()" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
