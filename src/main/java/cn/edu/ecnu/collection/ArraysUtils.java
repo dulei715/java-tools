@@ -207,6 +207,12 @@ public class ArraysUtils {
         return resultArray;
     }
 
+    public static <T> void swap(T[] elementArray, int i, int j) {
+        T tempElement = elementArray[i];
+        elementArray[i] = elementArray[j];
+        elementArray[j] = tempElement;
+    }
+
     public static void main(String[] args) {
         double[] arr = new double[] {
                 9.0, 7.0, 6.0, 3.0, 1.0
