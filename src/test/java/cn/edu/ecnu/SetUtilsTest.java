@@ -1,12 +1,13 @@
 package cn.edu.ecnu;
 
 import cn.edu.ecnu.collection.SetUtils;
+import cn.edu.ecnu.constant_values.ConstantValues;
 import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.Test;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class SetUtilsTest {
     @Test
@@ -43,4 +44,31 @@ public class SetUtilsTest {
         Integer result = SetUtils.getElementByIndex(data, 1);
         System.out.println(result);
     }
+
+    @Test
+    public void fun4() {
+        int n = 5;
+        int k = 2;
+        List<List<Integer>> resultList = SetUtils.getSubsetList(n, k, 2);
+        MyPrint.showList(resultList, ConstantValues.LINE_SPLIT);
+    }
+
+
+    @Test
+    public void fun5() {
+        List<TwoDimensionalIntegerPoint> originalList = new ArrayList<>();
+        originalList.add(new TwoDimensionalIntegerPoint(1, 2));
+        originalList.add(new TwoDimensionalIntegerPoint(3, 4));
+        originalList.add(new TwoDimensionalIntegerPoint(4, 2));
+        originalList.add(new TwoDimensionalIntegerPoint(5, 6));
+        originalList.add(new TwoDimensionalIntegerPoint(7, 8));
+
+        MyPrint.showList(originalList, ConstantValues.LINE_SPLIT);
+        MyPrint.showSplitLine("*", 150);
+        List<List<TwoDimensionalIntegerPoint>> sublistList = SetUtils.getSublistList(originalList, 2);
+        MyPrint.showList(sublistList, ConstantValues.LINE_SPLIT);
+
+    }
+
+
 }

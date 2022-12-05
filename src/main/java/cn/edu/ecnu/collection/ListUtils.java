@@ -1,5 +1,7 @@
 package cn.edu.ecnu.collection;
 
+import cn.edu.ecnu.differential_privacy.cdp.basic_struct.DistanceAble;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -87,6 +89,29 @@ public class ListUtils {
     public static <T> List<T> copyToListGivenElement(T element, int size) {
         T[] resultArray = ArraysUtils.copyToArrayGivenElement(element, size);
         return Arrays.asList(resultArray);
+    }
+
+    public static <T> List<T> subList(List<T> originalList, int fromIndex, int endIndex) {
+        List<T> list = new ArrayList<>(endIndex - fromIndex + 1);
+        for (int i = fromIndex; i <= endIndex; i++) {
+             list.add(originalList.get(i));
+        }
+        return list;
+    }
+
+    public static <T extends DistanceAble<T>> Double getMinimalDistanceFromElementToList(Integer elementIndex, List<Integer> elementListIndexList, List<T> elementList) {
+        Double resultDistance = Double.MAX_VALUE;
+        Double tempDistance;
+        T tempElement, element;
+        element = elementList.get(elementIndex);
+        for (Integer i : elementListIndexList) {
+            tempElement = elementList.get(i);
+            tempDistance = element.getDistance(tempElement);
+            if (tempDistance < resultDistance) {
+                resultDistance = tempDistance;
+            }
+        }
+        return resultDistance;
     }
 
 }
