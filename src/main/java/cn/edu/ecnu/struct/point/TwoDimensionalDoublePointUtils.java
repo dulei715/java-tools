@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 @SuppressWarnings("ALL")
-public class TwoDimensionalPointTool {
+public class TwoDimensionalDoublePointUtils {
 
     /**
      * 获取两个集合各个点之间的距离值的统计量（用于距离数据）

@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/collection/CollectionTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalIntegerPointUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/collection/ListUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/collection/ListUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/collection/SetUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/collection/SetUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/impl/OneNormTwoDimensionalIntegerPointDistanceTor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/differential_privacy/cdp/basic_struct/impl/OneNormTwoDimensionalIntegerPointDistanceTor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalIntegerPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalIntegerPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalPointTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/struct/point/TwoDimensionalDoublePointUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/SetUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/SetUtilsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,15 +61,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workspace\5.github\java-tools\src\main\java\cn\edu\ecnu\differential_privacy\cdp\basic_struct\impl" />
@@ -86,7 +85,7 @@
       <recent name="cn.edu.ecnu.differential_privacy.cdp.exponential_mechanism" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SetUtilsTest.fun4">
+  <component name="RunManager" selected="JUnit.SetUtilsTest.fun6">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -161,7 +160,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StructureTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SetUtilsTest.fun6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-tools" />
       <extension name="coverage">
         <pattern>
@@ -170,8 +169,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.StructureTest" />
-      <option name="METHOD_NAME" value="fun1" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.SetUtilsTest" />
+      <option name="METHOD_NAME" value="fun6" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SetUtilsTest.fun6" />
         <item itemvalue="JUnit.SetUtilsTest.fun4" />
         <item itemvalue="JUnit.SetUtilsTest.fun5" />
         <item itemvalue="JUnit.SetUtilsTest" />
         <item itemvalue="JUnit.ArraysUtilsTest.fun1" />
-        <item itemvalue="JUnit.StructureTest.fun1" />
       </list>
     </recent_temporary>
   </component>
@@ -269,7 +268,8 @@
       <workItem from="1670073665868" duration="418000" />
       <workItem from="1670074143509" duration="1262000" />
       <workItem from="1670075984647" duration="855000" />
-      <workItem from="1670206435773" duration="17599000" />
+      <workItem from="1670206435773" duration="17601000" />
+      <workItem from="1670292073093" duration="5114000" />
     </task>
     <servers />
   </component>

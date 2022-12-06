@@ -118,6 +118,15 @@ public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparab
 
 
 
+    @Override
+    public Double getDistance(TwoDimensionalIntegerPoint element) {
+        double xIndexDiffer = this.getXIndex() - element.getXIndex();
+        double yIndexDiffer = this.getYIndex() - element.getYIndex();
+        return Math.sqrt(xIndexDiffer * xIndexDiffer + yIndexDiffer * yIndexDiffer);
+    }
+
+
+
     public static void main(String[] args) {
         TwoDimensionalIntegerPoint pointA = new TwoDimensionalIntegerPoint(2, 3);
         TwoDimensionalIntegerPoint pointB = new TwoDimensionalIntegerPoint(2, 3);
@@ -131,12 +140,5 @@ public class TwoDimensionalIntegerPoint extends IntegerPoint implements Comparab
 
         Integer a = 10;
         System.out.println(a.hashCode());
-    }
-
-    @Override
-    public Double getDistance(TwoDimensionalIntegerPoint element) {
-        double xIndexDiffer = this.getXIndex() - element.getXIndex();
-        double yIndexDiffer = this.getYIndex() - element.getYIndex();
-        return Math.sqrt(xIndexDiffer * xIndexDiffer + yIndexDiffer * yIndexDiffer);
     }
 }

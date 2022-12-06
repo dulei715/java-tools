@@ -70,5 +70,13 @@ public class SetUtilsTest {
 
     }
 
+    @Test
+    public void fun6() {
+        int n = 36;
+        int k = 6;
+        List<List<Integer>> subsetList = SetUtils.getSubsetList(n, k, 0);
+        MyPrint.showList(subsetList, ConstantValues.LINE_SPLIT);
+    }
+
 
 }
