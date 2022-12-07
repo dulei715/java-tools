@@ -104,6 +104,20 @@ public class BasicArray {
         }
         return result;
     }
+    public static Double[] getLinearTransformFromIntegerList(List<Integer> element, double factorA, double constC) {
+        Double[] result = new Double[element.size()];
+        for (int i = 0; i < element.size(); i++) {
+            result[i] = element.get(i) * factorA + constC;
+        }
+        return result;
+    }
+    public static Double[] getLinearTransformFromIntegerArray(Integer[] elementArray, double factorA, double constC) {
+        Double[] result = new Double[elementArray.length];
+        for (int i = 0; i < elementArray.length; i++) {
+            result[i] = elementArray[i] * factorA + constC;
+        }
+        return result;
+    }
 
 
     /**
