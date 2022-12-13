@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/math/linearfunction/MonotoneDecreaseLinearFittingWithRightPriority.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +82,7 @@
       <recent name="cn.edu.ecnu.differential_privacy.cdp.exponential_mechanism" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SetUtilsTest.fun6">
+  <component name="RunManager" selected="Application.MonotoneDecreaseLinearFittingWithRightPriority">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -93,18 +94,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArraysUtilsTest.fun1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MonotoneDecreaseLinearFittingWithRightPriority" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.math.linearfunction.MonotoneDecreaseLinearFittingWithRightPriority" />
       <module name="java-tools" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.edu.ecnu.*" />
+          <option name="PATTERN" value="cn.edu.ecnu.math.linearfunction.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.ArraysUtilsTest" />
-      <option name="METHOD_NAME" value="fun1" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MonotoneDecreaseLinearFittingWithRightPriority" />
         <item itemvalue="JUnit.SetUtilsTest.fun6" />
         <item itemvalue="JUnit.SetUtilsTest.fun4" />
         <item itemvalue="JUnit.SetUtilsTest.fun5" />
         <item itemvalue="JUnit.SetUtilsTest" />
-        <item itemvalue="JUnit.ArraysUtilsTest.fun1" />
       </list>
     </recent_temporary>
   </component>
@@ -268,6 +266,7 @@
       <workItem from="1670292073093" duration="5116000" />
       <workItem from="1670375690165" duration="3346000" />
       <workItem from="1670460398417" duration="3306000" />
+      <workItem from="1670938660589" duration="2448000" />
     </task>
     <servers />
   </component>
