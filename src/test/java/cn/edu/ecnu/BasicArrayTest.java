@@ -137,5 +137,14 @@ public class BasicArrayTest {
         MyPrint.showList(list);
     }
 
+    @Test
+    public void fun9 () {
+        double x1 = 6.0, x2 = 3.0;
+        double y1 = 4.0, y2 = 8.0;
+        double x = 4.0;
+        double y = BasicArray.getLinearTransformValue(x1, x2, x, y1, y2);
+        System.out.println(y);
+    }
+
 
 }

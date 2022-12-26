@@ -70,11 +70,16 @@ public class BasicArray {
     }
 
 
+    public static double getLinearTransformValue(double oldLeftPoint, double oldRightPoint, double oldValue, double newLeftPoint, double newRightPoint) {
+        return newLeftPoint + (newRightPoint - newLeftPoint) / (oldRightPoint - oldLeftPoint) * (oldValue - oldLeftPoint);
+    }
+
     public static void linearTransform(double[] element, double factorA, double constC) {
         for (int i = 0; i < element.length; i++) {
             element[i] = element[i] * factorA + constC;
         }
     }
+
 
     public static void linearTransform(Double[] element, double factorA, double constC) {
         for (int i = 0; i < element.length; i++) {

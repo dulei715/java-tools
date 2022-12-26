@@ -6,6 +6,55 @@ import java.util.List;
 
 @SuppressWarnings("ALL")
 public class ArraysUtils {
+
+    public static boolean isAscending(double[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i-1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isDescending(double[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > arr[i-1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static int binaryDescendSearch(double[] a, int fromIndex, int toIndex, double key) {
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            double midVal = a[mid];
+
+            if (midVal > key)
+                low = mid + 1;  // Neither val is NaN, thisVal is smaller
+            else if (midVal < key)
+                high = mid - 1; // Neither val is NaN, thisVal is larger
+            else {
+                long midBits = Double.doubleToLongBits(midVal);
+                long keyBits = Double.doubleToLongBits(key);
+                if (midBits == keyBits)     // Values are equal
+                    return mid;             // Key found
+                else if (midBits > keyBits) // (-0.0, 0.0) or (!NaN, NaN)
+                    low = mid + 1;
+                else                        // (0.0, -0.0) or (NaN, !NaN)
+                    high = mid - 1;
+            }
+        }
+        return -(low + 1);  // key not found.
+    }
+
+    public static int binaryDescendSearch(double[] a, double key) {
+        return binaryDescendSearch(a, 0, a.length, key);
+    }
+
     /**
      * @param a
      * @param fromIndex

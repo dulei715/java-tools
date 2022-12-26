@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/math/linearfunction/MonotoneDecreaseLinearFittingWithRightPriority.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/collection/ArraysUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/collection/ArraysUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/ArraysUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/ArraysUtilsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/BasicArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/BasicArrayTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +85,7 @@
       <recent name="cn.edu.ecnu.differential_privacy.cdp.exponential_mechanism" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MonotoneDecreaseLinearFittingWithRightPriority">
+  <component name="RunManager" selected="JUnit.BasicArrayTest.fun9">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -107,7 +110,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SetUtilsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArraysUtilsTest.fun3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-tools" />
       <extension name="coverage">
         <pattern>
@@ -116,29 +119,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.SetUtilsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SetUtilsTest.fun4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-tools" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.edu.ecnu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.SetUtilsTest" />
-      <option name="METHOD_NAME" value="fun4" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.ArraysUtilsTest" />
+      <option name="METHOD_NAME" value="fun3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SetUtilsTest.fun5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArraysUtilsTest.fun3_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-tools" />
       <extension name="coverage">
         <pattern>
@@ -147,8 +135,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.SetUtilsTest" />
-      <option name="METHOD_NAME" value="fun5" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.ArraysUtilsTest" />
+      <option name="METHOD_NAME" value="fun3_1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicArrayTest.fun9" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.ecnu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.BasicArrayTest" />
+      <option name="METHOD_NAME" value="fun9" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -172,11 +176,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BasicArrayTest.fun9" />
+        <item itemvalue="JUnit.ArraysUtilsTest.fun3" />
+        <item itemvalue="JUnit.ArraysUtilsTest.fun3_1" />
         <item itemvalue="Application.MonotoneDecreaseLinearFittingWithRightPriority" />
         <item itemvalue="JUnit.SetUtilsTest.fun6" />
-        <item itemvalue="JUnit.SetUtilsTest.fun4" />
-        <item itemvalue="JUnit.SetUtilsTest.fun5" />
-        <item itemvalue="JUnit.SetUtilsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -267,6 +271,7 @@
       <workItem from="1670375690165" duration="3346000" />
       <workItem from="1670460398417" duration="3306000" />
       <workItem from="1670938660589" duration="2448000" />
+      <workItem from="1672018167940" duration="7354000" />
     </task>
     <servers />
   </component>
