@@ -146,5 +146,11 @@ public class BasicArrayTest {
         System.out.println(y);
     }
 
+    @Test
+    public void fun10() {
+        double[] result = BasicArray.getIncreaseDoubleNumberArray(3.0, 0.3, 5.1);
+        MyPrint.showDoubleArray(result);
+    }
+
 
 }

@@ -239,6 +239,20 @@ public class BasicArray {
         return result;
     }
 
+    public static double[] getIncreaseDoubleNumberArray(double startValue, double step, double maxValue) {
+        int size = (int) Math.ceil((maxValue - startValue) / step + 1);
+        double[] result = new double[size];
+        double value;
+        int i;
+        for (value = startValue, i = 0; value <= maxValue; value += step, i++) {
+            result[i] = value;
+        }
+        if (i < size) {
+            result[i] = maxValue;
+        }
+        return result;
+    }
+
     public static List<Integer> getIncreaseIntegerNumberList(Integer startValue, int step, Integer maxValue) {
         int size = (maxValue - startValue) / step + 1;
         List<Integer> result = new ArrayList<>(size);

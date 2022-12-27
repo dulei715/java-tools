@@ -7,8 +7,6 @@
     <list default="true" id="0f6b5001-8fd4-409b-9edf-3319cbbd9674" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/basic/BasicArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/collection/ArraysUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/ecnu/collection/ArraysUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/ArraysUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/ArraysUtilsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/BasicArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cn/edu/ecnu/BasicArrayTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +83,7 @@
       <recent name="cn.edu.ecnu.differential_privacy.cdp.exponential_mechanism" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BasicArrayTest.fun9">
+  <component name="RunManager" selected="JUnit.BasicArrayTest.fun10">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -142,6 +140,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BasicArrayTest.fun10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-tools" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.ecnu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.BasicArrayTest" />
+      <option name="METHOD_NAME" value="fun10" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicArrayTest.fun9" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-tools" />
       <extension name="coverage">
@@ -158,29 +172,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SetUtilsTest.fun6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-tools" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.edu.ecnu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.edu.ecnu" />
-      <option name="MAIN_CLASS_NAME" value="cn.edu.ecnu.SetUtilsTest" />
-      <option name="METHOD_NAME" value="fun6" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BasicArrayTest.fun10" />
         <item itemvalue="JUnit.BasicArrayTest.fun9" />
         <item itemvalue="JUnit.ArraysUtilsTest.fun3" />
         <item itemvalue="JUnit.ArraysUtilsTest.fun3_1" />
         <item itemvalue="Application.MonotoneDecreaseLinearFittingWithRightPriority" />
-        <item itemvalue="JUnit.SetUtilsTest.fun6" />
       </list>
     </recent_temporary>
   </component>
@@ -272,6 +270,7 @@
       <workItem from="1670460398417" duration="3306000" />
       <workItem from="1670938660589" duration="2448000" />
       <workItem from="1672018167940" duration="7354000" />
+      <workItem from="1672102502865" duration="3147000" />
     </task>
     <servers />
   </component>
@@ -327,6 +326,15 @@
     </ignored-roots>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/cn/edu/ecnu/BasicArrayTest.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="Math.min(k, i)" language="JAVA" />
