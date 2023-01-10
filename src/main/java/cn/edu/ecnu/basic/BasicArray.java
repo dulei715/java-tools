@@ -1,7 +1,8 @@
 package cn.edu.ecnu.basic;
 
 
-import javafx.util.Pair;
+
+import cn.edu.ecnu.struct.pair.BasicPair;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
@@ -318,7 +319,7 @@ public class BasicArray {
     }
 
 
-    public static <T extends Comparable<T>> Pair<Integer, T> getMaxValuePair(T... objs) {
+    public static <T extends Comparable<T>> BasicPair<Integer, T> getMaxValuePair(T... objs) {
         T result = objs[0];
         Integer index = 0;
         for (int i = 1; i < objs.length; i++) {
@@ -327,10 +328,10 @@ public class BasicArray {
                 result = objs[i];
             }
         }
-        return new Pair<>(index, result);
+        return new BasicPair<>(index, result);
     }
 
-    public static <T extends Comparable<T>> Pair<Integer, T> getMinValuePair(T... objs) {
+    public static <T extends Comparable<T>> BasicPair<Integer, T> getMinValuePair(T... objs) {
         T result = objs[0];
         Integer index = 0;
         for (int i = 1; i < objs.length; i++) {
@@ -339,7 +340,7 @@ public class BasicArray {
                 result = objs[i];
             }
         }
-        return new Pair<>(index, result);
+        return new BasicPair<>(index, result);
     }
 
     public static Integer getSum(Integer... nums) {
