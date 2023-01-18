@@ -1,7 +1,10 @@
 package cn.edu.ecnu.struct;
 
 
+import cn.edu.ecnu.basic.BasicArray;
 import cn.edu.ecnu.basic.RandomUtil;
+import cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities.Distance;
+import cn.edu.ecnu.differential_privacy.cdp.basic_struct.DistanceTor;
 import cn.edu.ecnu.io.print.MyPrint;
 import cn.edu.ecnu.struct.point.DoublePoint;
 import cn.edu.ecnu.struct.point.IntegerPoint;
@@ -10,6 +13,7 @@ import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeSet;
 
 public class Grid {
     @Deprecated
@@ -124,6 +128,30 @@ public class Grid {
         }
         return resultList;
     }
+
+    public static Double[] getDistinct1NormDistanceGivenIntegerSquareGridLength(Integer gridLength) {
+        int gridLenMinusOne = gridLength - 1;
+        return BasicArray.getIncreaseDoubleNumberArray(0.0, 1.0, gridLenMinusOne*2.0);
+    }
+
+    public static Double[] getDistinct2NormDistanceGivenIntegerSquareGridLength(Integer gridLength) {
+        TreeSet<Double> distanceSet = new TreeSet<>();
+        for (int i = 0; i < gridLength; i++) {
+            for (int j = 0; j <= i; j++) {
+                distanceSet.add(Math.sqrt(i*i + j*j));
+            }
+        }
+        return distanceSet.toArray(new Double[0]);
+    }
+
+    // todo: to be done.
+    public static Double[] getDistinct2NormTotalCellSumDistanceGivenIntegerSquareGridLength(Integer gridLength) {
+        Double[] allTypeDistance = getDistinct2NormDistanceGivenIntegerSquareGridLength(gridLength);
+        TreeSet<Double> allSumDistance = new TreeSet<>();
+        
+    }
+
+
 
     public static void main(String[] args) {
         int len = 10;

@@ -240,9 +240,23 @@ public class BasicArray {
         return result;
     }
 
-    public static double[] getIncreaseDoubleNumberArray(double startValue, double step, double maxValue) {
+    public static double[] getIncreasedoubleNumberArray(double startValue, double step, double maxValue) {
         int size = (int) Math.ceil((maxValue - startValue) / step + 1);
         double[] result = new double[size];
+        double value;
+        int i;
+        for (value = startValue, i = 0; value <= maxValue; value += step, i++) {
+            result[i] = value;
+        }
+        if (i < size) {
+            result[i] = maxValue;
+        }
+        return result;
+    }
+
+    public static Double[] getIncreaseDoubleNumberArray(double startValue, double step, double maxValue) {
+        int size = (int) Math.ceil((maxValue - startValue) / step + 1);
+        Double[] result = new Double[size];
         double value;
         int i;
         for (value = startValue, i = 0; value <= maxValue; value += step, i++) {
