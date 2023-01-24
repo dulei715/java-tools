@@ -1,10 +1,8 @@
-package cn.edu.ecnu.struct;
+package cn.edu.ecnu.struct.grid;
 
 
 import cn.edu.ecnu.basic.BasicArray;
 import cn.edu.ecnu.basic.RandomUtil;
-import cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities.Distance;
-import cn.edu.ecnu.differential_privacy.cdp.basic_struct.DistanceTor;
 import cn.edu.ecnu.io.print.MyPrint;
 import cn.edu.ecnu.struct.point.DoublePoint;
 import cn.edu.ecnu.struct.point.IntegerPoint;
@@ -144,12 +142,12 @@ public class Grid {
         return distanceSet.toArray(new Double[0]);
     }
 
-    // todo: to be done.
-    public static Double[] getDistinct2NormTotalCellSumDistanceGivenIntegerSquareGridLength(Integer gridLength) {
-        Double[] allTypeDistance = getDistinct2NormDistanceGivenIntegerSquareGridLength(gridLength);
-        TreeSet<Double> allSumDistance = new TreeSet<>();
-        
-    }
+//    // todo: to be done.
+//    public static Double[] getDistinct2NormTotalCellSumDistanceGivenIntegerSquareGridLength(Integer gridLength) {
+//        Double[] allTypeDistance = getDistinct2NormDistanceGivenIntegerSquareGridLength(gridLength);
+//        TreeSet<Double> allSumDistance = new TreeSet<>();
+//
+//    }
 
 
 

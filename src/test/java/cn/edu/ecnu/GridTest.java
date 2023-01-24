@@ -1,7 +1,7 @@
 package cn.edu.ecnu;
 
 import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.struct.Grid;
+import cn.edu.ecnu.struct.grid.Grid;
 import org.junit.Test;
 
 public class GridTest {
