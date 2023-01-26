@@ -15,4 +15,12 @@ public class DatasetHandler {
         }
         return extractPointList;
     }
+
+    public static List<TwoDimensionalDoublePoint> extractDataPointGivenShrinkUnitAndOffset(List<TwoDimensionalDoublePoint> pointList, int shrinkUnit, int offset) {
+        List<TwoDimensionalDoublePoint> extractPointList = new ArrayList<>();
+        for (int i = offset; i < pointList.size(); i += shrinkUnit) {
+            extractPointList.add(pointList.get(i));
+        }
+        return extractPointList;
+    }
 }
