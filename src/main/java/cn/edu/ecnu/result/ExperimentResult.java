@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 @SuppressWarnings("Duplicates")
-public class ExperimentResult {
+public class ExperimentResult implements Cloneable {
     public List<String> attributeList = null;
     public List<String> valueList = null;
 
@@ -45,6 +45,15 @@ public class ExperimentResult {
     public void addPair(int index, String key, String value) {
         this.attributeList.add(index, key);
         this.valueList.add(index, value);
+    }
+
+    public void setPair(String key, String value) {
+        int index = this.attributeList.indexOf(key);
+        if (index < 0) {
+            addPair(key, value);
+        } else {
+            this.valueList.set(index, value);
+        }
     }
 
     /**
@@ -124,5 +133,10 @@ public class ExperimentResult {
         stringBuilder.append(this.valueList.get(i));
         stringBuilder.append(ConstantValues.LINE_SPLIT);
         return stringBuilder.toString();
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
