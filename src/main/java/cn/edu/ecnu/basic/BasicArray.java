@@ -103,6 +103,16 @@ public class BasicArray {
         }
         return result;
     }
+
+    public static Double[][] getLinearTransform(Double[][] element, double factorA, double constC) {
+        Double[][] result = new Double[element.length][element[0].length];
+        for (int i = 0; i < element.length; i++) {
+            for (int j = 0; j < element[0].length; j++) {
+                result[i][j] = element[i][j] * factorA + constC;
+            }
+        }
+        return result;
+    }
     public static Double[] getLinearTransform(List<Double> element, double factorA, double constC) {
         Double[] result = new Double[element.size()];
         for (int i = 0; i < element.size(); i++) {

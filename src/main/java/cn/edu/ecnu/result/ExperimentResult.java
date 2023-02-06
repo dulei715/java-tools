@@ -137,6 +137,8 @@ public class ExperimentResult implements Cloneable {
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        List<String> attributeList = new ArrayList<>(this.attributeList);
+        List<String> valueList = new ArrayList<>(this.valueList);
+        return new ExperimentResult(attributeList, valueList);
     }
 }

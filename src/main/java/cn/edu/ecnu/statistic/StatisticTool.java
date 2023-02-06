@@ -63,6 +63,11 @@ public class StatisticTool {
      * @return
      */
     public static Double[] getSmooth(Double[] values, Integer[] binomialCoefficients) {
+        Double[] result = new Double[values.length];
+        if (values.length < 2) {
+            result[0] = values[0];
+            return result;
+        }
         Double[] ratios = new Double[binomialCoefficients.length];
         Double outerRatioSum;
         Integer sum = BasicArray.getSum(binomialCoefficients);
@@ -70,7 +75,6 @@ public class StatisticTool {
             ratios[i] = binomialCoefficients[i] * 1.0 / sum;
         }
         Integer midIndex = binomialCoefficients.length / 2;
-        Double[] result = new Double[values.length];
 
         // i记录中心值得位置
         // 处理左侧超出边界
@@ -116,13 +120,20 @@ public class StatisticTool {
      * @return
      */
     public static Double[][] getTwoDimensionalSmooth(Double[][] values, Double ratioK) {
+        int rowLen = values.length;
+        int colLen = values[0].length;
+        Double[][] resultStatistic;
+        if (rowLen < 2 || colLen < 2) {
+            // todo: 这里暂时不处理1行多列或1列多行的。后续根据需要做响应的增强。
+            resultStatistic = BasicArray.getLinearTransform(values, 1, 0);
+            return resultStatistic;
+        }
+        resultStatistic = new Double[rowLen][colLen];
         Double tempDouble = 4 * ratioK + 1;
         Double neighboorRatio = ratioK / tempDouble;
         Double selfRatio = 1 / tempDouble;
 
-        int rowLen = values.length;
-        int colLen = values[0].length;
-        Double[][] resultStatistic = new Double[rowLen][colLen];
+
 
         // 处理四个角
         Double combineRatio = neighboorRatio * 2 + selfRatio;

@@ -39,7 +39,6 @@ public class SetUtils {
         TreeSet<T> treeSet = new TreeSet<>(originalList);
         treeSet.removeAll(removeCollection);
         return treeSet;
-
     }
 
 //    public static <T extends Collection> T collectionMinus(T collectionA, T collectionB) throws InstantiationException, IllegalAccessException {
