@@ -1,6 +1,7 @@
 package cn.edu.ecnu.collection;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -260,6 +261,16 @@ public class ArraysUtils {
         T tempElement = elementArray[i];
         elementArray[i] = elementArray[j];
         elementArray[j] = tempElement;
+    }
+
+    public static <T> T[] combineArray(T[]... arrs) {
+        List<T> list = new ArrayList<>();
+        for (int i = 0; i < arrs.length; i++) {
+            for (int j = 0; j < arrs[i].length; j++) {
+                list.add(arrs[i][j]);
+            }
+        }
+        return list.toArray(list.toArray(arrs[0]));
     }
 
     public static void main(String[] args) {

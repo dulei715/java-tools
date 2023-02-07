@@ -59,6 +59,9 @@ public class ReflectTool {
      * @throws IllegalAccessException
      */
     public static Object getObjectWithGivenClassType(String className, String valueStr) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        if ("java.lang.String".equals(className)) {
+            return valueStr;
+        }
         Class<?> clazz = Class.forName(className);
         Method valueOfMethod = clazz.getMethod("valueOf", String.class);
         return valueOfMethod.invoke(null, valueStr);

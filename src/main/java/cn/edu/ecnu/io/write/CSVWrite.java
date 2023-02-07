@@ -9,11 +9,9 @@ import java.util.Map;
 
 public class CSVWrite extends BasicWrite{
     public CSVWrite() {
+        super(",");
     }
 
-    public CSVWrite(String OUTPUT_SPLIT_SYMBOL) {
-        super(OUTPUT_SPLIT_SYMBOL);
-    }
 
     /**
      *
@@ -36,7 +34,7 @@ public class CSVWrite extends BasicWrite{
             for (int j = 0; j < data.size(); j++) {
                 tempMap = data.get(j);
                 this.bufferedWriter.write(String.valueOf(tempMap.get(tileList.get(0))));
-                for (int i = 0; i < columnSize; i++) {
+                for (int i = 1; i < columnSize; i++) {
                     this.bufferedWriter.write(super.OUTPUT_SPLIT_SYMBOL);
                     this.bufferedWriter.write(String.valueOf(tempMap.get(tileList.get(i))));
                 }

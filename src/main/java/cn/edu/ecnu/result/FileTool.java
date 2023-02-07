@@ -4,8 +4,10 @@ import cn.edu.ecnu.basic.BasicArray;
 import cn.edu.ecnu.io.read.BasicRead;
 import cn.edu.ecnu.io.read.CSVRead;
 import cn.edu.ecnu.io.write.BasicWrite;
+import cn.edu.ecnu.io.write.CSVWrite;
 import cn.edu.ecnu.reflect.ReflectTool;
 import cn.edu.ecnu.struct.result.ColumnBean;
+import org.checkerframework.checker.units.qual.C;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -105,7 +107,7 @@ public class FileTool {
                     continue;
                 }
                 tempName = columnBean.getName();
-                tempType = columnBean.getDataType();
+//                tempType = columnBean.getDataType();
                 for (int j = 0; j < resultData.size(); j++) {
                     objectMap = resultData.get(j);
                     objectValue = ReflectTool.divide(objectMap.get(tempName), length);
@@ -114,8 +116,11 @@ public class FileTool {
             }
         }
 
-
-
+        List<String> columnList = ColumnBean.getNameList(columnBeanList);
+        CSVWrite csvWrite = new CSVWrite();
+        csvWrite.startWriting(outputFilePath);
+        csvWrite.write(resultData, columnList);
+        csvWrite.endWriting();
     }
 
     public static String[] toStringArray(File[] fileArray) {

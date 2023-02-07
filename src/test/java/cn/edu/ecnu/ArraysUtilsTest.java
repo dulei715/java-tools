@@ -1,5 +1,6 @@
 package cn.edu.ecnu;
 
+import cn.edu.ecnu.basic.StringUtil;
 import cn.edu.ecnu.collection.ArraysUtils;
 import cn.edu.ecnu.collection.ListUtils;
 import cn.edu.ecnu.constant_values.ConstantValues;
@@ -51,5 +52,16 @@ public class ArraysUtilsTest {
         int index = ArraysUtils.binaryDescendSearch(arr, key);
         System.out.println(index);
     }
+
+    @Test
+    public void fun4() {
+        String[] strArrA = new String[] {"aaa", "bbb"};
+        String[] strArrB = new String[] {"ccc", "ddd"};
+        String[] strArrC = new String[] {"fff", "hhh"};
+        String[] result = ArraysUtils.combineArray(strArrA, strArrB, strArrC);
+        MyPrint.showArray(result);
+    }
+
+
 
 }
