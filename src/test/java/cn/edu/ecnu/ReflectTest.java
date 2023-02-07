@@ -5,6 +5,7 @@ import javassist.*;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class ReflectTest {
@@ -59,6 +60,21 @@ public class ReflectTest {
         Object result = methodGet.invoke(obj);
         System.out.println(result);
 
+    }
+
+    @Test
+    public void fun4() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+        Object result = ReflectTool.getObjectWithGivenClassType("java.lang.Double", "12");
+        System.out.println(result.getClass().getName());
+        System.out.println(result);
+    }
+
+    @Test
+    public void fun5() {
+        Double valueA = 10.4;
+        String valueB = "20.2";
+        Object result = ReflectTool.combineObject(valueA, valueB);
+        System.out.println(result);
     }
 
 }

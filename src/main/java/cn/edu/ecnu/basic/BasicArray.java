@@ -230,6 +230,13 @@ public class BasicArray {
     }
 
 
+    /**
+     * 每个数组元素引用同一个元素
+     * @param value
+     * @param size
+     * @return
+     * @param <T>
+     */
     public static <T> T[] getInitializedArray(T value, int size) {
         Class clazz = value.getClass();
         Object array = null;
@@ -238,6 +245,22 @@ public class BasicArray {
             Array.set(array, i, value);
         }
         T[] result = (T[]) array;
+        return result;
+    }
+
+    /**
+     * 每个list元素引用不同的元素
+     * @param value
+     * @param size
+     * @return
+     * @param <T>
+     */
+    public static <T> List<T> getInitializedList(T value, int size) throws InstantiationException, IllegalAccessException {
+        Class clazz = value.getClass();
+        List<T> result = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            result.add((T) clazz.newInstance());
+        }
         return result;
     }
 

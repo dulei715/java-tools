@@ -1,6 +1,8 @@
 package cn.edu.ecnu.struct.result;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class ColumnBean implements Serializable, Comparable<ColumnBean> {
@@ -81,6 +83,15 @@ public class ColumnBean implements Serializable, Comparable<ColumnBean> {
         return Objects.hash(sequenceNumber);
     }
 
+
+    public static List<String> getNameList(List<ColumnBean> columnBeanList) {
+        int size = columnBeanList.size();
+        List<String> result = new ArrayList<>(size);
+        for (int i = 0; i < size; i++) {
+            result.add(columnBeanList.get(i).getName());
+        }
+        return result;
+    }
 
 
 }
