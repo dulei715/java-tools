@@ -406,5 +406,15 @@ public class BasicArray {
         return sum;
     }
 
+    public static Double getSum(Double[][] numberArray) {
+        Double sum = 0.0;
+        for (int i = 0; i < numberArray.length; i++) {
+            for (int j = 0; j < numberArray[0].length; j++) {
+                sum += numberArray[i][j];
+            }
+        }
+        return sum;
+    }
+
 
 }

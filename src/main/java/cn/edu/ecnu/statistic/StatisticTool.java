@@ -11,6 +11,53 @@ import java.util.*;
 @SuppressWarnings("ALL")
 public class StatisticTool {
 
+    public static Double getMean(final Double[] distribution) {
+        Double sum = BasicArray.getSum(distribution);
+        return sum / distribution.length;
+    }
+
+    public static Double getMean(final Double[][] distribution) {
+        Double sum = BasicArray.getSum(distribution);
+        return sum / (distribution.length * distribution[0].length);
+    }
+
+    public static Double getMean(final TreeMap<TwoDimensionalIntegerPoint, Double> distribution) {
+        Double result = 0.0;
+        for (Map.Entry<TwoDimensionalIntegerPoint, Double> entry : distribution.entrySet()) {
+            result += entry.getValue();
+        }
+        return result / distribution.size();
+    }
+
+    public static Double getVariance(final Double[] distribution) {
+        Double mean = getMean(distribution);
+        Double result = 0.0;
+        for (int i = 0; i < distribution.length; i++) {
+            result += Math.pow(distribution[i] - mean, 2);
+        }
+        return result / distribution.length;
+    }
+
+    public static Double getVariance(final Double[][] distribution) {
+        Double mean = getMean(distribution);
+        Double result = 0.0;
+        for (int i = 0; i < distribution.length; i++) {
+            for (int j = 0; j < distribution[0].length; j++) {
+                result += Math.pow(distribution[i][j] - mean, 2);
+            }
+        }
+        return result / (distribution.length * distribution[0].length);
+    }
+
+    public static Double getVariance(final TreeMap<TwoDimensionalIntegerPoint, Double> distribution) {
+        Double mean = getMean(distribution);
+        Double result = 0.0;
+        for (Map.Entry<TwoDimensionalIntegerPoint, Double> entry : distribution.entrySet()) {
+            result += Math.pow(entry.getValue() - mean, 2);
+        }
+        return result;
+    }
+
     /**
      * 极大似然估计
      * @param value
