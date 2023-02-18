@@ -273,6 +273,22 @@ public class ArraysUtils {
         return list.toArray(list.toArray(arrs[0]));
     }
 
+    public static double[] toDoubleArray(Double... elements) {
+        double[] result = new double[elements.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = elements[i];
+        }
+        return result;
+    }
+
+    public static Double[] toDoubleArray(double... elements) {
+        Double[] result = new Double[elements.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = elements[i];
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         double[] arr = new double[] {
                 9.0, 7.0, 6.0, 3.0, 1.0
