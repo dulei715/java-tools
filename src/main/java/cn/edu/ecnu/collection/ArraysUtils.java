@@ -289,6 +289,22 @@ public class ArraysUtils {
         return result;
     }
 
+    public static Double[] toDoubleArray(List<Double> elementList) {
+        Double[] result = new Double[elementList.size()];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = elementList.get(i);
+        }
+        return result;
+    }
+
+    public static double[] toBasicDoubleArray(List<Double> elementList) {
+        double[] result = new double[elementList.size()];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = elementList.get(i);
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         double[] arr = new double[] {
                 9.0, 7.0, 6.0, 3.0, 1.0

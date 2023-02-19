@@ -3,6 +3,7 @@ package cn.edu.ecnu.struct.point;
 
 import cn.edu.ecnu.basic.BasicCalculation;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -83,5 +84,20 @@ public class TwoDimensionalDoublePointUtils {
         return equalNumber;
     }
 
+    public static List<Double> getXIndexList(List<TwoDimensionalDoublePoint> data) {
+        List<Double> resultList = new ArrayList<>();
+        for (int i = 0; i < data.size(); i++) {
+            resultList.add(data.get(i).getXIndex());
+        }
+        return resultList;
+    }
+
+    public static List<Double> getYIndexList(List<TwoDimensionalDoublePoint> data) {
+        List<Double> resultList = new ArrayList<>();
+        for (int i = 0; i < data.size(); i++) {
+            resultList.add(data.get(i).getYIndex());
+        }
+        return resultList;
+    }
 
 }
