@@ -106,6 +106,7 @@ public class BasicWrite {
         }
     }
 
+
     public void writeSizeAndCollectionDataWithNewLineSplit(List dataList) {
         int i = 0;
         Object obj;

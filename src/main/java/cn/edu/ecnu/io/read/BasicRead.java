@@ -107,7 +107,9 @@ public class BasicRead {
         }
     }
 
-
+    public String getSplitSymbol() {
+        return INPUT_SPLIT_SYMBOL;
+    }
 
     public void endReading() {
         try {
