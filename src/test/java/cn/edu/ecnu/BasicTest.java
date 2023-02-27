@@ -22,4 +22,12 @@ public class BasicTest {
         Double b = 0.01;
         System.out.println(a/b);
     }
+
+    @Test
+    public void fun4() {
+//        double x = 12.345;
+        double x = 12.545;
+        long result = Math.round(x);
+        System.out.println(result);
+    }
 }

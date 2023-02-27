@@ -2,6 +2,7 @@ package cn.edu.ecnu.basic;
 
 
 
+import cn.edu.ecnu.DecimalTool;
 import cn.edu.ecnu.struct.pair.BasicPair;
 
 import java.lang.reflect.Array;
@@ -273,16 +274,16 @@ public class BasicArray {
         return result;
     }
 
-    public static double[] getIncreasedoubleNumberArray(double startValue, double step, double maxValue) {
+    public static double[] getIncreasedoubleNumberArray(double startValue, double step, double maxValue, int precision) {
         int size = (int) Math.ceil((maxValue - startValue) / step + 1);
         double[] result = new double[size];
         double value;
         int i;
         for (value = startValue, i = 0; value <= maxValue; value += step, i++) {
-            result[i] = value;
+            result[i] = DecimalTool.round(value, precision);
         }
         if (i < size) {
-            result[i] = maxValue;
+            result[i] = DecimalTool.round(maxValue, precision);
         }
         return result;
     }

@@ -148,9 +148,10 @@ public class BasicArrayTest {
 
     @Test
     public void fun10() {
-        double[] result = BasicArray.getIncreasedoubleNumberArray(3.0, 0.3, 5.1);
+        double[] result = BasicArray.getIncreasedoubleNumberArray(3.0, 0.3, 5.1, 2);
         MyPrint.showDoubleArray(result);
     }
+
 
 
 }
