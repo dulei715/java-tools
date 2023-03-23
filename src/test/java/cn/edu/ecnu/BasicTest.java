@@ -30,4 +30,30 @@ public class BasicTest {
         long result = Math.round(x);
         System.out.println(result);
     }
+
+    @Test
+    public void fun5() {
+        String valueStr = "Infinity";
+        Double value = Double.valueOf(valueStr);
+        System.out.println(value);
+    }
+
+    @Test
+    public void fun6() {
+        Double valueA = Double.POSITIVE_INFINITY;
+        Double valueB = 2D;
+        System.out.println(valueA + valueB);
+        System.out.println(valueA - valueB);
+        System.out.println(valueB - valueA);
+        System.out.println(valueB / valueA);
+    }
+
+    @Test
+    public void fun7() {
+        System.out.println(Double.MAX_VALUE);
+        System.out.println(-Double.MAX_VALUE);
+    }
+
+
+
 }

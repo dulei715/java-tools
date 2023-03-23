@@ -1,5 +1,6 @@
 package cn.edu.ecnu;
 
+import cn.edu.ecnu.constant_values.ConstantValues;
 import cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities.KLDivergence;
 import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
 import org.junit.Test;
@@ -24,10 +25,16 @@ public class KLDivergenceTest {
         distributionB1.put(tempPoint, 0.75);
         distributionB2.put(tempPoint, 0.875);
 
-        double klB1 = KLDivergence.getKLDivergence(distributionA, distributionB1);
-        double klB2 = KLDivergence.getKLDivergence(distributionA, distributionB2);
+        double klB1 = KLDivergence.getKLDivergence(distributionA, distributionB1, -1);
+        double klB2 = KLDivergence.getKLDivergence(distributionA, distributionB2, -1);
 
         System.out.println(klB1);
         System.out.println(klB2);
+
+        double klB3 = KLDivergence.getKLDivergence(distributionA, distributionB1, ConstantValues.DOUBLE_PRECISION);
+        double klB4 = KLDivergence.getKLDivergence(distributionA, distributionB2, ConstantValues.DOUBLE_PRECISION);
+
+        System.out.println(klB3);
+        System.out.println(klB4);
     }
 }
