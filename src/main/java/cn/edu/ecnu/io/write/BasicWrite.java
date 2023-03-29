@@ -19,7 +19,7 @@ public class BasicWrite {
         this.OUTPUT_SPLIT_SYMBOL = OUTPUT_SPLIT_SYMBOL;
     }
 
-    public void startWriting(String outputPath) {
+    public void startWriting(String outputPath, boolean append) {
         File file = new File(outputPath);
         File parentFile = file.getParentFile();
 
@@ -30,10 +30,14 @@ public class BasicWrite {
             if (!file.exists()) {
                 file.createNewFile();
             }
-            this.bufferedWriter = new BufferedWriter(new FileWriter(file));
+            this.bufferedWriter = new BufferedWriter(new FileWriter(file, append));
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void startWriting(String outputPath) {
+        startWriting(outputPath, false);
     }
 
     public void writeOneLineListData(List dataList) {
