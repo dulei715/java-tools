@@ -153,5 +153,19 @@ public class BasicArrayTest {
     }
 
 
+    @Test
+    public void fun11() {
+        double[] arrA = new double[20];
+        double[] arrB = new double[20];
+//        BasicArray.setDoubleArrayTo(arrA, 0);
+//        BasicArray.setDoubleArrayTo(arrB, 0);
+        double leftValue = 3.0, rightValue = 10.0;
+        BasicArray.fillLinearTransformValue(leftValue, rightValue, arrA, 1, 4, true);
+        BasicArray.fillLinearTransformValue(leftValue, rightValue, arrB, 1, 4, false);
+
+        MyPrint.showDoubleArray(arrA);
+        MyPrint.showDoubleArray(arrB);
+    }
+
 
 }

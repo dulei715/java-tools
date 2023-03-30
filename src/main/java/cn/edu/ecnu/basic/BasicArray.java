@@ -76,6 +76,33 @@ public class BasicArray {
         return newLeftPoint + (newRightPoint - newLeftPoint) / (oldRightPoint - oldLeftPoint) * (oldValue - oldLeftPoint);
     }
 
+    public static void fillLinearTransformValue(double leftValue, double rightValue, double[] toBeFilledArray, int leftIndex, int rightIndex, boolean whetherContainLeftValueAndRightValue) {
+        int indexDiffer= rightIndex - leftIndex;
+        if (indexDiffer < 0 || indexDiffer < 1 && whetherContainLeftValueAndRightValue) {
+            throw new RuntimeException("The difference between rightIndex and leftIndex is illegal!");
+        }
+        int from, end, stepAddition;
+        double step, tempValue;
+        if (whetherContainLeftValueAndRightValue) {
+            toBeFilledArray[leftIndex] = leftValue;
+            toBeFilledArray[rightIndex] = rightValue;
+            from = leftIndex + 1;
+            end = rightIndex - 1;
+            stepAddition = 0;
+        } else {
+            from = leftIndex;
+            end = rightIndex;
+            stepAddition = 2;
+        }
+        step = (rightValue - leftValue) / (rightIndex - leftIndex + stepAddition);
+        tempValue = leftValue + step;
+        for (int index = from; index <= end; index++) {
+            toBeFilledArray[index] = tempValue;
+            tempValue += step;
+        }
+
+    }
+
     public static void linearTransform(double[] element, double factorA, double constC) {
         for (int i = 0; i < element.length; i++) {
             element[i] = element[i] * factorA + constC;
