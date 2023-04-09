@@ -54,6 +54,16 @@ public class BasicTest {
         System.out.println(-Double.MAX_VALUE);
     }
 
+    @Test
+    public void fun8() {
+        Double value = 6.36E-05;
+        System.out.println(value);
+    }
 
+    @Test
+    public void fun9() {
+        String valueStr = "6.36E-05";
+        System.out.println(Double.valueOf(valueStr));
+    }
 
 }
