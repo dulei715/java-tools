@@ -4,6 +4,7 @@ import cn.edu.ecnu.differential_privacy.cdp.basic_struct.DistanceAble;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 public class ListUtils {
@@ -14,6 +15,14 @@ public class ListUtils {
             resultList.add(arr[i]);
         }
         return resultList;
+    }
+
+    public static <T> List<T> valueOf(Collection<T> collection) {
+        List<T> result = new ArrayList<>();
+        for (T t : collection) {
+            result.add(t);
+        }
+        return result;
     }
 
     public static Double sum(List<Double> list) {

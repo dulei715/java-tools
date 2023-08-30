@@ -6,6 +6,8 @@ import cn.edu.ecnu.struct.point.DoublePoint;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("ALL")
@@ -103,6 +105,27 @@ public class BasicCalculation {
         double result = 0;
         for (int i = 0; i < len; i++) {
             result += Math.pow(pointA[i]-pointB[i], 2);
+        }
+        return Math.sqrt(result);
+    }
+
+    public static Double get2Norm(Double[] pointA, Double[] pointB) {
+        if (pointA.length != pointB.length) {
+            throw new RuntimeException("The dimensionality of two points are not equal!");
+        }
+        int len = pointA.length;
+        Double result = 0D;
+        for (int i = 0; i < len; i++) {
+            result += Math.pow(pointA[i]-pointB[i], 2);
+        }
+        return Math.sqrt(result);
+    }
+
+    public static Double get2Norm(Double[] pointA) {
+        int len = pointA.length;
+        double result = 0;
+        for (int i = 0; i < len; i++) {
+            result += Math.pow(pointA[i], 2);
         }
         return Math.sqrt(result);
     }
@@ -378,6 +401,23 @@ public class BasicCalculation {
         Double result = 0.0;
         for (int i = 0; i < size; i++) {
             result += vectorA[i] * Math.pow(radix, exponentVectorB[i]);
+        }
+        return result;
+    }
+
+    public static Double getInnerProduct(Double[] vectorA, Double[] vectorB) {
+        int size = vectorA.length;
+        Double result = 0.0;
+        for (int i = 0; i < size; i++) {
+            result += vectorA[i] * vectorB[i];
+        }
+        return result;
+    }
+
+    public static Double getPartInnerProduct(Double[] vectorA, Double[] vectorB, Collection<Integer> effectiveIndexCollection) {
+        Double result = 0.0;
+        for (Integer index : effectiveIndexCollection) {
+            result += vectorA[index] * vectorB[index];
         }
         return result;
     }

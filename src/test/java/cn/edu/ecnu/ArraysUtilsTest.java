@@ -62,6 +62,19 @@ public class ArraysUtilsTest {
         MyPrint.showArray(result);
     }
 
+    @Test
+    public void fun5 () {
+        Double[][] data = {
+                {1D, 2D, 3D},
+                {4D, 5D, 6D},
+                {7D, 8D, 9D}
+        };
+        Double[] colResult = ArraysUtils.extractColArray(data, 1);
+        MyPrint.showArray(colResult);
+        Double[] rowResult = ArraysUtils.extractRowArray(data, 2);
+        MyPrint.showArray(rowResult);
+    }
+
 
 
 }

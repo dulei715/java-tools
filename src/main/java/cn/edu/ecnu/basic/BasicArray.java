@@ -132,6 +132,14 @@ public class BasicArray {
         return result;
     }
 
+    public static Double[] getLogTransform(Double[] element, double factorA, double constC) {
+        Double[] result = new Double[element.length];
+        for (int i = 0; i < element.length; i++) {
+            result[i] = Math.log(element[i]) * factorA + constC;
+        }
+        return result;
+    }
+
     public static Double[][] getLinearTransform(Double[][] element, double factorA, double constC) {
         Double[][] result = new Double[element.length][element[0].length];
         for (int i = 0; i < element.length; i++) {
@@ -440,6 +448,40 @@ public class BasicArray {
             for (int j = 0; j < numberArray[0].length; j++) {
                 sum += numberArray[i][j];
             }
+        }
+        return sum;
+    }
+
+    public static Double getSumFromGivenIndexSets(Double[][] numberArray, Collection<Integer> rowIndexSet, Collection<Integer> colIndexSet) {
+        Double sum = 0.0;
+        if(rowIndexSet == null || colIndexSet == null) {
+            return sum;
+        }
+        for (Integer xIndex : rowIndexSet) {
+            for (Integer yIndex : colIndexSet) {
+                sum += numberArray[xIndex][yIndex];
+            }
+        }
+        return sum;
+    }
+
+    public static Double getSumFromGivenIndexSets(Double[][] numberArray, Integer rowIndex, Collection<Integer> colIndexSet) {
+        Double sum = 0.0;
+        if (colIndexSet == null) {
+            return sum;
+        }
+        for (Integer yIndex : colIndexSet) {
+            sum += numberArray[rowIndex][yIndex];
+        }
+        return sum;
+    }
+    public static Double getSumFromGivenIndexSets(Double[][] numberArray, Collection<Integer> rowIndexSet, Integer colIndex) {
+        Double sum = 0.0;
+        if (rowIndexSet == null) {
+            return sum;
+        }
+        for (Integer xIndex : rowIndexSet) {
+            sum += numberArray[xIndex][colIndex];
         }
         return sum;
     }

@@ -305,6 +305,18 @@ public class ArraysUtils {
         return result;
     }
 
+    public static <T> T[] extractRowArray(T[][] data, int rowNumber) {
+        return data[rowNumber];
+    }
+
+    public static <T> T[] extractColArray(T[][] data, int colNumber) {
+        T[] result = (T[]) Array.newInstance(data[0][0].getClass(), data[0].length);
+        for (int i = 0; i < result.length; i++) {
+            result[i] = data[i][colNumber];
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         double[] arr = new double[] {
                 9.0, 7.0, 6.0, 3.0, 1.0
