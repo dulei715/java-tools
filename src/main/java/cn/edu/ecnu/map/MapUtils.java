@@ -1,12 +1,18 @@
 package cn.edu.ecnu.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MapUtils {
-    public static <K, V> void put(Map<K, Set<V>> map, K key, V value) {
+
+    public static <K, V> void putInListValue(Map<K, List<V>> map, K key, V value) {
+        List<V> valueList = map.get(key);
+        if (valueList == null) {
+            valueList = new ArrayList<>();
+            map.put(key, valueList);
+        }
+        valueList.add(value);
+    }
+    public static <K, V> void putInSetValue(Map<K, Set<V>> map, K key, V value) {
         Set<V> valueSet = map.get(key);
         if (valueSet == null) {
             valueSet = new HashSet<>();
@@ -21,6 +27,6 @@ public class MapUtils {
             innerMap = new HashMap<>();
             rawMap.put(rawKey, innerMap);
         }
-        put(innerMap, innerKey, value);
+        putInSetValue(innerMap, innerKey, value);
     }
 }

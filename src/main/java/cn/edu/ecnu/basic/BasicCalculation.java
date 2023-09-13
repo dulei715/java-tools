@@ -2,6 +2,7 @@ package cn.edu.ecnu.basic;
 
 
 import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.ecnu.struct.pair.BasicPair;
 import cn.edu.ecnu.struct.point.DoublePoint;
 
 import java.text.DecimalFormat;
@@ -137,6 +138,14 @@ public class BasicCalculation {
             result += Math.pow(pointA[i], 2);
         }
         return Math.sqrt(result);
+    }
+
+    public static Double get2Norm(BasicPair<Double, Double> pointA, BasicPair<Double, Double> pointB) {
+        Double result = 0D;
+        result += Math.pow(pointA.getKey() - pointB.getKey(), 2);
+        result += Math.pow(pointA.getValue() - pointB.getValue(), 2);
+        result = Math.sqrt(result);
+        return result;
     }
 
     public static double[] getDifference(double[] pointA, double[] pointB) {
