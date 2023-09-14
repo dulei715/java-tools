@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.struct;
 
 import org.junit.Test;
 

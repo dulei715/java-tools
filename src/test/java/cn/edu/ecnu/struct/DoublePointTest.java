@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.struct;
 
 import cn.edu.ecnu.constant_values.ConstantValues;
 import cn.edu.ecnu.io.print.MyPrint;

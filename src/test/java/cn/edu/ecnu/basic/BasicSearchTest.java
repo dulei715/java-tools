@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.basic;
 
 import cn.edu.ecnu.basic.BasicSearch;
 import cn.edu.ecnu.io.print.MyPrint;

@@ -3,6 +3,7 @@ package cn.edu.ecnu.struct.point;
 
 import cn.edu.ecnu.basic.BasicArray;
 import cn.edu.ecnu.basic.BasicCalculation;
+import cn.edu.ecnu.struct.pair.BasicPair;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +34,7 @@ public abstract class DoublePoint extends Point {
             this.valueArray[i] = values[i];
         }
     }
+
 
     public static <T extends DoublePoint> Double getMSE(List<T> estimationPointList, List<T> originalPointList) {
         int lenE = estimationPointList.size();

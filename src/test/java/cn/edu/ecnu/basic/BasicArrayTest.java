@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.basic;
 
 import cn.edu.ecnu.basic.BasicArray;
 import cn.edu.ecnu.collection.ListUtils;

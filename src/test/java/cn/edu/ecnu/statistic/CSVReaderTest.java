@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.statistic;
 
 import cn.edu.ecnu.io.print.MyPrint;
 import com.csvreader.CsvReader;

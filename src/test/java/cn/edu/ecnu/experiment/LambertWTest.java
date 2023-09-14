@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.experiment;
 
 import cn.edu.ecnu.math.LambertW;
 import org.junit.Test;

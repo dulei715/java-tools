@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.statistic;
 
 import cn.edu.ecnu.filter.file_filter.DirectoryFileFilter;
 import cn.edu.ecnu.io.print.MyPrint;

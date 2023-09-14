@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.basic;
 
 import cn.edu.ecnu.collection.SetUtils;
 import cn.edu.ecnu.constant_values.ConstantValues;

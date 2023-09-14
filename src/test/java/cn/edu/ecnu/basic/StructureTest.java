@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.basic;
 
 import cn.edu.ecnu.struct.pair.IdentityPair;
 import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;

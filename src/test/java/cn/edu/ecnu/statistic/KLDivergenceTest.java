@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.statistic;
 
 import cn.edu.ecnu.constant_values.ConstantValues;
 import cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities.KLDivergence;

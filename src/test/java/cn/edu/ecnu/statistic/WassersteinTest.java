@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.statistic;
 
 import cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities.OneDimensionalWassersteinDistance;
 import cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities.TwoDimensionalWassersteinDistance;

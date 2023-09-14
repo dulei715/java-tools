@@ -2,6 +2,7 @@ package cn.edu.ecnu.struct.point;
 
 
 import cn.edu.ecnu.basic.BasicCalculation;
+import cn.edu.ecnu.struct.pair.BasicPair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,6 +99,27 @@ public class TwoDimensionalDoublePointUtils {
             resultList.add(data.get(i).getYIndex());
         }
         return resultList;
+    }
+
+    public static List<TwoDimensionalDoublePoint> parsePoint(BasicPair<Double, Double>... points) {
+        List<TwoDimensionalDoublePoint> result = new ArrayList<>();
+        TwoDimensionalDoublePoint tempPoint;
+        for (int i = 0; i < points.length; i++) {
+            tempPoint = new TwoDimensionalDoublePoint(points[i].getKey(), points[i].getValue());
+        }
+        return result;
+    }
+
+    public static List<TwoDimensionalDoublePoint> parsePoint(List<BasicPair<Double, Double>> pointList) {
+        List<TwoDimensionalDoublePoint> result = new ArrayList<>();
+        TwoDimensionalDoublePoint tempPoint;
+        BasicPair<Double, Double> tempBasicPair;
+        for (int i = 0; i < pointList.size(); i++) {
+            tempBasicPair = pointList.get(i);
+            tempPoint = new TwoDimensionalDoublePoint(tempBasicPair.getKey(), tempBasicPair.getValue());
+            result.add(tempPoint);
+        }
+        return result;
     }
 
 }

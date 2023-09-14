@@ -77,7 +77,7 @@ public class Cluster {
         Double difference;
         Integer tempChosenCentroidIndex;
         List<BasicPair<Double, Double>> dataList = new ArrayList<>(data);
-        TreeSet<Integer> newCentroidIndexTreeSet = new TreeSet<>(RandomUtil.getRandomIntegerArrayWithoutRepeat(0, data.size() - 1, typeSize - 1));
+        TreeSet<Integer> newCentroidIndexTreeSet = new TreeSet<>(RandomUtil.getRandomIntegerArrayWithoutRepeat(0, data.size() - 1, typeSize));
         TreeSet<Integer> oldCentroidIndexTreeSet;
         Map<Integer, List<Integer>> typeMap = new HashMap<>();
         do {
@@ -99,4 +99,7 @@ public class Cluster {
         } while (difference > haltDifference);
         return new ArrayList<>(newCentroidIndexTreeSet);
     }
+
+
+
 }

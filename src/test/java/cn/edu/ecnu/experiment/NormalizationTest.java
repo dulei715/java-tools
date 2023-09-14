@@ -1,4 +1,4 @@
-package cn.edu.ecnu;
+package cn.edu.ecnu.experiment;
 
 import cn.edu.ecnu.basic.BasicCalculation;
 import cn.edu.ecnu.differential_privacy.ldp.consistent.Normalization;
