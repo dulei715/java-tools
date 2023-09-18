@@ -99,6 +99,32 @@ public class Cluster {
         } while (difference > haltDifference);
         return new ArrayList<>(newCentroidIndexTreeSet);
     }
+    public static List<Integer> kMeansByGivenSpecificPoint(Collection<BasicPair<Double, Double>> data, TreeSet<Integer> currentCentroidIndexTreeSet, Double haltDifference) {
+        Double difference;
+        Integer tempChosenCentroidIndex;
+        List<BasicPair<Double, Double>> dataList = new ArrayList<>(data);
+//        TreeSet<Integer> newCentroidIndexTreeSet = new TreeSet<>(RandomUtil.getRandomIntegerArrayWithoutRepeat(0, data.size() - 1, typeSize));
+        TreeSet<Integer> oldCentroidIndexTreeSet = null;
+        Map<Integer, List<Integer>> typeMap = new HashMap<>();
+        do {
+            typeMap.clear();
+            // 1. 计算各个点到中心点的距离，并将其归在最近中心点的一类
+            for (int i = 0; i < dataList.size(); i++) {
+                tempChosenCentroidIndex = getNearestPointIndex(dataList, i, currentCentroidIndexTreeSet);
+                MapUtils.putInListValue(typeMap, tempChosenCentroidIndex, i);
+            }
+            // 2. 在每个类别中，重新计算中心点
+            oldCentroidIndexTreeSet = currentCentroidIndexTreeSet;
+            currentCentroidIndexTreeSet = new TreeSet<>();
+            for (List<Integer> valueList : typeMap.values()) {
+                tempChosenCentroidIndex = getNewCentroidIndex(dataList, valueList);
+                currentCentroidIndexTreeSet.add(tempChosenCentroidIndex);
+            }
+            // 3. 计算各个中心点的变动量
+            difference = getSumDistance(dataList, currentCentroidIndexTreeSet, oldCentroidIndexTreeSet);
+        } while (difference > haltDifference);
+        return new ArrayList<>(currentCentroidIndexTreeSet);
+    }
 
 
 
