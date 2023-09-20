@@ -2,8 +2,6 @@ package cn.edu.ecnu.statistic;
 
 import cn.edu.ecnu.basic.BasicCalculation;
 import cn.edu.ecnu.basic.RandomUtil;
-import cn.edu.ecnu.differential_privacy.cdp.basic_struct.DistanceAble;
-import cn.edu.ecnu.differential_privacy.cdp.basic_struct.DistanceTor;
 import cn.edu.ecnu.map.MapUtils;
 import cn.edu.ecnu.struct.pair.BasicPair;
 
@@ -42,6 +40,25 @@ public class Cluster {
         return averageElementIndex;
     }
 
+    /**
+     * 找出dataList的中心点（该中心点不一定是dataList里的点）
+     * @param dataList
+     * @return
+     */
+    private static BasicPair<Double, Double> getNewCentroid(List<BasicPair<Double, Double>> dataList) {
+        Double averageX = 0D, averageY = 0D, tempDistance, minimalDistance = Double.MAX_VALUE;
+        BasicPair<Double, Double> averageElement;
+
+        for (BasicPair<Double, Double> tempElement : dataList) {
+            averageX += tempElement.getKey();
+            averageY += tempElement.getValue();
+        }
+        averageX /= dataList.size();
+        averageY /= dataList.size();
+        averageElement = new BasicPair<>(averageX, averageY);
+        return averageElement;
+    }
+
     private static Integer getNearestPointIndex(List<BasicPair<Double, Double>> dataList, Integer elementIndex, TreeSet<Integer> centroidIndexTreeSet) {
         BasicPair<Double, Double> tempElement = dataList.get(elementIndex), tempCentroidElement;
         Double tempMinimalDistance = Double.MAX_VALUE, tempDistance;
@@ -56,6 +73,21 @@ public class Cluster {
         }
         return chosenCentroidIndex;
     }
+
+    private static BasicPair<Double, Double> getNearestPoint(BasicPair<Double, Double> tempElement, TreeSet<BasicPair<Double, Double>> centroidTreeSet) {
+        Double tempMinimalDistance = Double.MAX_VALUE, tempDistance;
+        BasicPair<Double, Double> chosenCentroid = null;
+        for (BasicPair<Double, Double> tempCentroidElement : centroidTreeSet) {
+            tempDistance = BasicCalculation.get2Norm(tempElement, tempCentroidElement);
+            if (tempDistance < tempMinimalDistance) {
+                tempMinimalDistance = tempDistance;
+                chosenCentroid = tempCentroidElement;
+            }
+        }
+        return chosenCentroid;
+    }
+
+
 
     private static Double getSumDistance(List<BasicPair<Double, Double>> dataList, TreeSet<Integer> centroidIndexTreeSetA, TreeSet<Integer> centroidIndexTreeSetB) {
         Iterator<Integer> iteratorA = centroidIndexTreeSetA.iterator();
@@ -73,7 +105,7 @@ public class Cluster {
         return distanceSum;
     }
 
-    public static List<Integer> kMeans(Collection<BasicPair<Double, Double>> data, Integer typeSize, Double haltDifference) {
+    public static List<Integer> kMeansToGivenPoints(Collection<BasicPair<Double, Double>> data, Integer typeSize, Double haltDifference) {
         Double difference;
         Integer tempChosenCentroidIndex;
         List<BasicPair<Double, Double>> dataList = new ArrayList<>(data);
@@ -99,10 +131,10 @@ public class Cluster {
         } while (difference > haltDifference);
         return new ArrayList<>(newCentroidIndexTreeSet);
     }
-    public static List<Integer> kMeansByGivenSpecificPoint(Collection<BasicPair<Double, Double>> data, TreeSet<Integer> currentCentroidIndexTreeSet, Double haltDifference) {
+    public static List<Integer> kMeansToGivenPointsByGivenSpecificPoints(final List<BasicPair<Double, Double>> dataList, TreeSet<Integer> currentCentroidIndexTreeSet, Double haltDifference) {
         Double difference;
         Integer tempChosenCentroidIndex;
-        List<BasicPair<Double, Double>> dataList = new ArrayList<>(data);
+//        List<BasicPair<Double, Double>> dataList = new ArrayList<>(data);
 //        TreeSet<Integer> newCentroidIndexTreeSet = new TreeSet<>(RandomUtil.getRandomIntegerArrayWithoutRepeat(0, data.size() - 1, typeSize));
         TreeSet<Integer> oldCentroidIndexTreeSet = null;
         Map<Integer, List<Integer>> typeMap = new HashMap<>();
@@ -126,6 +158,46 @@ public class Cluster {
         return new ArrayList<>(currentCentroidIndexTreeSet);
     }
 
+    public static TreeSet<BasicPair<Double, Double>> getRandomBasicPairWithoutRepeat(final List<BasicPair<Double, Double>> data, Integer typeSize) {
+        List<Integer> indexList = RandomUtil.getRandomIntegerArrayWithoutRepeat(0, data.size() - 1, typeSize);
+        TreeSet<BasicPair<Double, Double>> result = new TreeSet<>();
+        for (Integer index : indexList) {
+            result.add(data.get(index));
+        }
+        return result;
+    }
+
+    public static List<Integer> kMeansToNewPoints(final List<BasicPair<Double, Double>> dataList, Integer typeSize, Double haltDifference) {
+        Double difference;
+        Integer tempChosenCentroidIndex;
+        TreeSet<BasicPair<Double, Double>> newCentroidTreeSet, oldCentroidTreeSet;
+//        List<BasicPair<Double, Double>> dataList = new ArrayList<>(data);
+//        TreeSet<Integer> newCentroidIndexTreeSet = new TreeSet<>(RandomUtil.getRandomIntegerArrayWithoutRepeat(0, data.size() - 1, typeSize));
+        newCentroidTreeSet = getRandomBasicPairWithoutRepeat(dataList, typeSize);
+//        TreeSet<Integer> oldCentroidIndexTreeSet;
+        Map<Integer, List<Integer>> typeMap = new HashMap<>();
+//        do {
+//            typeMap.clear();
+            // 1. 计算各个点到中心点的距离，并将其归在最近中心点的一类
+            for (int i = 0; i < dataList.size(); i++) {
+//                tempChosenCentroidIndex = getNearestPointIndex(dataList, i, newCentroidIndexTreeSet);
+                // todo
+//                getNearestPoint();
+//                MapUtils.putInListValue(typeMap, tempChosenCentroidIndex, i);
+            }
+            // 2. 在每个类别中，重新计算中心点
+//            oldCentroidIndexTreeSet = newCentroidIndexTreeSet;
+//            newCentroidIndexTreeSet = new TreeSet<>();
+//            for (List<Integer> valueList : typeMap.values()) {
+//                tempChosenCentroidIndex = getNewCentroidIndex(dataList, valueList);
+//                newCentroidIndexTreeSet.add(tempChosenCentroidIndex);
+//            }
+            // 3. 计算各个中心点的变动量
+//            difference = getSumDistance(dataList, newCentroidIndexTreeSet, oldCentroidIndexTreeSet);
+//        } while (difference > haltDifference);
+//        return new ArrayList<>(newCentroidIndexTreeSet);
+        return null;
+    }
 
 
 }

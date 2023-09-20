@@ -1,6 +1,5 @@
 package cn.edu.ecnu.statistic;
 
-import cn.edu.ecnu.io.write.BasicWrite;
 import cn.edu.ecnu.io.write.PointWrite;
 import cn.edu.ecnu.struct.pair.BasicPair;
 import cn.edu.ecnu.struct.point.TwoDimensionalDoublePoint;
@@ -8,7 +7,6 @@ import cn.edu.ecnu.struct.point.TwoDimensionalDoublePointUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -34,7 +32,7 @@ public class ClusterTest {
         data.add(new BasicPair<>(27.3, 4.2));
         data.add(new BasicPair<>(21.2, 6.1));
 
-        List<Integer> indexList = Cluster.kMeans(data, 3, 0.000001);
+        List<Integer> indexList = Cluster.kMeansToGivenPoints(data, 3, 0.000001);
         List<BasicPair<Double,Double>> chosenDataList = new ArrayList<>();
         for (int i = 0; i < indexList.size(); i++) {
             chosenDataList.add(data.get(indexList.get(i)));
@@ -78,7 +76,7 @@ public class ClusterTest {
         initialIndexSet.add(4);
         initialIndexSet.add(8);
 
-        List<Integer> indexList = Cluster.kMeansByGivenSpecificPoint(data, initialIndexSet, 0.000001);
+        List<Integer> indexList = Cluster.kMeansToGivenPointsByGivenSpecificPoints(data, initialIndexSet, 0.000001);
         List<BasicPair<Double,Double>> chosenDataList = new ArrayList<>();
         for (int i = 0; i < indexList.size(); i++) {
             chosenDataList.add(data.get(indexList.get(i)));
