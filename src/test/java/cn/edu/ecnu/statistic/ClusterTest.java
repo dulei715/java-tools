@@ -1,5 +1,7 @@
 package cn.edu.ecnu.statistic;
 
+import cn.edu.ecnu.constant_values.ConstantValues;
+import cn.edu.ecnu.io.print.MyPrint;
 import cn.edu.ecnu.io.write.PointWrite;
 import cn.edu.ecnu.struct.pair.BasicPair;
 import cn.edu.ecnu.struct.point.TwoDimensionalDoublePoint;
@@ -51,7 +53,6 @@ public class ClusterTest {
         pointWrite.endWriting();
     }
 
-
     @Test
     public void fun2() {
 
@@ -87,6 +88,82 @@ public class ClusterTest {
         List<TwoDimensionalDoublePoint> twoDimensionalDoublePointList = TwoDimensionalDoublePointUtils.parsePoint(data);
         List<TwoDimensionalDoublePoint> chosenList = TwoDimensionalDoublePointUtils.parsePoint(chosenDataList);
         String outputFileName = "E:\\1.学习\\4.数据集\\test\\data2.txt";
+        PointWrite pointWrite = new PointWrite();
+        pointWrite.startWriting(outputFileName);
+//        pointWrite.writeListDataWithNewLineSplit(twoDimensionalDoublePointList);
+        pointWrite.writePoint(twoDimensionalDoublePointList);
+        pointWrite.writePoint(chosenList);
+        pointWrite.endWriting();
+    }
+
+    @Test
+    public void fun3() {
+
+
+
+        List<BasicPair<Double, Double>> data = new ArrayList<>();
+        data.add(new BasicPair<>(1.2, 3.4));
+        data.add(new BasicPair<>(2.2, 1.4));
+        data.add(new BasicPair<>(3.3, 7.2));
+        data.add(new BasicPair<>(6.2, 5.1));
+
+        data.add(new BasicPair<>(10.2, 13.4));
+        data.add(new BasicPair<>(11.2, 17.4));
+        data.add(new BasicPair<>(15.3, 12.2));
+        data.add(new BasicPair<>(18.2, 16.1));
+
+        data.add(new BasicPair<>(22.2, 3.4));
+        data.add(new BasicPair<>(25.2, 8.4));
+        data.add(new BasicPair<>(27.3, 4.2));
+        data.add(new BasicPair<>(21.2, 6.1));
+
+        List<BasicPair<Double, Double>> chosenDataList = Cluster.kMeansToNewPoints(data, 3, 0.000001);
+        MyPrint.showList(chosenDataList, ConstantValues.LINE_SPLIT);
+
+
+        List<TwoDimensionalDoublePoint> twoDimensionalDoublePointList = TwoDimensionalDoublePointUtils.parsePoint(data);
+        List<TwoDimensionalDoublePoint> chosenList = TwoDimensionalDoublePointUtils.parsePoint(chosenDataList);
+        String outputFileName = "E:\\1.学习\\4.数据集\\test\\data3.txt";
+        PointWrite pointWrite = new PointWrite();
+        pointWrite.startWriting(outputFileName);
+//        pointWrite.writeListDataWithNewLineSplit(twoDimensionalDoublePointList);
+        pointWrite.writePoint(twoDimensionalDoublePointList);
+        pointWrite.writePoint(chosenList);
+        pointWrite.endWriting();
+    }
+    @Test
+    public void fun4() {
+
+
+
+        List<BasicPair<Double, Double>> data = new ArrayList<>();
+        data.add(new BasicPair<>(1.2, 3.4));
+        data.add(new BasicPair<>(2.2, 1.4));
+        data.add(new BasicPair<>(3.3, 7.2));
+        data.add(new BasicPair<>(6.2, 5.1));
+
+        data.add(new BasicPair<>(10.2, 13.4));
+        data.add(new BasicPair<>(11.2, 17.4));
+        data.add(new BasicPair<>(15.3, 12.2));
+        data.add(new BasicPair<>(18.2, 16.1));
+
+        data.add(new BasicPair<>(22.2, 3.4));
+        data.add(new BasicPair<>(25.2, 8.4));
+        data.add(new BasicPair<>(27.3, 4.2));
+        data.add(new BasicPair<>(21.2, 6.1));
+
+
+        TreeSet<BasicPair<Double, Double>> initialSet = new TreeSet<>();
+        initialSet.add(new BasicPair<>(1.2, 3.4));
+        initialSet.add(new BasicPair<>(10.2, 13.4));
+        initialSet.add(new BasicPair<>(22.2, 3.4));
+        List<BasicPair<Double, Double>> chosenDataList = Cluster.kMeansToNewPointsByGivenSpecificPoints(data, initialSet, 0.000001);
+        MyPrint.showList(chosenDataList, ConstantValues.LINE_SPLIT);
+
+
+        List<TwoDimensionalDoublePoint> twoDimensionalDoublePointList = TwoDimensionalDoublePointUtils.parsePoint(data);
+        List<TwoDimensionalDoublePoint> chosenList = TwoDimensionalDoublePointUtils.parsePoint(chosenDataList);
+        String outputFileName = "E:\\1.学习\\4.数据集\\test\\data4.txt";
         PointWrite pointWrite = new PointWrite();
         pointWrite.startWriting(outputFileName);
 //        pointWrite.writeListDataWithNewLineSplit(twoDimensionalDoublePointList);
