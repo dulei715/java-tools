@@ -74,7 +74,7 @@ public class Cluster {
         return chosenCentroidIndex;
     }
 
-    private static BasicPair<Double, Double> getNearestPoint(BasicPair<Double, Double> tempElement, TreeSet<BasicPair<Double, Double>> centroidTreeSet) {
+    protected static BasicPair<Double, Double> getNearestPoint(BasicPair<Double, Double> tempElement, TreeSet<BasicPair<Double, Double>> centroidTreeSet) {
         Double tempMinimalDistance = Double.MAX_VALUE, tempDistance;
         BasicPair<Double, Double> chosenCentroid = null;
         for (BasicPair<Double, Double> tempCentroidElement : centroidTreeSet) {
@@ -108,7 +108,6 @@ public class Cluster {
         Iterator<BasicPair<Double, Double>> iteratorA = centroidTreeSetA.iterator();
         Iterator<BasicPair<Double, Double>> iteratorB = centroidTreeSetB.iterator();
         BasicPair<Double, Double> pointA, pointB;
-        BasicPair<Double, Double> elementA, elementB;
         Double distanceSum = 0D;
         while (iteratorA.hasNext()) {
             pointA = iteratorA.next();

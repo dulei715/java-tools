@@ -108,6 +108,14 @@ public class ListUtils {
         return list;
     }
 
+    public static <T> List<T> subList(List<T> originalList, List<Integer> indexList) {
+        List<T> list = new ArrayList<>(indexList.size());
+        for (Integer i : indexList) {
+            list.add(originalList.get(i));
+        }
+        return list;
+    }
+
     public static <T extends DistanceAble<T>> Double getMinimalDistanceFromElementToList(Integer elementIndex, List<Integer> elementListIndexList, List<T> elementList) {
         Double resultDistance = Double.MAX_VALUE;
         Double tempDistance;
