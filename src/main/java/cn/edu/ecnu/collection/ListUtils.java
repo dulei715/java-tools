@@ -25,6 +25,19 @@ public class ListUtils {
         return result;
     }
 
+    public static <T> List<List<T>> generateTwoDimensionalList(T defaultValue, int rowSize, int colSize) {
+        List<List<T>> list = new ArrayList<>();
+        List<T> tempList;
+        for (int i = 0; i < rowSize; i++) {
+            tempList = new ArrayList<>();
+            for (int j = 0; j < colSize; j++) {
+                tempList.add(defaultValue);
+            }
+            list.add(tempList);
+        }
+        return list;
+    }
+
     public static Double sum(List<Double> list) {
         Double result = new Double(0);
         for (Double elem : list) {

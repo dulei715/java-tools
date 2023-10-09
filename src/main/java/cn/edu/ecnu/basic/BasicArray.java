@@ -475,6 +475,18 @@ public class BasicArray {
         }
         return sum;
     }
+    public static Double getSumFromGivenIndexSets(List<List<Double>> numberList, Integer rowIndex, Collection<Integer> colIndexSet) {
+        Double sum = 0.0;
+        if (colIndexSet == null) {
+            return sum;
+        }
+        List<Double> chosenList;
+        chosenList = numberList.get(rowIndex);
+        for (Integer yIndex : colIndexSet) {
+            sum += chosenList.get(yIndex);
+        }
+        return sum;
+    }
     public static Double getSumFromGivenIndexSets(Double[][] numberArray, Collection<Integer> rowIndexSet, Integer colIndex) {
         Double sum = 0.0;
         if (rowIndexSet == null) {
@@ -482,6 +494,16 @@ public class BasicArray {
         }
         for (Integer xIndex : rowIndexSet) {
             sum += numberArray[xIndex][colIndex];
+        }
+        return sum;
+    }
+    public static Double getSumFromGivenIndexSets(List<List<Double>> numberList, Collection<Integer> rowIndexSet, Integer colIndex) {
+        Double sum = 0.0;
+        if (rowIndexSet == null) {
+            return sum;
+        }
+        for (Integer xIndex : rowIndexSet) {
+            sum += numberList.get(xIndex).get(colIndex);
         }
         return sum;
     }
