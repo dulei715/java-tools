@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Beans>
+    <Bean className="cn.edu.ecnu.struct.pair.BasicPair" classComment="basic struct">
+        <Field name="key" type="java.lang.Double" comment="able to change">1.2</Field>
+        <Field name="value" type="java.lang.Double" comment="able to change">3.4</Field>
+    </Bean>
+    <Bean className="cn.edu.ecnu.struct.pair.BasicPair" classComment="basic struct">
+        <Field name="key" type="java.lang.Double" comment="able to change">5.6</Field>
+        <Field name="value" type="java.lang.Double" comment="able to change">7.8</Field>
+    </Bean>
+</Beans>
