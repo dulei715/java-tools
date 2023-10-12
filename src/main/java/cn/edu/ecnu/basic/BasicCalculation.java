@@ -240,6 +240,10 @@ public class BasicCalculation {
         Double[] difference = getDifference(pointA, pointB);
         return getSquareValue(difference);
     }
+    public static double get2NormSquare(BasicPair<Double, Double> pointA, BasicPair<Double, Double> pointB) {
+        Double[] difference = new Double[]{pointA.getKey() - pointB.getKey(), pointA.getValue() - pointB.getValue()};
+        return getSquareValue(difference);
+    }
     public static int get2NormSquare(int[] pointA, int[] pointB) {
         int[] difference = getDifference(pointA, pointB);
         return getSquareValue(difference);
