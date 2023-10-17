@@ -502,6 +502,37 @@ public class BasicCalculation {
         return sum;
     }
 
+    public static Double[] getPairwiseMultiple(Double[] dataA, int indexValueA, Double[] dataB, int indexValueB) {
+        int size = dataA.length;
+        if (dataB.length != size) {
+            throw new RuntimeException("The length is not equal!");
+        }
+        Double[] result = new Double[size];
+        for (int i = 0; i < size; i++) {
+            result[i] = Math.pow(dataA[i], indexValueA) * Math.pow(dataB[i],indexValueB);
+        }
+        return result;
+    }
+
+    public static Double[] getMultiwiseMultiple(Double[]... data) {
+        int size = data[0].length;
+        for (int i = 0; i < data.length; i++) {
+            if (data[i].length != size) {
+                throw new RuntimeException("The length is not equal!");
+            }
+        }
+        Double[] result = new Double[size];
+        for (int j = 0; j < size; j++) {
+            result[j] = 1D;
+            for (int i = 0; i < result.length; i++) {
+                result[j] *= data[i][j];
+            }
+        }
+        return result;
+    }
+
+
+
 
     public static void main(String[] args) {
         String[] result2 = getRandomStringValueArrayInRange(10, 200, 2, 10);
