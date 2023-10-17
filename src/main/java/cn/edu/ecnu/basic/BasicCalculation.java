@@ -524,7 +524,7 @@ public class BasicCalculation {
         Double[] result = new Double[size];
         for (int j = 0; j < size; j++) {
             result[j] = 1D;
-            for (int i = 0; i < result.length; i++) {
+            for (int i = 0; i < data.length; i++) {
                 result[j] *= data[i][j];
             }
         }

@@ -452,6 +452,60 @@ public class BasicArray {
         return sum;
     }
 
+    public static Double[][] getPairwiseMultiple(Double[][] dataA, Double[][] dataB) {
+        Double[][] result = new Double[dataA.length][dataA[0].length];
+        for (int i = 0; i < dataA.length; i++) {
+            for (int j = 0; j < dataA[0].length; j++) {
+                result[i][j] = dataA[i][j] + dataB[i][j];
+            }
+        }
+        return result;
+    }
+
+    public static Double[] getVectorByRowSum(Double[][] matrix, Double[] weight) {
+        if (weight.length != matrix[0].length) {
+            throw new RuntimeException("Length does not match!");
+        }
+        Double[] result = new Double[matrix.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = BasicCalculation.getInnerProduct(matrix[i], weight);
+        }
+        return result;
+    }
+
+    public static Double[] getVectorByRowSum(Double[][] matrix) {
+        Double[] result = new Double[matrix.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = BasicCalculation.getSum(matrix[i]);
+        }
+        return result;
+    }
+    public static Double[] getVectorByColSum(Double[][] matrix, Double[] weight) {
+        if (weight.length != matrix.length) {
+            throw new RuntimeException("Length does not match!");
+        }
+        Double[] result = new Double[matrix[0].length];
+        for (int j = 0; j < result.length; j++) {
+            result[j] = 0D;
+            for (int i = 0; i < matrix.length; i++) {
+                result[j] += matrix[i][j] * weight[i];
+            }
+        }
+        return result;
+    }
+
+    public static Double[] getVectorByColSum(Double[][] matrix) {
+        Double[] result = new Double[matrix[0].length];
+        for (int j = 0; j < result.length; j++) {
+            result[j] = 0D;
+            for (int i = 0; i < matrix.length; i++) {
+                result[j] += matrix[i][j];
+            }
+        }
+        return result;
+    }
+
+
     public static Double getSumFromGivenIndexSets(Double[][] numberArray, Collection<Integer> rowIndexSet, Collection<Integer> colIndexSet) {
         Double sum = 0.0;
         if(rowIndexSet == null || colIndexSet == null) {
