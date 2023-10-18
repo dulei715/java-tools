@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.TreeSet;
 
 public class MatrixArray {
+    /**
+     * 获取matrix中元素的最大值
+     * @param matrix
+     * @return
+     */
     public static double getMaxValue(double[][] matrix) {
         double result = Double.MIN_VALUE;
         for (int i = 0; i < matrix.length; i++) {
@@ -17,12 +22,23 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 获取matrix的行数和列数
+     * @param matrix
+     * @return
+     */
     public static int[] getMatrixSize(double[][] matrix) {
         int lineNumber = matrix.length;
         int colNumber = matrix[0].length;
         return new int[]{lineNumber, colNumber};
     }
 
+    /**
+     * 生成给定值行数和列数，且给定值的矩阵
+     * @param size
+     * @param defaultValue
+     * @return
+     */
     public static int[][] getIntegerMatrixWithDeclaredSize(int[] size, int defaultValue) {
         int[][] result = new int[size[0]][size[1]];
         for (int i = 0; i < result.length; i++) {
@@ -33,6 +49,12 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 返回matrix状态矩阵，等于给定的value，值为1，否则为0
+     * @param matrix
+     * @param value
+     * @return
+     */
     public static int[][] getResultStateWhetherEqualsToDeclaredValue(double[][] matrix, double value) {
         // 相等置为1， 不等置为0
         int[][] result = new int[matrix.length][matrix[0].length];
@@ -48,6 +70,12 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 返回matrix状态矩阵，等于给定的value，值为1，否则为0
+     * @param matrix
+     * @param value
+     * @return
+     */
     public static int[][] getResultStateWhetherEqualsToDeclaredValue(int[][] matrix, int value) {
         // 相等置为1， 不等置为0
         int[][] result = new int[matrix.length][matrix[0].length];
@@ -63,6 +91,12 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 逐行统计每行等于给定value的个数
+     * @param matrix
+     * @param value
+     * @return
+     */
     public static int[] getRowCountEqualDeclaredValue(int[][] matrix, int value) {
         int size = matrix.length;
         int[] result = new int[size];
@@ -78,6 +112,12 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 逐列统计每列等于给定value值的个数
+     * @param matrix
+     * @param value
+     * @return
+     */
     public static int[] getColCountEqualDeclaredValue(int[][] matrix, int value) {
         int size = matrix[0].length;
         int[] result = new int[size];
@@ -93,6 +133,13 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 返回给定行中等于给定value的列的集合
+     * @param matrix
+     * @param rowIndex
+     * @param value
+     * @return
+     */
     public static List<Integer> getColIndexListWithDeclareRowIndexAndValue(int[][] matrix, int rowIndex, int value) {
         List<Integer> colIndexList = new ArrayList<>();
         for (int j = 0; j < matrix[rowIndex].length; j++) {
@@ -103,6 +150,13 @@ public class MatrixArray {
         return colIndexList;
     }
 
+    /**
+     * 返回给定多个行中值等于给定value的列的集合
+     * @param matrix
+     * @param rowIndexList
+     * @param value
+     * @return
+     */
     public static List<Integer> getColIndexListWithDeclareRowIndexAndValue(int[][] matrix, List<Integer> rowIndexList, int value) {
         TreeSet<Integer> colIndexTreeSet = new TreeSet<>();
         List<Integer> result = new ArrayList<>();
@@ -115,6 +169,13 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 返回给定列中值等于value的行的集合
+     * @param matrix
+     * @param colIndex
+     * @param value
+     * @return
+     */
     public static List<Integer> getRowIndexListWithDeclareColIndexAndValue(int[][] matrix, int colIndex, int value) {
         List<Integer> rowIndexList = new ArrayList<>();
         for (int i = 0; i < matrix.length; i++) {
@@ -126,6 +187,13 @@ public class MatrixArray {
     }
 
 
+    /**
+     * 返回给定多个列中值等于value的行的集合
+     * @param matrix
+     * @param colIndexList
+     * @param value
+     * @return
+     */
     public static List<Integer> getRowIndexListWithDeclareColIndexAndValue(int[][] matrix, List<Integer> colIndexList, int value) {
         TreeSet<Integer> rowIndexTreeSet = new TreeSet<>();
         List<Integer> result = new ArrayList<>();
@@ -138,6 +206,13 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 讲给定的行和列的笛卡尔积坐标对应的值设置为给定的value
+     * @param matrix
+     * @param rowIndexList
+     * @param colIndexList
+     * @param value
+     */
     public static void setValue(int[][] matrix, List<Integer> rowIndexList, List<Integer> colIndexList, int value) {
         for (Integer rowIndex : rowIndexList) {
             for (Integer colIndex : colIndexList) {
@@ -146,7 +221,12 @@ public class MatrixArray {
         }
     }
 
-
+    /**
+     * 将矩阵的每个元素修改成原本值的线性变换
+     * @param matrix
+     * @param paramMulti
+     * @param paramAdd
+     */
     public static void linearHandleEachElement(double[][] matrix, double paramMulti, double paramAdd) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
@@ -155,6 +235,14 @@ public class MatrixArray {
         }
     }
 
+    /**
+     * 将fromMatrix复制到toMatrix，空余部分用给定的defaultValue填充
+     * @param fromMatrix
+     * @param toMatrix
+     * @param defaultValue
+     * @param paramMulti
+     * @param paramAdd
+     */
     public static void linearHandleMatrix(double[][] fromMatrix, double[][] toMatrix, double defaultValue, double paramMulti, double paramAdd) {
         int[] fromMatrixSize = getMatrixSize(fromMatrix);
         for (int i = 0; i < toMatrix.length; i++) {
@@ -168,6 +256,14 @@ public class MatrixArray {
         }
     }
 
+    /**
+     * 将给定rowIndex中给定的colIndexList对应的值设置为value
+     * 如果rowIndex<0，则将所有行对应的colIndexList中的值设置为value
+     * @param matrix
+     * @param rowIndex
+     * @param colIndexList
+     * @param value
+     */
     public static void setValue(int[][] matrix, int rowIndex, List<Integer> colIndexList, int value) {
         if (rowIndex <= -1) {
             for (int i = 0; i < matrix.length; i++) {
@@ -182,6 +278,14 @@ public class MatrixArray {
         }
     }
 
+    /**
+     * 将给定列的给定行的集合对应的值设置为给定的value
+     * 如果列<0，则将所有的列中给定的行的集合对应的值都设置为value
+     * @param matrix
+     * @param rowIndexList
+     * @param colIndex
+     * @param value
+     */
     public static void setValue(int[][] matrix, List<Integer> rowIndexList, int colIndex, int value) {
         if (colIndex <= -1) {
             for (int j = 0; j < matrix[0].length; j++) {
