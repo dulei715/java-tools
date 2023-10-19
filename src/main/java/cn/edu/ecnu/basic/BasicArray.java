@@ -452,6 +452,23 @@ public class BasicArray {
         return sum;
     }
 
+    /**
+     * 将两个数组合并成一个列表
+     * @param arrA
+     * @param arrB
+     * @return
+     */
+    public static List<Integer> getCombinedListOfTwoIntegerArray(int[] arrA, int[] arrB) {
+        List<Integer> list = new ArrayList<>(arrA.length + arrB.length);
+        for (int i = 0; i < arrA.length; i++) {
+            list.add(arrA[i]);
+        }
+        for (int i = 0; i < arrB.length; i++) {
+            list.add(arrB[i]);
+        }
+        return list;
+    }
+
     public static Double[][] getPairwiseMultiple(Double[][] dataA, Double[][] dataB) {
         Double[][] result = new Double[dataA.length][dataA[0].length];
         for (int i = 0; i < dataA.length; i++) {

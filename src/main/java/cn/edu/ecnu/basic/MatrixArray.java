@@ -300,6 +300,13 @@ public class MatrixArray {
         }
     }
 
+    /**
+     * 将给定行和列的值设置为value值
+     * @param matrix
+     * @param rowIndex
+     * @param colIndex
+     * @param value
+     */
     public static void setValue(int[][] matrix, int rowIndex, int colIndex, int value) {
         if (rowIndex <= -1 && colIndex <= -1) {
             for (int i = 0; i < matrix.length; i++) {
@@ -322,10 +329,41 @@ public class MatrixArray {
         }
     }
 
+    /**
+     * 获取由state指定的matrix中元素的线性变换的和
+     * @param matrix
+     * @param state
+     * @param paramMulti
+     * @param paramAdd
+     * @return
+     */
+    public static double getMatrixLinearChangeElementMultipleResult(double[][] matrix, int[][] state, double paramMulti, double paramAdd) {
+        double result = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                result += (matrix[i][j] * paramMulti + paramAdd) * state[i][j];
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 获取由state指定的matrix中元素的和
+     * @param matrix
+     * @param state
+     * @return
+     */
     public static double getMatrixElementMultipleResult(double[][] matrix, int[][] state) {
         return getMatrixLinearChangeElementMultipleResult(matrix, state, 1, 0);
     }
 
+    /**
+     * 获取从0行0列开始的rowSize行colSize列的子矩阵
+     * @param matrix
+     * @param rowSize
+     * @param colSize
+     * @return
+     */
     public static int[][] generateSubMatrix(int[][] matrix, int rowSize, int colSize) {
         int[][] result = new int[rowSize][colSize];
         for (int i = 0; i < result.length; i++) {
@@ -336,6 +374,13 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 获取从0行0列开始的rowSize行colSize列的子矩阵
+     * @param matrix
+     * @param rowSize
+     * @param colSize
+     * @return
+     */
     public static double[][] generateSubMatrix(double[][] matrix, int rowSize, int colSize) {
         double[][] result = new double[rowSize][colSize];
         for (int i = 0; i < result.length; i++) {
@@ -346,6 +391,14 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 对给定rowIndexList和colIndex的所在位置加上addingValue的值;
+     * 如果colIndex小于0，则对所有列的给定行集合都加上addingValue
+     * @param matrix
+     * @param rowIndexList
+     * @param colIndex
+     * @param addingValue
+     */
     public static void addValue(double[][] matrix, List<Integer> rowIndexList, Integer colIndex, double addingValue) {
         if (colIndex <= -1) {
             for (int j = 0; j < matrix[0].length; j++) {
@@ -360,6 +413,14 @@ public class MatrixArray {
         }
     }
 
+    /**
+     * 对给定rowIndex和colIndexList的所在位置加上addingValue的值;
+     * 如果rowIndex小于0，则对所有列的给定行集合都加上addingValue
+     * @param matrix
+     * @param rowIndex
+     * @param colIndexList
+     * @param addingValue
+     */
     public static void addValue(double[][] matrix, Integer rowIndex, List<Integer> colIndexList, double addingValue) {
         if (rowIndex <= -1) {
             for (int i = 0; i < matrix.length; i++) {
@@ -374,6 +435,13 @@ public class MatrixArray {
         }
     }
 
+    /**
+     * 对给定rowIndexList和colIndexList的所在位置加上addingValue的值
+     * @param matrix
+     * @param rowIndexList
+     * @param colIndexList
+     * @param addingValue
+     */
     public static void addValue(double[][] matrix, List<Integer> rowIndexList, List<Integer> colIndexList, double addingValue) {
         for (Integer rowIndex : rowIndexList) {
             for (Integer colIndex : colIndexList) {
@@ -382,6 +450,14 @@ public class MatrixArray {
         }
     }
 
+    /**
+     * 对给定rowIndex和colIndex的所在位置加上addingValue的值;
+     * 如果行标识小于0，则对所有行进行操作; 如果列标识小于0，则对所有列进行操作
+     * @param matrix
+     * @param rowIndex
+     * @param colIndex
+     * @param addingValue
+     */
     public static void addValue(double[][] matrix, Integer rowIndex, Integer colIndex, double addingValue) {
         if (rowIndex <= -1 && colIndex <= -1) {
             for (int i = 0; i < matrix.length; i++) {
@@ -405,6 +481,12 @@ public class MatrixArray {
     }
 
 
+    /**
+     * 获取给定行中所有元素的最小值
+     * @param matrix
+     * @param rowIndex
+     * @return
+     */
     public static double getRowMinimalValue(double[][] matrix, Integer rowIndex) {
         Double result = Double.MAX_VALUE;
         for (int j = 0; j < matrix[rowIndex].length; j++) {
@@ -415,6 +497,12 @@ public class MatrixArray {
         return result;
     }
 
+    /**
+     * 获取给定列中所有元素的最小值
+     * @param matrix
+     * @param colIndex
+     * @return
+     */
     public static double getColMinimalValue(double[][] matrix, Integer colIndex) {
         Double result = Double.MAX_VALUE;
         for (int i = 0; i < matrix.length; i++) {
@@ -425,17 +513,14 @@ public class MatrixArray {
         return result;
     }
 
-    public static List<Integer> getCombinedListOfTwoIntegerArray(int[] arrA, int[] arrB) {
-        List<Integer> list = new ArrayList<>(arrA.length + arrB.length);
-        for (int i = 0; i < arrA.length; i++) {
-            list.add(arrA[i]);
-        }
-        for (int i = 0; i < arrB.length; i++) {
-            list.add(arrB[i]);
-        }
-        return list;
-    }
 
+    /**
+     * 用给定的value生成给定行数和列数的矩阵
+     * @param value
+     * @param rowSize
+     * @param colSize
+     * @return
+     */
     public static int[][] generateMatrixWithDeclaredValue(int value, int rowSize, int colSize) {
         int[][] matrix = new int[rowSize][colSize];
         for (int i = 0; i < rowSize; i++) {
@@ -464,16 +549,6 @@ public class MatrixArray {
             }
         }
         return index;
-    }
-
-    public static double getMatrixLinearChangeElementMultipleResult(double[][] matrix, int[][] state, double paramMulti, double paramAdd) {
-        double result = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                result += (matrix[i][j] * paramMulti + paramAdd) * state[i][j];
-            }
-        }
-        return result;
     }
 
 }
