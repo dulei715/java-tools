@@ -442,15 +442,7 @@ public class BasicArray {
         return sum;
     }
 
-    public static Double getSum(Double[][] numberArray) {
-        Double sum = 0.0;
-        for (int i = 0; i < numberArray.length; i++) {
-            for (int j = 0; j < numberArray[0].length; j++) {
-                sum += numberArray[i][j];
-            }
-        }
-        return sum;
-    }
+
 
     /**
      * 将两个数组合并成一个列表
@@ -469,83 +461,7 @@ public class BasicArray {
         return list;
     }
 
-    public static Double[][] getPairwiseMultiple(Double[][] dataA, Double[][] dataB) {
-        Double[][] result = new Double[dataA.length][dataA[0].length];
-        for (int i = 0; i < dataA.length; i++) {
-            for (int j = 0; j < dataA[0].length; j++) {
-                result[i][j] = dataA[i][j] + dataB[i][j];
-            }
-        }
-        return result;
-    }
 
-    public static Double[] getVectorByRowSum(Double[][] matrix, Double[] weight) {
-        if (weight.length != matrix[0].length) {
-            throw new RuntimeException("Length does not match!");
-        }
-        Double[] result = new Double[matrix.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = BasicCalculation.getInnerProduct(matrix[i], weight);
-        }
-        return result;
-    }
-
-    public static Double[] getVectorByRowSum(Double[][] matrix) {
-        Double[] result = new Double[matrix.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = BasicCalculation.getSum(matrix[i]);
-        }
-        return result;
-    }
-    public static Double[] getVectorByColSum(Double[][] matrix, Double[] weight) {
-        if (weight.length != matrix.length) {
-            throw new RuntimeException("Length does not match!");
-        }
-        Double[] result = new Double[matrix[0].length];
-        for (int j = 0; j < result.length; j++) {
-            result[j] = 0D;
-            for (int i = 0; i < matrix.length; i++) {
-                result[j] += matrix[i][j] * weight[i];
-            }
-        }
-        return result;
-    }
-
-    public static Double[] getVectorByColSum(Double[][] matrix) {
-        Double[] result = new Double[matrix[0].length];
-        for (int j = 0; j < result.length; j++) {
-            result[j] = 0D;
-            for (int i = 0; i < matrix.length; i++) {
-                result[j] += matrix[i][j];
-            }
-        }
-        return result;
-    }
-
-
-    public static Double getSumFromGivenIndexSets(Double[][] numberArray, Collection<Integer> rowIndexSet, Collection<Integer> colIndexSet) {
-        Double sum = 0.0;
-        if(rowIndexSet == null || colIndexSet == null) {
-            return sum;
-        }
-        for (Integer xIndex : rowIndexSet) {
-            for (Integer yIndex : colIndexSet) {
-                sum += numberArray[xIndex][yIndex];
-            }
-        }
-        return sum;
-    }
-
-    public static Double getSumFromGivenIndexSets(Double[][] numberArray, Integer rowIndex, Collection<Integer> colIndexSet) {
-        Double sum = 0.0;
-        if (colIndexSet == null) {
-            return sum;
-        }
-        for (Integer yIndex : colIndexSet) {
-            sum += numberArray[rowIndex][yIndex];
-        }
-        return sum;
-    }
     public static Double getSumFromGivenIndexSets(List<List<Double>> numberList, Integer rowIndex, Collection<Integer> colIndexSet) {
         Double sum = 0.0;
         if (colIndexSet == null) {
@@ -558,16 +474,7 @@ public class BasicArray {
         }
         return sum;
     }
-    public static Double getSumFromGivenIndexSets(Double[][] numberArray, Collection<Integer> rowIndexSet, Integer colIndex) {
-        Double sum = 0.0;
-        if (rowIndexSet == null) {
-            return sum;
-        }
-        for (Integer xIndex : rowIndexSet) {
-            sum += numberArray[xIndex][colIndex];
-        }
-        return sum;
-    }
+
     public static Double getSumFromGivenIndexSets(List<List<Double>> numberList, Collection<Integer> rowIndexSet, Integer colIndex) {
         Double sum = 0.0;
         if (rowIndexSet == null) {
@@ -577,6 +484,26 @@ public class BasicArray {
             sum += numberList.get(xIndex).get(colIndex);
         }
         return sum;
+    }
+
+    public static void setArrayToDeclaredValueByIndexList(int[] arr, List<Integer> indexList, int value) {
+        for (Integer index : indexList) {
+            arr[index] = value;
+        }
+    }
+
+    public static int getIndexOfMinimalValueGreaterThanDeclaredValue(List<Integer> data, Integer value) {
+        Integer minimalValue = Integer.MAX_VALUE;
+        int index = -1;
+        Integer tempValue;
+        for (int i = 0; i < data.size(); i++) {
+            tempValue = data.get(i);
+            if (tempValue > value && tempValue < minimalValue) {
+                minimalValue = tempValue;
+                index = i;
+            }
+        }
+        return index;
     }
 
 

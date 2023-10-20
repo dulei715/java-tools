@@ -1,6 +1,7 @@
 package cn.edu.ecnu.basic;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -31,6 +32,13 @@ public class MatrixArray {
         int lineNumber = matrix.length;
         int colNumber = matrix[0].length;
         return new int[]{lineNumber, colNumber};
+    }
+
+    public static <T> int[] getMatrixSize(List<List<T>> data) {
+        int[] size = new int[2];
+        size[0] = data.size();
+        size[1] = data.get(0).size();
+        return size;
     }
 
     /**
@@ -531,24 +539,217 @@ public class MatrixArray {
         return matrix;
     }
 
-    public static void setArrayToDeclaredValueByIndexList(int[] arr, List<Integer> indexList, int value) {
-        for (Integer index : indexList) {
-            arr[index] = value;
-        }
-    }
-
-    public static int getIndexOfMinimalValueGreaterThanDeclaredValue(List<Integer> data, Integer value) {
-        Integer minimalValue = Integer.MAX_VALUE;
-        int index = -1;
-        Integer tempValue;
-        for (int i = 0; i < data.size(); i++) {
-            tempValue = data.get(i);
-            if (tempValue > value && tempValue < minimalValue) {
-                minimalValue = tempValue;
-                index = i;
+    public static Double[][] getPairwiseSum(Double[][] dataA, Double[][] dataB) {
+        Double[][] result = new Double[dataA.length][dataA[0].length];
+        for (int i = 0; i < dataA.length; i++) {
+            for (int j = 0; j < dataA[0].length; j++) {
+                result[i][j] = dataA[i][j] + dataB[i][j];
             }
         }
-        return index;
+        return result;
     }
+
+    /**
+     * 获取两个矩阵对应元素的乘积
+     * @param dataA
+     * @param dataB
+     * @return
+     */
+    public static Double[][] getPairwiseMultiple(Double[][] dataA, Double[][] dataB) {
+        int rowSize = dataA.length, colSize = dataA[0].length;
+        if (dataB.length != rowSize || dataB[0].length != colSize) {
+            throw new RuntimeException("The scales of dataA and dataB are not equal!");
+        }
+        Double[][] result = new Double[rowSize][colSize];
+        for (int i = 0; i < rowSize; i++) {
+            for (int j = 0; j < colSize; j++) {
+                result[i][j] = dataA[i][j] * dataB[i][j];
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 矩阵右乘列向量
+     * @param matrix
+     * @param weight
+     * @return
+     */
+    public static Double[] getVectorByRowSum(Double[][] matrix, Double[] weight) {
+        if (weight.length != matrix[0].length) {
+            throw new RuntimeException("Length does not match!");
+        }
+        Double[] result = new Double[matrix.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = BasicCalculation.getInnerProduct(matrix[i], weight);
+        }
+        return result;
+    }
+
+    /**
+     * 矩阵右乘单位列向量
+     * @param matrix
+     * @return
+     */
+    public static Double[] getVectorByRowSum(Double[][] matrix) {
+        Double[] result = new Double[matrix.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = BasicCalculation.getSum(matrix[i]);
+        }
+        return result;
+    }
+
+    /**
+     * 矩阵左乘行向量
+     * @param matrix
+     * @param weight
+     * @return
+     */
+    public static Double[] getVectorByColSum(Double[][] matrix, Double[] weight) {
+        if (weight.length != matrix.length) {
+            throw new RuntimeException("Length does not match!");
+        }
+        Double[] result = new Double[matrix[0].length];
+        for (int j = 0; j < result.length; j++) {
+            result[j] = 0D;
+            for (int i = 0; i < matrix.length; i++) {
+                result[j] += matrix[i][j] * weight[i];
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 矩阵左乘单位行向量
+     * @param matrix
+     * @return
+     */
+    public static Double[] getVectorByColSum(Double[][] matrix) {
+        Double[] result = new Double[matrix[0].length];
+        for (int j = 0; j < result.length; j++) {
+            result[j] = 0D;
+            for (int i = 0; i < matrix.length; i++) {
+                result[j] += matrix[i][j];
+            }
+        }
+        return result;
+    }
+
+
+    public static Double getSumFromGivenIndexSets(Double[][] numberArray, Collection<Integer> rowIndexSet, Collection<Integer> colIndexSet) {
+        Double sum = 0.0;
+        if(rowIndexSet == null || colIndexSet == null) {
+            return sum;
+        }
+        for (Integer xIndex : rowIndexSet) {
+            for (Integer yIndex : colIndexSet) {
+                sum += numberArray[xIndex][yIndex];
+            }
+        }
+        return sum;
+    }
+
+    public static Double getSumFromGivenIndexSets(Double[][] numberArray, Integer rowIndex, Collection<Integer> colIndexSet) {
+        Double sum = 0.0;
+        if (colIndexSet == null) {
+            return sum;
+        }
+        for (Integer yIndex : colIndexSet) {
+            sum += numberArray[rowIndex][yIndex];
+        }
+        return sum;
+    }
+
+    public static Double getSumFromGivenIndexSets(Double[][] numberArray, Collection<Integer> rowIndexSet, Integer colIndex) {
+        Double sum = 0.0;
+        if (rowIndexSet == null) {
+            return sum;
+        }
+        for (Integer xIndex : rowIndexSet) {
+            sum += numberArray[xIndex][colIndex];
+        }
+        return sum;
+    }
+
+    public static Double getSum(Double[][] numberArray) {
+        Double sum = 0.0;
+        for (int i = 0; i < numberArray.length; i++) {
+            for (int j = 0; j < numberArray[0].length; j++) {
+                sum += numberArray[i][j];
+            }
+        }
+        return sum;
+    }
+
+    /**
+     * 不是直接提取第index行，而是复制第index行的所有元素
+     * @param data
+     * @param index
+     * @return
+     */
+    public static Double[] getRowArray(Double[][] data, Integer index){
+        Double[] result = new Double[data.length];
+        for (int j = 0; j < result.length; j++) {
+            result[j] = data[index][j];
+        }
+        return result;
+    }
+    public static Double[] getColArray(Double[][] data, Integer index) {
+        Double[] result = new Double[data[0].length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = data[i][index];
+        }
+        return result;
+    }
+
+    public static Double[][] getMatrixProduct(Double[][] dataA, Double[][] dataB) {
+        int dataAColSize = dataA[0].length, dataBRowSize = dataB.length;
+        if (dataAColSize != dataBRowSize) {
+            throw new RuntimeException("The colSize of dataA and the rowSize of dataB are not equal!");
+        }
+        int resultRowSize = dataA.length;
+        int resultColSize = dataB[0].length;
+        Double[] tempRowArray, tempColArray;
+        Double[][] result = new Double[resultRowSize][resultColSize];
+        for (int i = 0; i < resultRowSize; i++) {
+            tempRowArray = getRowArray(dataA, i);
+            for (int j = 0; j < resultColSize; j++) {
+                tempColArray = getColArray(dataB, j);
+                result[i][j] = BasicCalculation.getInnerProduct(tempRowArray, tempColArray);
+            }
+        }
+        return result;
+    }
+
+    public static Double[][] getLeftMultipleDiagonalMatrix(Double[] diagonalArray, Double[][] data) {
+        int leftMatrixSize = diagonalArray.length;
+        if (leftMatrixSize != data.length) {
+            throw new RuntimeException("The size of diagonal Array is not equal to the data length!");
+        }
+        Double[][] result = new Double[data.length][data[0].length];
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < result[0].length; j++) {
+                result[i][j] = data[i][j] * diagonalArray[i];
+            }
+        }
+        return result;
+    }
+
+    public static Double[][] getRightMultipleDiagonalMatrix(Double[][] data, Double[] diagonalArray) {
+        int rightMatrixSize = diagonalArray.length;
+        if (rightMatrixSize != data[0].length) {
+            throw new RuntimeException("The size of diagonal Array is not equal to the data[0] length!");
+        }
+        Double[][] result = new Double[data.length][data[0].length];
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < result[0].length; j++) {
+                result[i][j] = data[i][j] * diagonalArray[j];
+            }
+        }
+        return result;
+    }
+
+
+
 
 }

@@ -2,6 +2,7 @@ package cn.edu.ecnu.statistic;
 
 
 import cn.edu.ecnu.basic.BasicArray;
+import cn.edu.ecnu.basic.MatrixArray;
 import cn.edu.ecnu.collection.ArraysUtils;
 import cn.edu.ecnu.io.print.MyPrint;
 import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
@@ -17,7 +18,7 @@ public class StatisticTool {
     }
 
     public static Double getMean(final Double[][] distribution) {
-        Double sum = BasicArray.getSum(distribution);
+        Double sum = MatrixArray.getSum(distribution);
         return sum / (distribution.length * distribution[0].length);
     }
 
