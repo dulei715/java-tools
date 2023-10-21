@@ -144,6 +144,18 @@ public class ListUtils {
         return resultDistance;
     }
 
+    public static <T> List<List<T>> toMatrixList(T[][] data) {
+        List<List<T>> result = new ArrayList<>();
+        List<T> tempList;
+        for (int i = 0; i < data.length; i++) {
+            tempList = new ArrayList<>();
+            for (int j = 0; j < data[i].length; j++) {
+                tempList.add(data[i][j]);
+            }
+            result.add(tempList);
+        }
+        return result;
+    }
 
 
 }

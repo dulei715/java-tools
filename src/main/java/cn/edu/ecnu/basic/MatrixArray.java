@@ -6,6 +6,21 @@ import java.util.List;
 import java.util.TreeSet;
 
 public class MatrixArray {
+
+    public static Double[][] toMatrixArray(List<List<Double>> data) {
+        int size = data.size();
+        int sizeCol = data.get(0).size();
+        Double[][] result = new Double[size][sizeCol];
+        List<Double> tempList;
+        for (int i = 0; i < size; i++) {
+            tempList = data.get(i);
+            for (int j = 0; j < sizeCol; j++) {
+                result[i][j] = tempList.get(j);
+            }
+        }
+        return result;
+    }
+
     /**
      * 获取matrix中元素的最大值
      * @param matrix

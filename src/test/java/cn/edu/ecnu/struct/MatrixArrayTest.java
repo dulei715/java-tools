@@ -4,6 +4,9 @@ import cn.edu.ecnu.basic.MatrixArray;
 import cn.edu.ecnu.io.print.MyPrint;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MatrixArrayTest {
 
     @Test
@@ -53,6 +56,24 @@ public class MatrixArrayTest {
         Double[][] rightResult = MatrixArray.getRightMultipleDiagonalMatrix(dataA, array);
         MyPrint.show2DimensionDoubleArray(rightResult);
         MyPrint.showSplitLine("*", 150);
+
+    }
+
+    @Test
+    public void fun3() {
+        List<List<Double>> data = new ArrayList<>();
+        List<Double> tempData;
+        for (int i = 0; i < 3; i++) {
+            tempData = new ArrayList<>();
+            for (int j = 0; j < 4; j++) {
+                tempData.add(i*1.0+j);
+            }
+            data.add(tempData);
+        }
+        MyPrint.showList(data, ", ");
+
+        Double[][] result = MatrixArray.toMatrixArray(data);
+        MyPrint.show2DimensionDoubleArray(result);
 
     }
 
