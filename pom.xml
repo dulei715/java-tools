@@ -70,6 +70,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>cn.edu.ecnu</groupId>
+			<artifactId>MultiScaleSparseSinkhorn</artifactId>
+			<version>1.01.01</version>
+		</dependency>
+
+		<dependency>
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
 			<version>1.6.1</version>

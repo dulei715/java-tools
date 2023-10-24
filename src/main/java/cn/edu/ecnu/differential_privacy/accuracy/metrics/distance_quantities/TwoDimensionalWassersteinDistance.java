@@ -1,9 +1,12 @@
 package cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities;
 
 import cn.edu.ecnu.basic.BasicCalculation;
+import cn.edu.ecnu.basic.MatrixArray;
 import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
 import edu.ecnu.dll.cpl.*;
 import edu.ecnu.dll.cpl.expection.CPLException;
+import tools.others.Sinkhorn;
+import tools.utils.SinkhornUtils;
 
 import java.util.Iterator;
 import java.util.List;
@@ -16,10 +19,9 @@ public class TwoDimensionalWassersteinDistance {
      * 计算给定个的两个分布的wasserstein距离
      * @param distributionA 分布A，个数为 sizeA
      * @param distributionB 分布B，个数为 sizeB
-     * @param distanceMatrix 距离矩阵，要求规模是 sizeA * sizeB 个元素
      * @return
      */
-    public static double getWassersteinDistance(TreeMap<TwoDimensionalIntegerPoint, Double> distributionA, TreeMap<TwoDimensionalIntegerPoint, Double> distributionB, Integer normP) throws CPLException {
+    public static double getWassersteinDistanceByCPlex(TreeMap<TwoDimensionalIntegerPoint, Double> distributionA, TreeMap<TwoDimensionalIntegerPoint, Double> distributionB, Integer normP) throws CPLException {
         /**
          * 构建线性规划
          */
@@ -91,5 +93,19 @@ public class TwoDimensionalWassersteinDistance {
         cPlex.solve();
         return Math.pow(cPlex.getResult(), 1.0 / normP);
 
+    }
+    public static double getWassersteinDistanceBySinkhorn(TreeMap<TwoDimensionalIntegerPoint, Double> distributionA, TreeMap<TwoDimensionalIntegerPoint, Double> distributionB, Integer normP, Double lambda, Double precisionLowerBound) throws CPLException {
+
+        int sizeA = distributionA.size();
+        int sizeB = distributionB.size();
+
+        Double[] distributionArrayA = SinkhornUtils.extractOrderedDistributionArray(distributionA);
+        Double[] distributionArrayB = SinkhornUtils.extractOrderedDistributionArray(distributionB);
+        Double[][] costMatrixArray = SinkhornUtils.getCostMatrixArray(distributionA, distributionB, normP);
+
+        Double[][] coupling = Sinkhorn.getCouplingBasic(distributionArrayA, distributionArrayB, costMatrixArray, lambda, precisionLowerBound);
+        Double[][] dotProduct = MatrixArray.getPairwiseMultiple(coupling, costMatrixArray);
+        Double squareDistance = MatrixArray.getSum(dotProduct);
+        return Math.pow(squareDistance, 1.0 / normP);
     }
 }

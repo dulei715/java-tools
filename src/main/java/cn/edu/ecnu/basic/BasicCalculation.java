@@ -223,6 +223,40 @@ public class BasicCalculation {
         return result;
     }
 
+    public static Integer getSquareValue(Integer[] point, Integer norm) {
+        int len = point.length;
+        Integer result = 0;
+        for (int i = 0; i < len; i++) {
+            result += (int)Math.pow(point[i], norm);
+        }
+        return result;
+    }
+    public static Integer getSquareValue(int[] point, Integer norm) {
+        int len = point.length;
+        Integer result = 0;
+        for (int i = 0; i < len; i++) {
+            result += (int)Math.pow(point[i], norm);
+        }
+        return result;
+    }
+
+    public static Double getSquareValue(Double[] point, Integer norm) {
+        int len = point.length;
+        Double result = 0D;
+        for (int i = 0; i < len; i++) {
+            result += Math.pow(point[i], norm);
+        }
+        return result;
+    }
+    public static Double getSquareValue(double[] point, Integer norm) {
+        int len = point.length;
+        Double result = 0D;
+        for (int i = 0; i < len; i++) {
+            result += Math.pow(point[i], norm);
+        }
+        return result;
+    }
+
     public static int getSquareValue(int[] point) {
         int len = point.length;
         int result = 0;
@@ -252,6 +286,21 @@ public class BasicCalculation {
     public static Integer get2NormSquare(Integer[] pointA, Integer[] pointB) {
         Integer[] difference = getDifference(pointA, pointB);
         return getSquareValue(difference);
+    }
+
+    public static Integer getNNormSquare(Integer[] pointA, Integer[] pointB, Integer squareNorm) {
+        Integer[] difference = getDifference(pointA, pointB);
+        return getSquareValue(difference, squareNorm);
+    }
+
+    public static Integer getNNormSquare(int[] pointA, int[] pointB, Integer squareNorm) {
+        int[] difference = getDifference(pointA, pointB);
+        return getSquareValue(difference, squareNorm);
+    }
+
+    public static Double getNNormSquare(Double[] pointA, Double[] pointB, Integer squareNorm) {
+        Double[] difference = getDifference(pointA, pointB);
+        return getSquareValue(difference, squareNorm);
     }
 
 

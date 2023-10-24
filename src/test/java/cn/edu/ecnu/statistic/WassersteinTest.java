@@ -35,7 +35,7 @@ public class WassersteinTest {
         distributionB.put(new TwoDimensionalIntegerPoint(3, 0), 4.0);
         distributionB.put(new TwoDimensionalIntegerPoint(4, 0), 3.0);
 
-        double result = TwoDimensionalWassersteinDistance.getWassersteinDistance(distributionA, distributionB, 1);
+        double result = TwoDimensionalWassersteinDistance.getWassersteinDistanceByCPlex(distributionA, distributionB, 1);
         System.out.println(result);
     }
 
@@ -53,7 +53,7 @@ public class WassersteinTest {
         distributionB.put(new TwoDimensionalIntegerPoint(3, 0), 4.0);
         distributionB.put(new TwoDimensionalIntegerPoint(4, 0), 3.0);
 
-        double result = TwoDimensionalWassersteinDistance.getWassersteinDistance(distributionA, distributionB, 2);
+        double result = TwoDimensionalWassersteinDistance.getWassersteinDistanceByCPlex(distributionA, distributionB, 2);
         System.out.println(result);
     }
 

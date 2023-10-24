@@ -56,10 +56,7 @@ public class CSVRead {
     public static List<Map<String, String>> readData(String filePath) {
         BufferedReader bufferedReader = null;
         String line = null;
-        String[] dataElement;
-        int dataSize;
         List<Map<String, String>> elementList = new ArrayList<>();
-        List<String> keyList = new ArrayList<>();
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
             line = bufferedReader.readLine();

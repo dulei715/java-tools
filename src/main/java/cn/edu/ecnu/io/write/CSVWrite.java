@@ -44,4 +44,30 @@ public class CSVWrite extends BasicWrite{
             e.printStackTrace();
         }
     }
+    public <T> void writeWithTileOrder(List<List<T>> data, List<String> tileList) {
+        if (tileList == null || tileList.size() == 0) {
+            throw new RuntimeException("The title is null!");
+        }
+        int columnSize = tileList.size();
+        List<T> tempList;
+        try {
+            this.bufferedWriter.write(tileList.get(0));
+            for (int i = 1; i < columnSize; i++) {
+                this.bufferedWriter.write(super.OUTPUT_SPLIT_SYMBOL);
+                this.bufferedWriter.write(tileList.get(i));
+            }
+            this.bufferedWriter.newLine();
+            for (int j = 0; j < data.size(); j++) {
+                tempList = data.get(j);
+                this.bufferedWriter.write(String.valueOf(tempList.get(0)));
+                for (int i = 1; i < columnSize; i++) {
+                    this.bufferedWriter.write(super.OUTPUT_SPLIT_SYMBOL);
+                    this.bufferedWriter.write(String.valueOf(tempList.get(i)));
+                }
+                this.bufferedWriter.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

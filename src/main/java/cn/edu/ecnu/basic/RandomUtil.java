@@ -1,14 +1,12 @@
 package cn.edu.ecnu.basic;
 
 
-import cn.edu.ecnu.basic.BasicArray;
-import cn.edu.ecnu.basic.BasicSearch;
 import cn.edu.ecnu.basic.cumulate.CumulativeFunction;
 import cn.edu.ecnu.io.print.MyPrint;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 @SuppressWarnings("Duplicates")
 public class RandomUtil {
@@ -86,6 +84,21 @@ public class RandomUtil {
         return resultArray;
     }
 
+    /**
+     * 返回随机小数数组（元素可以重复）
+     * @param lowerBound
+     * @param upperBound
+     * @param arraySize
+     * @return
+     */
+    public static Double[] getRandomDoubleArray(Double lowerBound, Double upperBound, int arraySize) {
+        Double[] resultArray = new Double[arraySize];
+        for (int i = 0; i < arraySize; i++) {
+            resultArray[i] = getRandomDouble(lowerBound, upperBound);
+        }
+        return resultArray;
+    }
+
     public static List<Integer> getRandomIntegerArrayWithoutRepeat(Integer lowerBound, Integer upperBound, int samplingSize) {
         int domainSize = upperBound - lowerBound + 1;
         if (samplingSize > domainSize) {
@@ -104,6 +117,27 @@ public class RandomUtil {
             -- residualMaxIndex;
         }
 
+        return result;
+    }
+
+    /**
+     * 获取给定0到upperBoundValue之间的arraySize个随机数
+     * @param arraySize
+     * @param upperBoundValue
+     * @return
+     */
+    public static Double[] getRandomDoubleArrayWithValuesInGivenRange(Integer arraySize, Double upperBoundValue) {
+        Integer pointSize = arraySize - 1;
+        Double[] pointArray = getRandomDoubleArray(0D, upperBoundValue, pointSize);
+        Arrays.sort(pointArray);
+        Double[] result = new Double[arraySize];
+        Double beforeValue = 0D;
+        int i;
+        for (i = 0; i < pointSize; i++) {
+            result[i] = pointArray[i] - beforeValue;
+            beforeValue = pointArray[i];
+        }
+        result[i] = upperBoundValue - beforeValue;
         return result;
     }
 
