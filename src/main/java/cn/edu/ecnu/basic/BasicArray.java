@@ -374,6 +374,15 @@ public class BasicArray {
         return result;
     }
 
+    public static Double[] extractSubArrayInGivenIndexList(Double[] data, List<Integer> indexList) {
+        Double[] result = new Double[indexList.size()];
+        int k = 0;
+        for (Integer tempIndex : indexList) {
+            result[k++] = data[tempIndex];
+        }
+        return result;
+    }
+
     public static <T> int getFirstFindValueIndex(T[] data, T value) {
         for (int i = 0; i < data.length; i++) {
             if (data[i].equals(value)) {
@@ -504,6 +513,17 @@ public class BasicArray {
             }
         }
         return index;
+    }
+
+
+    public static List<Integer> getIndexListWithValueGreaterThanDeclaredValue(Double[] data, Integer value) {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] > value) {
+                result.add(i);
+            }
+        }
+        return result;
     }
 
 

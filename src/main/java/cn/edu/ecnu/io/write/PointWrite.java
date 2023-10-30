@@ -48,6 +48,33 @@ public class PointWrite extends BasicWrite {
             e.printStackTrace();
         }
     }
+    public void writeIntegerPoint(Collection<TwoDimensionalIntegerPoint> dataCollection) {
+        int i = 0;
+        DoublePoint tempPoint;
+        Integer pointDimensionSize;
+        try {
+            super.bufferedWriter.write(String.valueOf(dataCollection.size()));
+            super.bufferedWriter.newLine();
+
+            for (TwoDimensionalIntegerPoint point : dataCollection) {
+//                super.bufferedWriter.write(String.valueOf(point.getxIndex()));
+//                super.bufferedWriter.write(super.OUTPUT_SPLIT_SYMBOL);
+//                super.bufferedWriter.write(String.valueOf(point.getyIndex()));
+                pointDimensionSize = point.getDimensionalSize();
+                if (pointDimensionSize < 1) {
+                    continue;
+                }
+                super.bufferedWriter.write(String.valueOf(point.getDeclaredIndexValue(0)));
+                for (int j = 1; j < pointDimensionSize; j++) {
+                    super.bufferedWriter.write(super.OUTPUT_SPLIT_SYMBOL);
+                    super.bufferedWriter.write(String.valueOf(point.getDeclaredIndexValue(j)));
+                }
+                super.bufferedWriter.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void writePoint(List<DoublePoint> dataList, Set<Integer> declaredIndexSet) {
         DoublePoint point;

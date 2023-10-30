@@ -1,6 +1,7 @@
 package cn.edu.ecnu.struct;
 
 import cn.edu.ecnu.basic.MatrixArray;
+import cn.edu.ecnu.constant_values.ConstantValues;
 import cn.edu.ecnu.io.print.MyPrint;
 import org.junit.Test;
 
@@ -74,6 +75,35 @@ public class MatrixArrayTest {
 
         Double[][] result = MatrixArray.toMatrixArray(data);
         MyPrint.show2DimensionDoubleArray(result);
+
+    }
+    @Test
+    public void fun4() {
+        List<List<Double>> data = new ArrayList<>();
+        List<Double> tempData;
+        for (int i = 0; i < 3; i++) {
+            tempData = new ArrayList<>();
+            for (int j = 0; j < 4; j++) {
+                tempData.add(i*1.0+j);
+            }
+            data.add(tempData);
+        }
+//        MyPrint.showList(data, ", ");
+
+        Double[][] result = MatrixArray.toMatrixArray(data);
+        MyPrint.show2DimensionDoubleArray(result);
+        MyPrint.showSplitLine("*", 150);
+
+        List<Integer> indexList = new ArrayList<>();
+        indexList.add(1);
+        indexList.add(2);
+        Double[][] subSetRowMatrix = MatrixArray.getSubMatrixByDeclaredRowList(result, indexList);
+        Double[][] subSetColMatrix = MatrixArray.getSubMatrixByDeclaredColList(result, indexList);
+
+        MyPrint.show2DimensionDoubleArray(subSetRowMatrix);
+        MyPrint.showSplitLine("*", 150);
+        MyPrint.show2DimensionDoubleArray(subSetColMatrix);
+        MyPrint.showSplitLine("*", 150);
 
     }
 

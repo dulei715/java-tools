@@ -414,6 +414,33 @@ public class MatrixArray {
         return result;
     }
 
+    public static Double[][] getSubMatrixByDeclaredRowList(Double[][] matrix, List<Integer> rowIndexList) {
+        int resultRowSize = rowIndexList.size();
+        int resultColSize = matrix[0].length;
+        Double[][] result = new Double[resultRowSize][resultColSize];
+        int k = 0;
+        for (Integer tempRowIndex : rowIndexList) {
+            for (int j = 0; j < resultColSize; j++) {
+                result[k][j] = matrix[tempRowIndex][j];
+            }
+            ++k;
+        }
+        return result;
+    }
+    public static Double[][] getSubMatrixByDeclaredColList(Double[][] matrix, List<Integer> colIndexList) {
+        int resultRowSize = matrix.length;
+        int resultColSize = colIndexList.size();
+        Double[][] result = new Double[resultRowSize][resultColSize];
+        int k = 0;
+        for (Integer tempColIndex : colIndexList) {
+            for (int i = 0; i < resultRowSize; i++) {
+                result[i][k] = matrix[i][tempColIndex];
+            }
+            ++k;
+        }
+        return result;
+    }
+
     /**
      * 对给定rowIndexList和colIndex的所在位置加上addingValue的值;
      * 如果colIndex小于0，则对所有列的给定行集合都加上addingValue

@@ -94,7 +94,7 @@ public class TwoDimensionalWassersteinDistance {
         return Math.pow(cPlex.getResult(), 1.0 / normP);
 
     }
-    public static double getWassersteinDistanceBySinkhorn(TreeMap<TwoDimensionalIntegerPoint, Double> distributionA, TreeMap<TwoDimensionalIntegerPoint, Double> distributionB, Integer normP, Double lambda, Double precisionLowerBound) throws CPLException {
+    public static double getWassersteinDistanceBySinkhorn(TreeMap<TwoDimensionalIntegerPoint, Double> distributionA, TreeMap<TwoDimensionalIntegerPoint, Double> distributionB, Integer normP, Double lambda, Double precisionLowerBound, Double supportedMinimalPositiveValue) throws CPLException {
 
         int sizeA = distributionA.size();
         int sizeB = distributionB.size();
@@ -103,7 +103,7 @@ public class TwoDimensionalWassersteinDistance {
         Double[] distributionArrayB = SinkhornUtils.extractOrderedDistributionArray(distributionB);
         Double[][] costMatrixArray = SinkhornUtils.getCostMatrixArray(distributionA, distributionB, normP);
 
-        Double[][] coupling = Sinkhorn.getCouplingBasic(distributionArrayA, distributionArrayB, costMatrixArray, lambda, precisionLowerBound);
+        Double[][] coupling = Sinkhorn.getCouplingEnhanced(distributionArrayA, distributionArrayB, costMatrixArray, lambda, precisionLowerBound);
         Double[][] dotProduct = MatrixArray.getPairwiseMultiple(coupling, costMatrixArray);
         Double squareDistance = MatrixArray.getSum(dotProduct);
         return Math.pow(squareDistance, 1.0 / normP);
