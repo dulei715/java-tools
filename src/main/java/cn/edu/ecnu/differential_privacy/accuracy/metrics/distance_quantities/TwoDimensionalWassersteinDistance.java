@@ -5,8 +5,11 @@ import cn.edu.ecnu.basic.MatrixArray;
 import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
 import edu.ecnu.dll.cpl.*;
 import edu.ecnu.dll.cpl.expection.CPLException;
+import struct.return_struct.CompressedDistributionAAndCompressedCouplingStruct;
 import tools.others.Sinkhorn;
 import tools.utils.SinkhornUtils;
+//import tools.others.Sinkhorn;
+//import tools.utils.SinkhornUtils;
 
 import java.util.Iterator;
 import java.util.List;
@@ -94,7 +97,7 @@ public class TwoDimensionalWassersteinDistance {
         return Math.pow(cPlex.getResult(), 1.0 / normP);
 
     }
-    public static double getWassersteinDistanceBySinkhorn(TreeMap<TwoDimensionalIntegerPoint, Double> distributionA, TreeMap<TwoDimensionalIntegerPoint, Double> distributionB, Integer normP, Double lambda, Double precisionLowerBound, Double supportedMinimalPositiveValue) throws CPLException {
+    public static double getWassersteinDistanceBySinkhorn(TreeMap<TwoDimensionalIntegerPoint, Double> distributionA, TreeMap<TwoDimensionalIntegerPoint, Double> distributionB, Integer normP, Double lambda, Double precisionLowerBound) throws CPLException {
 
         int sizeA = distributionA.size();
         int sizeB = distributionB.size();
@@ -103,8 +106,11 @@ public class TwoDimensionalWassersteinDistance {
         Double[] distributionArrayB = SinkhornUtils.extractOrderedDistributionArray(distributionB);
         Double[][] costMatrixArray = SinkhornUtils.getCostMatrixArray(distributionA, distributionB, normP);
 
-        Double[][] coupling = Sinkhorn.getCouplingEnhanced(distributionArrayA, distributionArrayB, costMatrixArray, lambda, precisionLowerBound);
-        Double[][] dotProduct = MatrixArray.getPairwiseMultiple(coupling, costMatrixArray);
+        CompressedDistributionAAndCompressedCouplingStruct compressedResult = Sinkhorn.getCouplingEnhanced(distributionArrayA, distributionArrayB, costMatrixArray, lambda, precisionLowerBound);
+        Double[][] coupling = compressedResult.getCompressedCoupling();
+        List<Integer> reserveIndexList = compressedResult.getReserveIndexList();
+        Double[][] compressedCostMatrix = MatrixArray.getSubMatrixByDeclaredRowList(costMatrixArray, reserveIndexList);
+        Double[][] dotProduct = MatrixArray.getPairwiseMultiple(coupling, compressedCostMatrix);
         Double squareDistance = MatrixArray.getSum(dotProduct);
         return Math.pow(squareDistance, 1.0 / normP);
     }
