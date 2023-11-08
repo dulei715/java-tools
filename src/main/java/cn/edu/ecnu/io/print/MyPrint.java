@@ -348,6 +348,13 @@ public class MyPrint {
         }
         System.out.println(objects[i]);
     }
+    public static void showArray(double[] doubles, String splitString) {
+        int i = 0;
+        for (; i < doubles.length - 1; i++) {
+            System.out.print(doubles[i] + splitString);
+        }
+        System.out.println(doubles[i]);
+    }
 
     public static void showArray(Object[] objects) {
         showArray(objects, ConstantValues.LINE_SPLIT);

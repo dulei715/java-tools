@@ -8,10 +8,7 @@ import cn.edu.ecnu.struct.pair.BasicPair;
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @SuppressWarnings("Duplicates")
 public class BasicArray {
@@ -265,6 +262,15 @@ public class BasicArray {
         return result;
     }
 
+    public static double[] toDouArray(Collection<Double> data) {
+        double[] result = new double[data.size()];
+        Iterator<Double> iterator = data.iterator();
+        for (int i = 0; i < result.length; i++) {
+            result[i] = iterator.next();
+        }
+        return result;
+    }
+
 
     /**
      * 每个数组元素引用同一个元素
@@ -378,6 +384,14 @@ public class BasicArray {
         Double[] result = new Double[indexList.size()];
         int k = 0;
         for (Integer tempIndex : indexList) {
+            result[k++] = data[tempIndex];
+        }
+        return result;
+    }
+    public static double[] extractSubArrayInGivenIndexList(double[] data, List<Integer> indexList) {
+        double[] result = new double[indexList.size()];
+        int k = 0;
+        for (int tempIndex : indexList) {
             result[k++] = data[tempIndex];
         }
         return result;
@@ -526,5 +540,14 @@ public class BasicArray {
         return result;
     }
 
+    public static List<Integer> getIndexListWithValueGreaterThanDeclaredValue(double[] data, Integer value) {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] > value) {
+                result.add(i);
+            }
+        }
+        return result;
+    }
 
 }

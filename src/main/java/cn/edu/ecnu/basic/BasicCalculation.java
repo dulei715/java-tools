@@ -304,15 +304,15 @@ public class BasicCalculation {
     }
 
 
-    public static double getSum(double ... values) {
+
+    public static double getSum(Double ... values) {
         double sum = 0;
         for (int i = 0; i < values.length; i++) {
             sum += values[i];
         }
         return sum;
     }
-
-    public static double getSum(Double ... values) {
+    public static double getSum(double ... values) {
         double sum = 0;
         for (int i = 0; i < values.length; i++) {
             sum += values[i];
@@ -475,6 +475,14 @@ public class BasicCalculation {
         }
         return result;
     }
+    public static double getInnerProduct(double[] vectorA, double[] vectorB) {
+        int size = vectorA.length;
+        double result = 0.0;
+        for (int i = 0; i < size; i++) {
+            result += vectorA[i] * vectorB[i];
+        }
+        return result;
+    }
 
     public static Double getPartInnerProduct(Double[] vectorA, Double[] vectorB, Collection<Integer> effectiveIndexCollection) {
         Double result = 0.0;
@@ -562,6 +570,28 @@ public class BasicCalculation {
         }
         return result;
     }
+    public static double[] getPairwiseMultiple(double[] dataA, int indexValueA, double[] dataB, int indexValueB) {
+        int size = dataA.length;
+        if (dataB.length != size) {
+            throw new RuntimeException("The length is not equal!");
+        }
+        double[] result = new double[size];
+        for (int i = 0; i < size; i++) {
+            result[i] = Math.pow(dataA[i], indexValueA) * Math.pow(dataB[i],indexValueB);
+        }
+        return result;
+    }
+    public static void setPairwiseMultiple(double[] result, double[] dataA, int indexValueA, double[] dataB, int indexValueB) {
+        int size = dataA.length;
+        if (dataB.length != size) {
+            throw new RuntimeException("The length is not equal!");
+        }
+//        double[] result = new double[size];
+        for (int i = 0; i < size; i++) {
+            result[i] = Math.pow(dataA[i], indexValueA) * Math.pow(dataB[i],indexValueB);
+        }
+//        return result;
+    }
 
     public static Double[] getMultiwiseMultiple(Double[]... data) {
         int size = data[0].length;
@@ -571,6 +601,22 @@ public class BasicCalculation {
             }
         }
         Double[] result = new Double[size];
+        for (int j = 0; j < size; j++) {
+            result[j] = 1D;
+            for (int i = 0; i < data.length; i++) {
+                result[j] *= data[i][j];
+            }
+        }
+        return result;
+    }
+    public static double[] getMultiwiseMultiple(double[]... data) {
+        int size = data[0].length;
+        for (int i = 0; i < data.length; i++) {
+            if (data[i].length != size) {
+                throw new RuntimeException("The length is not equal!");
+            }
+        }
+        double[] result = new double[size];
         for (int j = 0; j < size; j++) {
             result[j] = 1D;
             for (int i = 0; i < data.length; i++) {

@@ -2,16 +2,16 @@ package cn.edu.ecnu.io.read;
 
 
 import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.ecnu.io.write.CSVWrite;
+import cn.edu.ecnu.struct.point.DoublePoint;
+import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @SuppressWarnings("Duplicates")
 public class CSVRead {
-    private BufferedReader bufferedReader = null;
+    protected BufferedReader bufferedReader = null;
     public static List<Map<String, String>> readData(String filePath, int lineSize) {
         BufferedReader bufferedReader = null;
         String line = null;
@@ -21,12 +21,16 @@ public class CSVRead {
         List<String> keyList = new ArrayList<>();
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
-            line = bufferedReader.readLine();
+//            line = bufferedReader.readLine();
+            while ((line = bufferedReader.readLine()).startsWith(CSVWrite.commonTag));   // 循环直到读到不是注释为止
             String[] keyStrs = line.split(",");
             String[] valueStrs = null;
             Map<String, String> tempMap;
             int lineNum = 0;
             while ((line = bufferedReader.readLine()) != null && lineNum < lineSize) {
+                if (line.startsWith(CSVWrite.commonTag)) {
+                    continue;
+                }
                 valueStrs = line.split(",");
                 tempMap = new HashMap<>();
                 int i;
@@ -59,11 +63,15 @@ public class CSVRead {
         List<Map<String, String>> elementList = new ArrayList<>();
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
-            line = bufferedReader.readLine();
+//            line = bufferedReader.readLine();
+            while ((line = bufferedReader.readLine()).startsWith(CSVWrite.commonTag));   // 循环直到读到不是注释为止
             String[] keyStrs = line.split(",");
             String[] valueStrs = null;
             Map<String, String> tempMap;
             while ((line = bufferedReader.readLine()) != null) {
+                if (line.startsWith(CSVWrite.commonTag)) {
+                    continue;
+                }
                 valueStrs = line.split(",");
                 tempMap = new HashMap<>();
                 int i;
@@ -89,14 +97,51 @@ public class CSVRead {
         }
         return elementList;
     }
+
+    public static TreeMap<TwoDimensionalIntegerPoint, Double> readTwoDimensionalIntegerPointDistributionWithoutTitle(String filePath) {
+        BufferedReader bufferedReader = null;
+        String line;
+        TreeMap<TwoDimensionalIntegerPoint, Double> resultMap = new TreeMap<>();
+        String[] valueStrs;
+        try {
+            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
+//            line = bufferedReader.readLine();
+            while ((line = bufferedReader.readLine()).startsWith(CSVWrite.commonTag));   // 循环直到读到不是注释为止
+            Map<String, String> tempMap;
+            while ((line = bufferedReader.readLine()) != null) {
+                if (line.startsWith(CSVWrite.commonTag)) {
+                    continue;
+                }
+                valueStrs = line.split(",");
+                resultMap.put(new TwoDimensionalIntegerPoint(Integer.parseInt(valueStrs[0]), Integer.parseInt(valueStrs[1])), Double.parseDouble(valueStrs[2]));
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return resultMap;
+    }
+
     public static List<String> readDataLinesWithoutTitle(String filePath) {
         BufferedReader bufferedReader = null;
         String line;
         List<String> elementList = new ArrayList<>();
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
-            line = bufferedReader.readLine();
+//            line = bufferedReader.readLine();
+            while ((line = bufferedReader.readLine()).startsWith(CSVWrite.commonTag));   // 循环直到读到不是注释为止
             while ((line = bufferedReader.readLine()) != null) {
+                if (line.startsWith(CSVWrite.commonTag)) {
+                    continue;
+                }
                 elementList.add(line);
             }
 
@@ -119,7 +164,8 @@ public class CSVRead {
         String line = null;
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
-            line = bufferedReader.readLine();
+//            line = bufferedReader.readLine();
+            while ((line = bufferedReader.readLine()).startsWith(CSVWrite.commonTag));   // 循环直到读到不是注释为止
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

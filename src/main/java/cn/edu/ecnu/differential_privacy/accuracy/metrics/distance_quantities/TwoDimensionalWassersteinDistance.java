@@ -102,16 +102,16 @@ public class TwoDimensionalWassersteinDistance {
         int sizeA = distributionA.size();
         int sizeB = distributionB.size();
 
-        Double[] distributionArrayA = SinkhornUtils.extractOrderedDistributionArray(distributionA);
-        Double[] distributionArrayB = SinkhornUtils.extractOrderedDistributionArray(distributionB);
-        Double[][] costMatrixArray = SinkhornUtils.getCostMatrixArray(distributionA, distributionB, normP);
+        double[] distributionArrayA = SinkhornUtils.extractOrderedDistributionArray(distributionA);
+        double[] distributionArrayB = SinkhornUtils.extractOrderedDistributionArray(distributionB);
+        double[][] costMatrixArray = SinkhornUtils.getCostMatrixArray(distributionA, distributionB, normP);
 
         CompressedDistributionAAndCompressedCouplingStruct compressedResult = Sinkhorn.getCouplingEnhanced(distributionArrayA, distributionArrayB, costMatrixArray, lambda, precisionLowerBound);
-        Double[][] coupling = compressedResult.getCompressedCoupling();
+        double[][] coupling = compressedResult.getCompressedCoupling();
         List<Integer> reserveIndexList = compressedResult.getReserveIndexList();
-        Double[][] compressedCostMatrix = MatrixArray.getSubMatrixByDeclaredRowList(costMatrixArray, reserveIndexList);
-        Double[][] dotProduct = MatrixArray.getPairwiseMultiple(coupling, compressedCostMatrix);
-        Double squareDistance = MatrixArray.getSum(dotProduct);
+        double[][] compressedCostMatrix = MatrixArray.getSubMatrixByDeclaredRowList(costMatrixArray, reserveIndexList);
+        double[][] dotProduct = MatrixArray.getPairwiseMultiple(coupling, compressedCostMatrix);
+        double squareDistance = MatrixArray.getSum(dotProduct);
         return Math.pow(squareDistance, 1.0 / normP);
     }
 }

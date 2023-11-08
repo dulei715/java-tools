@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class CSVWrite extends BasicWrite{
+
+    public static String commonTag = "#";
     public CSVWrite() {
         super(",");
     }
@@ -69,13 +71,17 @@ public class CSVWrite extends BasicWrite{
             e.printStackTrace();
         }
     }
-    public void writeTwoDimensionalIntegerPointWithTileOrder(TreeMap<TwoDimensionalIntegerPoint, Double> data, List<String> tileList) {
+    public void writeTwoDimensionalIntegerPointWithTileOrder(TreeMap<TwoDimensionalIntegerPoint, Double> data, List<String> tileList, String common) {
         if (tileList == null || tileList.size() == 0) {
             throw new RuntimeException("The title is null!");
         }
         int columnSize = tileList.size();
         TwoDimensionalIntegerPoint tempPoint;
         try {
+            if (common != null) {
+                this.bufferedWriter.write(CSVWrite.commonTag + " " + common);
+                this.bufferedWriter.newLine();
+            }
             this.bufferedWriter.write(tileList.get(0));
             for (int i = 1; i < columnSize; i++) {
                 this.bufferedWriter.write(super.OUTPUT_SPLIT_SYMBOL);
@@ -97,5 +103,9 @@ public class CSVWrite extends BasicWrite{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void writeTwoDimensionalIntegerPointWithTileOrder(TreeMap<TwoDimensionalIntegerPoint, Double> data, List<String> tileList) {
+        this.writeTwoDimensionalIntegerPointWithTileOrder(data, tileList, null);
     }
 }

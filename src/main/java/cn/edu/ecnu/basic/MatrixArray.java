@@ -427,12 +427,40 @@ public class MatrixArray {
         }
         return result;
     }
+
+    public static double[][] getSubMatrixByDeclaredRowList(double[][] matrix, List<Integer> rowIndexList) {
+        int resultRowSize = rowIndexList.size();
+        int resultColSize = matrix[0].length;
+        double[][] result = new double[resultRowSize][resultColSize];
+        int k = 0;
+        for (int tempRowIndex : rowIndexList) {
+            for (int j = 0; j < resultColSize; j++) {
+                result[k][j] = matrix[tempRowIndex][j];
+            }
+            ++k;
+        }
+        return result;
+    }
     public static Double[][] getSubMatrixByDeclaredColList(Double[][] matrix, List<Integer> colIndexList) {
         int resultRowSize = matrix.length;
         int resultColSize = colIndexList.size();
         Double[][] result = new Double[resultRowSize][resultColSize];
         int k = 0;
         for (Integer tempColIndex : colIndexList) {
+            for (int i = 0; i < resultRowSize; i++) {
+                result[i][k] = matrix[i][tempColIndex];
+            }
+            ++k;
+        }
+        return result;
+    }
+
+    public static double[][] getSubMatrixByDeclaredColList(double[][] matrix, List<Integer> colIndexList) {
+        int resultRowSize = matrix.length;
+        int resultColSize = colIndexList.size();
+        double[][] result = new double[resultRowSize][resultColSize];
+        int k = 0;
+        for (int tempColIndex : colIndexList) {
             for (int i = 0; i < resultRowSize; i++) {
                 result[i][k] = matrix[i][tempColIndex];
             }
@@ -610,6 +638,19 @@ public class MatrixArray {
         }
         return result;
     }
+    public static double[][] getPairwiseMultiple(double[][] dataA, double[][] dataB) {
+        int rowSize = dataA.length, colSize = dataA[0].length;
+        if (dataB.length != rowSize || dataB[0].length != colSize) {
+            throw new RuntimeException("The scales of dataA and dataB are not equal!");
+        }
+        double[][] result = new double[rowSize][colSize];
+        for (int i = 0; i < rowSize; i++) {
+            for (int j = 0; j < colSize; j++) {
+                result[i][j] = dataA[i][j] * dataB[i][j];
+            }
+        }
+        return result;
+    }
 
     /**
      * 矩阵右乘列向量
@@ -627,6 +668,26 @@ public class MatrixArray {
         }
         return result;
     }
+    public static double[] getVectorByRowSum(double[][] matrix, double[] weight) {
+        if (weight.length != matrix[0].length) {
+            throw new RuntimeException("Length does not match!");
+        }
+        double[] result = new double[matrix.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = BasicCalculation.getInnerProduct(matrix[i], weight);
+        }
+        return result;
+    }
+    public static void setVectorByRowSum(double[] result, double[][] matrix, double[] weight) {
+        if (weight.length != matrix[0].length) {
+            throw new RuntimeException("Length does not match!");
+        }
+//        double[] result = new double[matrix.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = BasicCalculation.getInnerProduct(matrix[i], weight);
+        }
+//        return result;
+    }
 
     /**
      * 矩阵右乘单位列向量
@@ -639,6 +700,20 @@ public class MatrixArray {
             result[i] = BasicCalculation.getSum(matrix[i]);
         }
         return result;
+    }
+    public static double[] getVectorByRowSum(double[][] matrix) {
+        double[] result = new double[matrix.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = BasicCalculation.getSum(matrix[i]);
+        }
+        return result;
+    }
+    public static void setVectorByRowSum(double[] result, double[][] matrix) {
+//        double[] result = new double[matrix.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = BasicCalculation.getSum(matrix[i]);
+        }
+//        return result;
     }
 
     /**
@@ -660,6 +735,32 @@ public class MatrixArray {
         }
         return result;
     }
+    public static double[] getVectorByColSum(double[][] matrix, double[] weight) {
+        if (weight.length != matrix.length) {
+            throw new RuntimeException("Length does not match!");
+        }
+        double[] result = new double[matrix[0].length];
+        for (int j = 0; j < result.length; j++) {
+            result[j] = 0D;
+            for (int i = 0; i < matrix.length; i++) {
+                result[j] += matrix[i][j] * weight[i];
+            }
+        }
+        return result;
+    }
+    public static void setVectorByColSum(double[] result, double[][] matrix, double[] weight) {
+        if (weight.length != matrix.length) {
+            throw new RuntimeException("Length does not match!");
+        }
+//        double[] result = new double[matrix[0].length];
+        for (int j = 0; j < result.length; j++) {
+            result[j] = 0D;
+            for (int i = 0; i < matrix.length; i++) {
+                result[j] += matrix[i][j] * weight[i];
+            }
+        }
+//        return result;
+    }
 
     /**
      * 矩阵左乘单位行向量
@@ -668,6 +769,16 @@ public class MatrixArray {
      */
     public static Double[] getVectorByColSum(Double[][] matrix) {
         Double[] result = new Double[matrix[0].length];
+        for (int j = 0; j < result.length; j++) {
+            result[j] = 0D;
+            for (int i = 0; i < matrix.length; i++) {
+                result[j] += matrix[i][j];
+            }
+        }
+        return result;
+    }
+    public static double[] getVectorByColSum(double[][] matrix) {
+        double[] result = new double[matrix[0].length];
         for (int j = 0; j < result.length; j++) {
             result[j] = 0D;
             for (int i = 0; i < matrix.length; i++) {
@@ -715,6 +826,15 @@ public class MatrixArray {
 
     public static Double getSum(Double[][] numberArray) {
         Double sum = 0.0;
+        for (int i = 0; i < numberArray.length; i++) {
+            for (int j = 0; j < numberArray[0].length; j++) {
+                sum += numberArray[i][j];
+            }
+        }
+        return sum;
+    }
+    public static double getSum(double[][] numberArray) {
+        double sum = 0.0;
         for (int i = 0; i < numberArray.length; i++) {
             for (int j = 0; j < numberArray[0].length; j++) {
                 sum += numberArray[i][j];

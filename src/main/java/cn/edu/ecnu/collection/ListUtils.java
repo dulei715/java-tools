@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ListUtils {
 
-    public static <T> List<T> valueOf(T[] arr) {
+    public static <T> List<T> valueOf(T... arr) {
         List<T> resultList = new ArrayList<>(arr.length);
         for (int i = 0; i < arr.length; i++) {
             resultList.add(arr[i]);

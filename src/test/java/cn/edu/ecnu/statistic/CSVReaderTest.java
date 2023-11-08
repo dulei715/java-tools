@@ -1,10 +1,13 @@
 package cn.edu.ecnu.statistic;
 
 import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.ecnu.io.read.CSVRead;
+import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
 import com.csvreader.CsvReader;
 import org.junit.Test;
 
 import java.io.*;
+import java.util.TreeMap;
 
 public class CSVReaderTest {
     @Test
@@ -38,5 +41,12 @@ public class CSVReaderTest {
 
 
 
+    }
+
+    @Test
+    public void fun3() {
+        String path = "E:\\1.学习\\4.数据集\\2.dataset_for_spatial_estimation\\test_dataset\\test_for_crime2_data_estimation_dam.txt";
+        TreeMap<TwoDimensionalIntegerPoint, Double> result = CSVRead.readTwoDimensionalIntegerPointDistributionWithoutTitle(path);
+        MyPrint.showMap(result);
     }
 }
