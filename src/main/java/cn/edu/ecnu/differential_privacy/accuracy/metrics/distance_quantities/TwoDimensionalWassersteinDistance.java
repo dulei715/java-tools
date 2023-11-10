@@ -97,7 +97,7 @@ public class TwoDimensionalWassersteinDistance {
         return Math.pow(cPlex.getResult(), 1.0 / normP);
 
     }
-    public static double getWassersteinDistanceBySinkhorn(TreeMap<TwoDimensionalIntegerPoint, Double> distributionA, TreeMap<TwoDimensionalIntegerPoint, Double> distributionB, Integer normP, Double lambda, Double precisionLowerBound) throws CPLException {
+    public static double getWassersteinDistanceBySinkhorn(TreeMap<TwoDimensionalIntegerPoint, Double> distributionA, TreeMap<TwoDimensionalIntegerPoint, Double> distributionB, Integer normP, Double lambda, Double precisionLowerBound, int iterationUpperBound) throws CPLException {
 
         int sizeA = distributionA.size();
         int sizeB = distributionB.size();
@@ -106,7 +106,7 @@ public class TwoDimensionalWassersteinDistance {
         double[] distributionArrayB = SinkhornUtils.extractOrderedDistributionArray(distributionB);
         double[][] costMatrixArray = SinkhornUtils.getCostMatrixArray(distributionA, distributionB, normP);
 
-        CompressedDistributionAAndCompressedCouplingStruct compressedResult = Sinkhorn.getCouplingEnhanced(distributionArrayA, distributionArrayB, costMatrixArray, lambda, precisionLowerBound);
+        CompressedDistributionAAndCompressedCouplingStruct compressedResult = Sinkhorn.getCouplingEnhancedWithTimesUpperBound(distributionArrayA, distributionArrayB, costMatrixArray, lambda, precisionLowerBound, iterationUpperBound);
         double[][] coupling = compressedResult.getCompressedCoupling();
         List<Integer> reserveIndexList = compressedResult.getReserveIndexList();
         double[][] compressedCostMatrix = MatrixArray.getSubMatrixByDeclaredRowList(costMatrixArray, reserveIndexList);
