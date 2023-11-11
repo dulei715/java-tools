@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class FileTool {
 
-    private static File resultConfigFile = new File(FileTool.class.getResource("/").getPath(), "result_config.xml");
+//    private static File resultConfigFile = new File(FileTool.class.getResource("/").getPath(), "result_config.xml");
     public static final Integer SUM_COMPOSE = 1;
     public static final Integer AVERAGE_COMPOSE = 2;
 
@@ -141,7 +141,7 @@ public class FileTool {
         return resultArray;
     }
 
-    public static void main(String[] args) {
-        System.out.println(resultConfigFile.getPath());
-    }
+//    public static void main(String[] args) {
+//        System.out.println(resultConfigFile.getPath());
+//    }
 }
