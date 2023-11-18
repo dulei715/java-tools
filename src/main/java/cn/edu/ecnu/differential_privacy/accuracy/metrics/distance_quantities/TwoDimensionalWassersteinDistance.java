@@ -1,16 +1,9 @@
 package cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities;
 
 import cn.edu.ecnu.basic.BasicCalculation;
-import cn.edu.ecnu.basic.MatrixArray;
 import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
 import edu.ecnu.dll.cpl.*;
 import edu.ecnu.dll.cpl.expection.CPLException;
-import struct.return_struct.CompressedDistributionAAndCompressedCouplingStruct;
-import tools.others.Sinkhorn;
-import tools.utils.SinkhornUtils;
-//import tools.others.Sinkhorn;
-//import tools.utils.SinkhornUtils;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
