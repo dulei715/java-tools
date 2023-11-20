@@ -1,5 +1,6 @@
 package cn.edu.ecnu.basic;
 
+import cn.edu.ecnu.io.print.MyPrint;
 import cn.edu.ecnu.reflect.ReflectTool;
 import javassist.*;
 import org.junit.Test;
@@ -75,6 +76,16 @@ public class ReflectTest {
         String valueB = "20.2";
         Object result = ReflectTool.combineObject(valueA, valueB);
         System.out.println(result);
+    }
+
+    @Test
+    public void fun6() {
+        Double valueA = 0.0/0.0;
+        System.out.println(valueA);
+        Object[] objectArray = ReflectTool.filterNaNToGivenValue(valueA, "0");
+        MyPrint.showArray(objectArray);
+        Object[] objectArray2 = ReflectTool.filterNaNToGivenValue(23.3, "0");
+        MyPrint.showArray(objectArray2);
     }
 
 }

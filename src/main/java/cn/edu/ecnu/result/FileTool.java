@@ -7,6 +7,7 @@ import cn.edu.ecnu.io.write.BasicWrite;
 import cn.edu.ecnu.io.write.CSVWrite;
 import cn.edu.ecnu.reflect.ReflectTool;
 import cn.edu.ecnu.struct.result.ColumnBean;
+import org.apache.commons.math3.linear.MatrixUtils;
 import org.checkerframework.checker.units.qual.C;
 
 import java.io.File;
@@ -61,14 +62,19 @@ public class FileTool {
      */
     public static void composeCSVFileWithTheSameFirstLine(String[] originalInputFilePath, String outputFilePath, List<ColumnBean> columnBeanList, Integer composeType) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException {
         int length = originalInputFilePath.length;
+
         int columnNumber = columnBeanList.size();
         Map<String, String> tempMap;
         Map<String, Object> objectMap;
         ColumnBean columnBean;
         String tempType, tempName;
         Object objectValue, newObjectValue;
+        Object[] objectValueArray, newObjectValueArray;
         List<Map<String, String>> tempData = CSVRead.readData(originalInputFilePath[0]);
         List<Map<String, Object>> resultData = BasicArray.getInitializedList(new HashMap(), tempData.size());
+
+        int[][] sizeMatrix = new int[tempData.size()][columnBeanList.size()];
+        BasicArray.setIntArrayTo(sizeMatrix, length);
 
         for (int i = 0; i < columnNumber; i++) {
             columnBean = columnBeanList.get(i);
@@ -77,8 +83,12 @@ public class FileTool {
             for (int j = 0; j < tempData.size(); j++) {
                 tempMap = tempData.get(j);
                 objectValue = ReflectTool.getObjectWithGivenClassType(tempType, tempMap.get(tempName));
+                objectValueArray = ReflectTool.filterNaNToGivenValue(objectValue, "0");
+                if (objectValueArray[1].equals(true)) {
+                    sizeMatrix[j][i]--;
+                }
                 objectMap = resultData.get(j);
-                objectMap.put(tempName, objectValue);
+                objectMap.put(tempName, objectValueArray[0]);
             }
         }
         for (int k = 1; k < length; k++) {
@@ -94,7 +104,11 @@ public class FileTool {
                     tempMap = tempData.get(j);
                     objectMap = resultData.get(j);
                     newObjectValue = tempMap.get(tempName);
-                    objectValue = ReflectTool.combineObject(objectMap.get(tempName), newObjectValue);
+                    newObjectValueArray = ReflectTool.filterNaNToGivenValue(newObjectValue, "0");
+                    if (newObjectValueArray[1].equals(true)) {
+                        sizeMatrix[j][i]--;
+                    }
+                    objectValue = ReflectTool.combineObject(objectMap.get(tempName), newObjectValueArray[0]);
                     objectMap.put(tempName, objectValue);
                 }
             }
@@ -110,7 +124,7 @@ public class FileTool {
 //                tempType = columnBean.getDataType();
                 for (int j = 0; j < resultData.size(); j++) {
                     objectMap = resultData.get(j);
-                    objectValue = ReflectTool.divide(objectMap.get(tempName), length);
+                    objectValue = ReflectTool.divide(objectMap.get(tempName), sizeMatrix[j][i]);
                     objectMap.put(tempName, objectValue);
                 }
             }

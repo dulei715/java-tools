@@ -101,8 +101,57 @@ public class ReflectTool {
             Long dataBLong = (Long) dataB;
             return dataALong + dataBLong;
         }
+        if (dataA instanceof Float) {
+            Float dataAFloat = (Float) dataA;
+            if (dataB instanceof String) {
+                dataB = Float.valueOf((String) dataB);
+            }
+            Float dataBFloat = (Float) dataB;
+            return dataAFloat + dataBFloat;
+        }
         throw new RuntimeException("Not support combination for " + dataA.getClass() + " and " + dataB.getClass() + "!");
     }
+    public static Object fromNaNToGivenValue(Object dataFrom, String givenData) {
+        if (dataFrom instanceof String) {
+            return givenData;
+        }
+        if (dataFrom instanceof Double) {
+            return Double.valueOf(givenData);
+        }
+        if (dataFrom instanceof Integer) {
+            return Integer.valueOf(givenData);
+        }
+        if (dataFrom instanceof Long) {
+            return Long.valueOf(givenData);
+        }
+        if (dataFrom instanceof Float) {
+            return Float.valueOf(givenData);
+        }
+        throw new RuntimeException("Not support transform for " + dataFrom.getClass() + " and " + givenData.getClass() + "!");
+    }
+    public static Object[] filterNaNToGivenValue(Object dataFrom, String givenData) {
+        Object[] result = new Object[2];
+        if (dataFrom instanceof String && "NaN".equals(dataFrom)) {
+            result[0] = givenData;
+            result[1] = true;
+            return result;
+        }
+        if (dataFrom instanceof Double && Double.valueOf("NaN").equals(dataFrom)) {
+            result[0] = Double.valueOf(givenData);
+            result[1] = true;
+            return result;
+        }
+        if (dataFrom instanceof Float && Float.valueOf("NaN").equals(dataFrom)) {
+            result[0] =  Float.valueOf(givenData);
+            result[1] = true;
+            return result;
+        }
+        result[0] = dataFrom;
+        result[1] = false;
+        return result;
+    }
+
+
 
     public static Object divide(Object data, int divideValue) {
         if (data instanceof Double) {

@@ -39,6 +39,13 @@ public class BasicArray {
             }
         }
     }
+    public static void setIntArrayTo(int[][] element, int value) {
+        for (int i = 0; i < element.length; i++) {
+            for (int j = 0; j < element[0].length; j++) {
+                element[i][j] = value;
+            }
+        }
+    }
 
     public static void setDoubleArrayTo(double[] element, double value) {
         for (int i = 0; i < element.length; i++) {
