@@ -15,6 +15,14 @@ public class RandomUtilTest {
         List<Integer> result = RandomUtil.getRandomIntegerArrayWithoutRepeat(lowerBound, upperBound, size);
         MyPrint.showList(result);
     }
+    @Test
+    public void fun3() {
+        int lowerBound = 1;
+        int upperBound = 100;
+        int size = 20;
+        int[] result = RandomUtil.getRandomIntArrayWithoutRepeat(lowerBound, upperBound, size);
+        MyPrint.showIntegerArray(result);
+    }
 
     @Test
     public void fun2() {

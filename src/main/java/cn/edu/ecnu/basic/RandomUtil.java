@@ -119,6 +119,26 @@ public class RandomUtil {
 
         return result;
     }
+    public static int[] getRandomIntArrayWithoutRepeat(int lowerBound, int upperBound, int samplingSize) {
+        int domainSize = upperBound - lowerBound + 1;
+        if (samplingSize > domainSize) {
+            throw new RuntimeException("The sampling size is larger than domain size!");
+        }
+        int[] result = new int[samplingSize];
+        int samplingPosition;
+        Integer samplingElement;
+        int residualMaxIndex = domainSize - 1;
+        List<Integer> randomList = BasicArray.getIncreaseIntegerNumberList(lowerBound, 1, upperBound);
+        for (int i = 0; i < samplingSize; i++) {
+            samplingPosition = getRandomInteger(0, residualMaxIndex);
+
+            samplingElement = randomList.remove(samplingPosition);
+            result[i] = samplingElement;
+            -- residualMaxIndex;
+        }
+
+        return result;
+    }
 
     /**
      * 获取给定0到upperBoundValue之间的arraySize个随机数
