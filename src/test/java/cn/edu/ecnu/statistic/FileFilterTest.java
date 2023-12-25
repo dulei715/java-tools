@@ -1,7 +1,7 @@
 package cn.edu.ecnu.statistic;
 
-import cn.edu.ecnu.filter.file_filter.DirectoryFileFilter;
-import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.dll.filter.file_filter.DirectoryFileFilter;
+import cn.edu.dll.io.print.MyPrint;
 import org.junit.Test;
 
 import java.io.File;

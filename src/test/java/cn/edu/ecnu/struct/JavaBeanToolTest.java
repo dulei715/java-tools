@@ -1,9 +1,8 @@
 package cn.edu.ecnu.struct;
 
-import cn.edu.ecnu.basic.StringUtil;
-import cn.edu.ecnu.constant_values.ConstantValues;
-import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.reflect.JavaBeanTool;
+import cn.edu.dll.constant_values.ConstantValues;
+import cn.edu.dll.io.print.MyPrint;
+import cn.edu.dll.reflect.JavaBeanTool;
 import org.junit.Test;
 
 public class JavaBeanToolTest {

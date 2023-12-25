@@ -1,7 +1,7 @@
 package cn.edu.ecnu.basic;
 
-import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.reflect.ReflectTool;
+import cn.edu.dll.io.print.MyPrint;
+import cn.edu.dll.reflect.ReflectTool;
 import javassist.*;
 import org.junit.Test;
 

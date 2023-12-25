@@ -1,8 +1,8 @@
 package cn.edu.ecnu.struct;
 
-import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.struct.grid.IntegerSquareGrid;
-import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
+import cn.edu.dll.io.print.MyPrint;
+import cn.edu.dll.struct.grid.IntegerSquareGrid;
+import cn.edu.dll.struct.point.TwoDimensionalIntegerPoint;
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 

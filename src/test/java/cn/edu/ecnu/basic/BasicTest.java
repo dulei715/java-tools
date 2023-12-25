@@ -1,7 +1,7 @@
 package cn.edu.ecnu.basic;
 
-import cn.edu.ecnu.basic.RandomUtil;
-import cn.edu.ecnu.math.MathUtils;
+import cn.edu.dll.basic.RandomUtil;
+import cn.edu.dll.math.MathUtils;
 import org.junit.Test;
 
 public class BasicTest {

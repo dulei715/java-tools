@@ -1,6 +1,6 @@
 package cn.edu.ecnu.statistic;
 
-import cn.edu.ecnu.math.MathUtils;
+import cn.edu.dll.math.MathUtils;
 import org.junit.Test;
 
 public class MathUtilsTest {

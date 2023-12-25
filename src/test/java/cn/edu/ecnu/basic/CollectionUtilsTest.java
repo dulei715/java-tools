@@ -1,6 +1,6 @@
 package cn.edu.ecnu.basic;
 
-import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.dll.io.print.MyPrint;
 import com.google.common.collect.Sets;
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;

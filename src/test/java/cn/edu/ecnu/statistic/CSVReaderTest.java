@@ -1,8 +1,8 @@
 package cn.edu.ecnu.statistic;
 
-import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.io.read.CSVRead;
-import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
+import cn.edu.dll.io.print.MyPrint;
+import cn.edu.dll.io.read.CSVRead;
+import cn.edu.dll.struct.point.TwoDimensionalIntegerPoint;
 import com.csvreader.CsvReader;
 import org.junit.Test;
 

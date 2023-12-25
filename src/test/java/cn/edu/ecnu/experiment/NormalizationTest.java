@@ -1,8 +1,8 @@
 package cn.edu.ecnu.experiment;
 
-import cn.edu.ecnu.basic.BasicCalculation;
-import cn.edu.ecnu.differential_privacy.ldp.consistent.Normalization;
-import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.dll.basic.BasicCalculation;
+import cn.edu.dll.differential_privacy.ldp.consistent.Normalization;
+import cn.edu.dll.io.print.MyPrint;
 import org.junit.Test;
 
 import java.io.File;

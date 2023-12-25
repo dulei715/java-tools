@@ -1,11 +1,12 @@
 package cn.edu.ecnu.statistic;
 
-import cn.edu.ecnu.constant_values.ConstantValues;
-import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.io.write.PointWrite;
-import cn.edu.ecnu.struct.pair.BasicPair;
-import cn.edu.ecnu.struct.point.TwoDimensionalDoublePoint;
-import cn.edu.ecnu.struct.point.TwoDimensionalDoublePointUtils;
+import cn.edu.dll.constant_values.ConstantValues;
+import cn.edu.dll.io.print.MyPrint;
+import cn.edu.dll.io.write.PointWrite;
+import cn.edu.dll.statistic.Cluster;
+import cn.edu.dll.struct.pair.BasicPair;
+import cn.edu.dll.struct.point.TwoDimensionalDoublePoint;
+import cn.edu.dll.struct.point.TwoDimensionalDoublePointUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,19 +1,14 @@
 package cn.edu.ecnu.struct;
 
-import cn.edu.ecnu.basic.StringUtil;
-import cn.edu.ecnu.constant_values.ConstantValues;
-import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.io.read.BasicRead;
-import cn.edu.ecnu.io.read.BeanXMLRead;
-import cn.edu.ecnu.struct.bean_structs.Bean;
-import cn.edu.ecnu.struct.bean_structs.Beans;
-import cn.edu.ecnu.struct.pair.BasicPair;
-import cn.edu.ecnu.system.SystemTool;
+import cn.edu.dll.basic.StringUtil;
+import cn.edu.dll.constant_values.ConstantValues;
+import cn.edu.dll.io.print.MyPrint;
+import cn.edu.dll.io.read.BeanXMLRead;
+import cn.edu.dll.struct.bean_structs.Bean;
+import cn.edu.dll.struct.bean_structs.Beans;
+import cn.edu.dll.system.SystemTool;
 import org.junit.Test;
 
-import java.io.FileReader;
-import java.lang.reflect.Parameter;
-import java.net.URL;
 import java.util.List;
 
 public class BeanTest {

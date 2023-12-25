@@ -1,7 +1,7 @@
 package cn.edu.ecnu.basic;
 
-import cn.edu.ecnu.struct.pair.IdentityPair;
-import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
+import cn.edu.dll.struct.pair.IdentityPair;
+import cn.edu.dll.struct.point.TwoDimensionalIntegerPoint;
 import org.junit.Test;
 
 public class StructureTest {

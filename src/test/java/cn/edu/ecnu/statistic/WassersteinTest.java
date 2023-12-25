@@ -1,8 +1,8 @@
 package cn.edu.ecnu.statistic;
 
-import cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities.OneDimensionalWassersteinDistance;
-import cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities.TwoDimensionalWassersteinDistance;
-import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
+import cn.edu.dll.differential_privacy.accuracy.metrics.distance_quantities.OneDimensionalWassersteinDistance;
+import cn.edu.dll.differential_privacy.accuracy.metrics.distance_quantities.TwoDimensionalWassersteinDistance;
+import cn.edu.dll.struct.point.TwoDimensionalIntegerPoint;
 import edu.ecnu.dll.cpl.expection.CPLException;
 import org.junit.Test;
 

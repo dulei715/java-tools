@@ -1,8 +1,8 @@
 package cn.edu.ecnu.statistic;
 
-import cn.edu.ecnu.constant_values.ConstantValues;
-import cn.edu.ecnu.differential_privacy.accuracy.metrics.distance_quantities.KLDivergence;
-import cn.edu.ecnu.struct.point.TwoDimensionalIntegerPoint;
+import cn.edu.dll.constant_values.ConstantValues;
+import cn.edu.dll.differential_privacy.accuracy.metrics.distance_quantities.KLDivergence;
+import cn.edu.dll.struct.point.TwoDimensionalIntegerPoint;
 import org.junit.Test;
 
 import java.util.TreeMap;

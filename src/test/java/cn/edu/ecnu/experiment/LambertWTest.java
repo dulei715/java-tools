@@ -1,6 +1,6 @@
 package cn.edu.ecnu.experiment;
 
-import cn.edu.ecnu.math.LambertW;
+import cn.edu.dll.math.LambertW;
 import org.junit.Test;
 
 public class LambertWTest {

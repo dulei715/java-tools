@@ -1,8 +1,7 @@
 package cn.edu.ecnu.struct;
 
-import cn.edu.ecnu.basic.MatrixArray;
-import cn.edu.ecnu.constant_values.ConstantValues;
-import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.dll.basic.MatrixArray;
+import cn.edu.dll.io.print.MyPrint;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package cn.edu.ecnu.basic;
 
-import cn.edu.ecnu.basic.BasicSearch;
-import cn.edu.ecnu.io.print.MyPrint;
+import cn.edu.dll.basic.BasicSearch;
+import cn.edu.dll.io.print.MyPrint;
 import org.junit.Test;
 
 public class BasicSearchTest {

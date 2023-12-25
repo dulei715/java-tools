@@ -1,7 +1,7 @@
 package cn.edu.ecnu.basic;
 
-import cn.edu.ecnu.basic.StringUtil;
-import cn.edu.ecnu.constant_values.ConstantValues;
+import cn.edu.dll.basic.StringUtil;
+import cn.edu.dll.constant_values.ConstantValues;
 import org.junit.Test;
 
 import java.lang.reflect.Method;

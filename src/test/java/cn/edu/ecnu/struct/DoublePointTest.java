@@ -1,9 +1,9 @@
 package cn.edu.ecnu.struct;
 
-import cn.edu.ecnu.constant_values.ConstantValues;
-import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.struct.point.DoublePoint;
-import cn.edu.ecnu.struct.point.TwoDimensionalDoublePoint;
+import cn.edu.dll.constant_values.ConstantValues;
+import cn.edu.dll.io.print.MyPrint;
+import cn.edu.dll.struct.point.DoublePoint;
+import cn.edu.dll.struct.point.TwoDimensionalDoublePoint;
 import org.junit.Test;
 
 import java.util.ArrayList;

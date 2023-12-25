@@ -1,7 +1,7 @@
 package cn.edu.ecnu.basic;
 
-import cn.edu.ecnu.io.print.MyPrint;
-import cn.edu.ecnu.statistic.StatisticTool;
+import cn.edu.dll.io.print.MyPrint;
+import cn.edu.dll.statistic.StatisticTool;
 import org.junit.Test;
 
 import java.util.TreeMap;
