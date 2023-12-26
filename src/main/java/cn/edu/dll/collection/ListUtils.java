@@ -1,5 +1,6 @@
 package cn.edu.dll.collection;
 
+import cn.edu.dll.basic.BasicArrayUtil;
 import cn.edu.dll.differential_privacy.cdp.basic_struct.DistanceAble;
 
 import java.util.ArrayList;
@@ -109,7 +110,7 @@ public class ListUtils {
      * @return
      */
     public static <T> List<T> copyToListGivenElement(T element, int size) {
-        T[] resultArray = ArraysUtils.copyToArrayGivenElement(element, size);
+        T[] resultArray = BasicArrayUtil.copyToArrayGivenElement(element, size);
         return Arrays.asList(resultArray);
     }
 

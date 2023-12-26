@@ -367,9 +367,9 @@ public class StatisticTool {
             for (int i = 0; i < pValueArray.length; i++) {
                 newValueArray[i] = pValueArray[i] / pSum;
             }
-            ArraysUtils.reshapeAndSet(newValueArray, newTwoDimensionalValueArray);
+            BasicArrayUtil.reshapeAndSet(newValueArray, newTwoDimensionalValueArray);
             newTwoDimensionalValueArray = getTwoDimensionalSmooth(newTwoDimensionalValueArray, kParameter);
-            ArraysUtils.shiftAndSet(newTwoDimensionalValueArray, newValueArray);
+            BasicArrayUtil.shiftAndSet(newTwoDimensionalValueArray, newValueArray);
             newLogLikelihood = getLogLikelihood(newValueArray, matrix);
         } while (Math.abs(newLogLikelihood - beforeLogLikelihood) >= stopValue);
         return newValueArray;
