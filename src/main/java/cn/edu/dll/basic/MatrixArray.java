@@ -910,6 +910,18 @@ public class MatrixArray {
         }
         return result;
     }
+    public static Double[] getAverageOfEachRow(double[][] data){
+        Double[] result = new Double[data.length];
+        BasicArrayUtil.setDoubleArrayToZero(result);
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < data[0].length; j++) {
+                result[i] += data[i][j];
+            }
+            result[i] /= data[0].length;
+        }
+        return result;
+    }
+
 
 
 
