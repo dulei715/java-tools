@@ -158,5 +158,14 @@ public class ListUtils {
         return result;
     }
 
+    public static double getMinimalValue(List<Double> data) {
+        double result = Double.MAX_VALUE;
+        for (Double element : data) {
+            if (element < result) {
+                result = element;
+            }
+        }
+        return result;
+    }
 
 }
