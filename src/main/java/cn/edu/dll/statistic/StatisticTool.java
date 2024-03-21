@@ -1,6 +1,7 @@
 package cn.edu.dll.statistic;
 
 
+import cn.edu.dll.basic.BasicCalculation;
 import cn.edu.dll.io.print.MyPrint;
 import cn.edu.dll.struct.point.TwoDimensionalIntegerPoint;
 import cn.edu.dll.basic.BasicArrayUtil;
@@ -533,6 +534,24 @@ public class StatisticTool {
 //
 //    }
 
+    public static double getPearsonCorrelationCoefficient(double[] dataA, double[] dataB) {
+        if (dataA.length != dataB.length) {
+            throw new RuntimeException("The lengths of dataA and dataB are not equal!");
+        }
+        double averageA = BasicCalculation.getAverage(dataA);
+        double averageB = BasicCalculation.getAverage(dataB);
+        double[] differA = BasicArrayUtil.getLinearTransform(dataA, 1, -averageA);
+        double[] differB = BasicArrayUtil.getLinearTransform(dataB, 1, -averageB);
+
+        double squareSumA = BasicCalculation.getSquareValue(differA);
+        double squareSumB = BasicCalculation.getSquareValue(differB);
+        double differProduct = BasicCalculation.getInnerProduct(differA, differB);
+        double covAB = differProduct / dataA.length;
+        double varA = squareSumA / dataA.length;
+        double varB = squareSumB / dataB.length;
+        return covAB / Math.sqrt(varA * varB);
+    }
+
 
 
     public static void main1(String[] args) {
@@ -543,6 +562,13 @@ public class StatisticTool {
         Integer[] binomialCoefficients = new Integer[]{1, 4, 6, 4, 1};
         Double[] result = getSmooth(values, binomialCoefficients);
         MyPrint.showDoubleArray(result);
+    }
+
+    public static void main(String[] args) {
+        double[] dataA = new double[] {10, 12, 18};
+        double[] dataB = new double[] {5, 10, 14};
+        double result = getPearsonCorrelationCoefficient(dataA, dataB);
+        System.out.println(result);
     }
 
 }

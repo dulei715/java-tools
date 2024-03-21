@@ -864,6 +864,16 @@ public class BasicArrayUtil {
         }
         return result;
     }
+    
+    public static double getMinimalValue(double... values) {
+        double result = Double.MAX_VALUE;
+        for (double value : values) {
+            if (value < result) {
+                result = value;
+            }
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
         double[] arr = new double[] {

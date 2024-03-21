@@ -304,6 +304,7 @@ public class BasicCalculation {
 
 
 
+
     public static double getSum(Double ... values) {
         double sum = 0;
         for (int i = 0; i < values.length; i++) {
