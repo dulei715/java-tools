@@ -8,6 +8,7 @@ import cn.edu.dll.struct.point.DoublePoint;
 import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("ALL")
@@ -194,6 +195,45 @@ public class BasicCalculation {
         }
         return result;
     }
+
+    public static double[] getNeighborDifference(final double[] data) {
+        int size = data.length - 1;
+        double[] result = new double[size];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = data[i+1] - data[i];
+        }
+        return result;
+    }
+
+    public static Double[] getNeighborDifference(final List<Double> data) {
+        int size = data.size() - 1;
+        Double[] result = new Double[size];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = data.get(i+1) - data.get(i);
+        }
+        return result;
+    }
+
+    public static Double[] getNeighborAbsDifference(final List<Double> data) {
+        int size = data.size() - 1;
+        Double[] result = new Double[size];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = Math.abs(data.get(i+1) - data.get(i));
+        }
+        return result;
+    }
+
+    public static Double[] getEnhancedNeighborAbsDifference(final List<Double> data) {
+        int size = data.size();
+        Double[] result = new Double[size];
+        result[0] = Math.abs(data.get(0));
+        for (int i = 1; i < size; i++) {
+            result[i] = Math.abs(data.get(i) - data.get(i-1));
+        }
+        return result;
+    }
+
+
 
     public static double getSquareValue(double[] point) {
         int len = point.length;

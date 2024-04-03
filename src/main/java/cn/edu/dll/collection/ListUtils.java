@@ -168,4 +168,18 @@ public class ListUtils {
         return result;
     }
 
+    public static <T> void addValue(List<T> list, T element, int size) {
+        for (int i = 0; i < size; i++) {
+            list.add(element);
+        }
+    }
+
+    public static <T> List<T> generateListWithFixedElement(T element, int size) {
+        List<T> result = new ArrayList<>(size);
+        for (int i = 0; i < size; i++) {
+            result.add(element);
+        }
+        return result;
+    }
+
 }

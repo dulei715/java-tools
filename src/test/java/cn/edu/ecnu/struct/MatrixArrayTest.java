@@ -1,5 +1,6 @@
 package cn.edu.ecnu.struct;
 
+import cn.edu.dll.basic.BasicCalculation;
 import cn.edu.dll.basic.MatrixArray;
 import cn.edu.dll.io.print.MyPrint;
 import org.junit.Test;
@@ -104,6 +105,14 @@ public class MatrixArrayTest {
         MyPrint.show2DimensionDoubleArray(subSetColMatrix);
         MyPrint.showSplitLine("*", 150);
 
+    }
+    @Test
+    public void fun5() {
+        Double[][] matrix = new Double[2][3];
+        MatrixArray.setValue(matrix, -1, -1, 0);
+        Double[] data = new Double[]{1D,2D,3D};
+        MatrixArray.setRowValueAsGivenVector(matrix, 0, data);
+        MyPrint.show2DimensionDoubleArray(matrix);
     }
 
 

@@ -243,6 +243,13 @@ public class MatrixArray {
             }
         }
     }
+    public static <T> void setValue(T[][] matrix, List<Integer> rowIndexList, List<Integer> colIndexList, T value) {
+        for (Integer rowIndex : rowIndexList) {
+            for (Integer colIndex : colIndexList) {
+                matrix[rowIndex][colIndex] = value;
+            }
+        }
+    }
 
     /**
      * 将矩阵的每个元素修改成原本值的线性变换
@@ -301,6 +308,20 @@ public class MatrixArray {
         }
     }
 
+    public static <T> void setValue(T[][] matrix, int rowIndex, List<Integer> colIndexList, T value) {
+        if (rowIndex <= -1) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (Integer colIndex : colIndexList) {
+                    matrix[i][colIndex] = value;
+                }
+            }
+        } else {
+            for (Integer colIndex : colIndexList) {
+                matrix[rowIndex][colIndex] = value;
+            }
+        }
+    }
+
     /**
      * 将给定列的给定行的集合对应的值设置为给定的value
      * 如果列<0，则将所有的列中给定的行的集合对应的值都设置为value
@@ -310,6 +331,20 @@ public class MatrixArray {
      * @param value
      */
     public static void setValue(int[][] matrix, List<Integer> rowIndexList, int colIndex, int value) {
+        if (colIndex <= -1) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                for (Integer rowIndex : rowIndexList) {
+                    matrix[rowIndex][j] = value;
+                }
+            }
+        } else {
+            for (Integer rowIndex : rowIndexList) {
+                matrix[rowIndex][colIndex] = value;
+            }
+        }
+    }
+
+    public static <T> void setValue(T[][] matrix, List<Integer> rowIndexList, int colIndex, T value) {
         if (colIndex <= -1) {
             for (int j = 0; j < matrix[0].length; j++) {
                 for (Integer rowIndex : rowIndexList) {
@@ -350,6 +385,59 @@ public class MatrixArray {
                 matrix[rowIndex][colIndex] = value;
             }
         }
+    }
+
+    public static void setValue(double[][] matrix, int rowIndex, int colIndex, double value) {
+        if (rowIndex <= -1 && colIndex <= -1) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    matrix[i][j] = value;
+                }
+            }
+        } else {
+            if (colIndex <= -1) {
+                for (int j = 0; j < matrix[rowIndex].length; j++) {
+                    matrix[rowIndex][j] = value;
+                }
+            } else if (rowIndex <= -1) {
+                for (int i = 0; i < matrix.length; i++) {
+                    matrix[i][colIndex] = value;
+                }
+            } else {
+                matrix[rowIndex][colIndex] = value;
+            }
+        }
+    }
+
+    public static <T> void setValue(T[][] matrix, int rowIndex, int colIndex, T value) {
+        if (rowIndex <= -1 && colIndex <= -1) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    matrix[i][j] = value;
+                }
+            }
+        } else {
+            if (colIndex <= -1) {
+                for (int j = 0; j < matrix[rowIndex].length; j++) {
+                    matrix[rowIndex][j] = value;
+                }
+            } else if (rowIndex <= -1) {
+                for (int i = 0; i < matrix.length; i++) {
+                    matrix[i][colIndex] = value;
+                }
+            } else {
+                matrix[rowIndex][colIndex] = value;
+            }
+        }
+    }
+
+    public static <T> void setColValueAsGivenVector(T[][] matrix, int colNumber, T[] vectorValue) {
+        for (int i = 0; i < vectorValue.length; i++) {
+            matrix[i][colNumber] = vectorValue[i];
+        }
+    }
+    public static <T> void setRowValueAsGivenVector(T[][] matrix, int rowNumber, T[] vectorValue) {
+        System.arraycopy(vectorValue, 0, matrix[rowNumber], 0, vectorValue.length);
     }
 
     /**

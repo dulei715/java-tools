@@ -49,5 +49,24 @@ public class MapUtils {
         }
         return orderMap;
     }
+    public static <T extends Comparable<T>> TreeMap<T, List<Integer>> getSortResult(TreeMap<Integer, T> statisticValueMap, List<Integer> regionIndex) {
+        TreeMap<T, List<Integer>> orderMap = new TreeMap<>();
+        T tempValue;
+        int tempIndex;
+        List<Integer> tempList;
+        for (int i = 0; i < regionIndex.size(); i++) {
+            tempIndex = regionIndex.get(i);
+            tempValue = statisticValueMap.get(tempIndex);
+            if (orderMap.containsKey(tempValue)) {
+                tempList = orderMap.get(tempValue);
+                tempList.add(tempIndex);
+            } else {
+                tempList = new ArrayList<>();
+                tempList.add(tempIndex);
+                orderMap.put(tempValue, tempList);
+            }
+        }
+        return orderMap;
+    }
 
 }
