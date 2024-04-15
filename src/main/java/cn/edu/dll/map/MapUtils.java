@@ -69,4 +69,13 @@ public class MapUtils {
         return orderMap;
     }
 
+    public static <T> Double getValueSum(TreeMap<T, Double> data) {
+        Collection<Double> valueCollection = data.values();
+        Double result = 0D;
+        for (Double value : valueCollection) {
+            result += value;
+        }
+        return result;
+    }
+
 }
