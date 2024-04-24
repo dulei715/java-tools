@@ -358,6 +358,15 @@ public class BasicArrayUtil {
         return result;
     }
 
+    public static List<String> getIncreaseIntegerNumberListAsStringList(Integer startValue, int step, Integer maxValue) {
+        int size = (maxValue - startValue) / step + 1;
+        List<String> result = new ArrayList<>(size);
+        for (int value = startValue; value <= maxValue; value += step) {
+            result.add(String.valueOf(value));
+        }
+        return result;
+    }
+
 
     public static int getFirstFindValueIndex(int[] data, int value) {
         for (int i = 0; i < data.length; i++) {
