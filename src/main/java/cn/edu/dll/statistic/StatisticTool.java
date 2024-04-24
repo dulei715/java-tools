@@ -383,9 +383,8 @@ public class StatisticTool {
      * @param collection
      * @return
      */
-    public static <T> Map<T, Integer> countHistogramNumber(Collection<T> collection) {
+    public static <T extends Comparable<T>> Map<T, Integer> countHistogramNumber(Collection<T> collection) {
         Map<T, Integer> resultMap = new TreeMap<>();
-        TwoDimensionalIntegerPoint tempPoint;
         Integer tempCount;
         for (T point : collection) {
             tempCount = resultMap.get(point);
@@ -400,15 +399,38 @@ public class StatisticTool {
     }
 
     /**
+     * 统计个数。考察的元素由indexList指定。indexList指定了elementList里的被选择的元素的坐标。
+     * @param elementList
+     * @param indexList
+     * @return
+     * @param <T>
+     */
+    public static <T extends Comparable<T>> Map<T, Integer> countHistogramNumber(List<T> elementList, List<Integer> indexList) {
+        Map<T, Integer> resultMap = new TreeMap<>();
+        Integer tempCount;
+        T tempElement;
+        for (Integer index : indexList) {
+            tempElement = elementList.get(index);
+            tempCount = resultMap.get(tempElement);
+            if (tempCount == null) {
+                resultMap.put(tempElement, 1);
+            } else {
+                ++tempCount;
+                resultMap.put(tempElement, tempCount);
+            }
+        }
+        return resultMap;
+    }
+
+    /**
      * 统计个数。元素的种类由elementTypeList指定
      * @param elementTypeList
      * @param collection
      * @param <T>
      * @return
      */
-    public static <T> Integer[] countHistogramNumber(List<T> elementTypeList, Collection<T> collection) {
+    public static <T extends Comparable<T>> Integer[] countHistogramNumber(List<T> elementTypeList, Collection<T> collection) {
         Map<T, Integer> resultMap = new TreeMap<>();
-        TwoDimensionalIntegerPoint tempPoint;
         Integer tempCount;
         for (T element : elementTypeList) {
             resultMap.put(element, 0);
@@ -435,9 +457,8 @@ public class StatisticTool {
      * @param <T>
      * @return
      */
-    public static <T> Double[] countHistogramRatio(List<T> elementTypeList, Collection<T> collection) {
+    public static <T extends Comparable<T>> Double[] countHistogramRatio(List<T> elementTypeList, Collection<T> collection) {
         Map<T, Integer> resultMap = new TreeMap<>();
-        TwoDimensionalIntegerPoint tempPoint;
         Integer tempCount;
         int totalSize = 0;
         for (T element : elementTypeList) {
@@ -459,9 +480,8 @@ public class StatisticTool {
         return resultArray;
     }
 
-    public static <T> TreeMap<T, Double> countHistogramRatioMap(List<T> elementTypeList, Collection<T> collection) {
+    public static <T extends Comparable<T>> TreeMap<T, Double> countHistogramRatioMap(List<T> elementTypeList, Collection<T> collection) {
         Map<T, Integer> countMap = new TreeMap<>();
-        TwoDimensionalIntegerPoint tempPoint;
         Integer tempCount;
         int totalSize = 0;
         for (T element : elementTypeList) {
@@ -491,7 +511,7 @@ public class StatisticTool {
      * @param collection
      * @return
      */
-    public static <T> Map<T, Double> countHistogramRatio(Collection<T> collection) {
+    public static <T extends Comparable<T>> Map<T, Double> countHistogramRatio(Collection<T> collection) {
         double size = collection.size() * 1.0;
         Map<T, Integer> countResultMap = countHistogramNumber(collection);
         Map<T, Double> ratioResultMap = new TreeMap<>();
@@ -500,6 +520,7 @@ public class StatisticTool {
         }
         return ratioResultMap;
     }
+
 
 
 

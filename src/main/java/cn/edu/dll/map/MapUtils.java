@@ -78,4 +78,13 @@ public class MapUtils {
         return result;
     }
 
+    public static <T> Integer getIntegerValueSum(TreeMap<T, Integer> data) {
+        Collection<Integer> valueCollection = data.values();
+        Integer result = 0;
+        for (Integer value : valueCollection) {
+            result += value;
+        }
+        return result;
+    }
+
 }
