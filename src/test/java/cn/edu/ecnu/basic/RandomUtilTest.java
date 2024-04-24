@@ -37,5 +37,22 @@ public class RandomUtilTest {
 //            }
 //        }
     }
+    
+    @Test
+    public void fun4() {
+        double probability = 0.6;
+//        double probability = 0;
+        boolean[] result = new boolean[100000];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = RandomUtil.isChosen(probability);
+        }
+        int count = 0;
+        for (int i = 0; i < result.length; i++) {
+            if (result[i]) {
+                ++count;
+            }
+        }
+        System.out.println(count*1.0/ result.length);
+    }
 
 }

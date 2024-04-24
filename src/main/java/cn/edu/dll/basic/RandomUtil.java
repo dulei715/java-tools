@@ -36,6 +36,14 @@ public class RandomUtil {
         return result;
     }
 
+    public static Boolean isChosen(Double probability) {
+        Double position = Math.random();
+        if (position < probability) {
+            return true;
+        }
+        return false;
+    }
+
     public static <T> List<T> getRandomElement(List<T> elementList, int sampleSize) {
         int lowerBound = 0;
         int upperBound = elementList.size() - 1;
