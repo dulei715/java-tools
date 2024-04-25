@@ -422,6 +422,46 @@ public class StatisticTool {
         return resultMap;
     }
 
+    public static <T extends Comparable<T>> Map<T, Integer> countHistogramNumber(List<T> elementTypeList, List<T> elementList, List<Integer> indexList) {
+        Map<T, Integer> resultMap = new TreeMap<>();
+        Integer tempCount;
+        T tempElement;
+        for (Integer index : indexList) {
+            tempElement = elementList.get(index);
+            if (!elementTypeList.contains(tempElement)) {
+                continue;
+            }
+            tempCount = resultMap.get(tempElement);
+            if (tempCount == null) {
+                resultMap.put(tempElement, 1);
+            } else {
+                ++tempCount;
+                resultMap.put(tempElement, tempCount);
+            }
+        }
+        return resultMap;
+    }
+
+    public static <T extends Comparable<T>> Map<T, Integer> countHistogramNumberByGivenElementType(T elementType, List<T> elementList, List<Integer> indexList) {
+        Map<T, Integer> resultMap = new TreeMap<>();
+        Integer tempCount;
+        T tempElement;
+        for (Integer index : indexList) {
+            tempElement = elementList.get(index);
+            if (!elementType.equals(tempElement)) {
+                continue;
+            }
+            tempCount = resultMap.get(tempElement);
+            if (tempCount == null) {
+                resultMap.put(tempElement, 1);
+            } else {
+                ++tempCount;
+                resultMap.put(tempElement, tempCount);
+            }
+        }
+        return resultMap;
+    }
+
     /**
      * 统计个数。元素的种类由elementTypeList指定
      * @param elementTypeList
