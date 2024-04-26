@@ -424,6 +424,9 @@ public class StatisticTool {
 
     public static <T extends Comparable<T>> Map<T, Integer> countHistogramNumber(List<T> elementTypeList, List<T> elementList, List<Integer> indexList) {
         Map<T, Integer> resultMap = new TreeMap<>();
+        for (T element : elementTypeList) {
+            resultMap.put(element, 0);
+        }
         Integer tempCount;
         T tempElement;
         for (Integer index : indexList) {
@@ -432,18 +435,15 @@ public class StatisticTool {
                 continue;
             }
             tempCount = resultMap.get(tempElement);
-            if (tempCount == null) {
-                resultMap.put(tempElement, 1);
-            } else {
-                ++tempCount;
-                resultMap.put(tempElement, tempCount);
-            }
+            ++tempCount;
+            resultMap.put(tempElement, tempCount);
         }
         return resultMap;
     }
 
     public static <T extends Comparable<T>> Map<T, Integer> countHistogramNumberByGivenElementType(T elementType, List<T> elementList, List<Integer> indexList) {
         Map<T, Integer> resultMap = new TreeMap<>();
+        resultMap.put(elementType, 0);
         Integer tempCount;
         T tempElement;
         for (Integer index : indexList) {
@@ -451,13 +451,26 @@ public class StatisticTool {
             if (!elementType.equals(tempElement)) {
                 continue;
             }
-            tempCount = resultMap.get(tempElement);
-            if (tempCount == null) {
-                resultMap.put(tempElement, 1);
-            } else {
-                ++tempCount;
-                resultMap.put(tempElement, tempCount);
+            tempCount = resultMap.get(elementType);
+            ++tempCount;
+            resultMap.put(tempElement, tempCount);
+        }
+        return resultMap;
+    }
+
+    public static <T extends Comparable<T>> Map<T, Integer> countHistogramNumberByGivenElementType(T elementType, List<T> elementList) {
+        Map<T, Integer> resultMap = new TreeMap<>();
+        resultMap.put(elementType, 0);
+        Integer tempCount;
+//        T tempElement;
+        for (T tempElement : elementList) {
+//            tempElement = elementList.get(index);
+            if (!elementType.equals(tempElement)) {
+                continue;
             }
+            tempCount = resultMap.get(elementType);
+            ++tempCount;
+            resultMap.put(tempElement, tempCount);
         }
         return resultMap;
     }

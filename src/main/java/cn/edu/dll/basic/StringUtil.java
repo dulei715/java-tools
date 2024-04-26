@@ -1,6 +1,7 @@
 package cn.edu.dll.basic;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class StringUtil {
@@ -12,6 +13,17 @@ public class StringUtil {
         }
         result += objects[i];
         return result;
+    }
+
+    public static String join(String split, Collection<? extends Object> collection) {
+        int i = 0;
+        StringBuilder stringBuilder = new StringBuilder();
+        List<Object> list = new ArrayList<>(collection);
+        for (; i < list.size() - 1; i++) {
+            stringBuilder.append(list.get(i)).append(split);
+        }
+        stringBuilder.append(list.get(i));
+        return stringBuilder.toString();
     }
 
     public static String join(String split, Double[] values){
