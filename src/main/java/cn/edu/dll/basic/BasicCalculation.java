@@ -5,6 +5,7 @@ import cn.edu.dll.io.print.MyPrint;
 import cn.edu.dll.struct.pair.BasicPair;
 import cn.edu.dll.struct.point.DoublePoint;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Collection;
@@ -664,6 +665,22 @@ public class BasicCalculation {
             }
         }
         return result;
+    }
+
+    /**
+     * 将给定的小数化成指定精度的小数
+     * @param originalValue
+     * @param precision
+     * @return
+     */
+//    public static double getPrecisionValue(double originalValue, int precision) {
+//        BigDecimal bigDecimal = new BigDecimal(originalValue);
+//        return bigDecimal.setScale(precision, BigDecimal.ROUND_HALF_UP).doubleValue();
+//    }
+    public static double getPrecisionValue(double originalValue, int precision) {
+        String formatStr = "%." + precision + "f";
+        String doubleStr =  String.format(formatStr, originalValue);
+        return Double.valueOf(doubleStr);
     }
 
 

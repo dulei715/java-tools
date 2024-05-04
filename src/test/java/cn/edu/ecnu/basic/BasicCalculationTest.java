@@ -36,4 +36,10 @@ public class BasicCalculationTest {
         MyPrint.showArray(resultC, ", ");
     }
 
+    @Test
+    public void fun3() {
+        double result = BasicCalculation.getPrecisionValue(3.678, 2);
+        System.out.println(result);
+    }
+
 }
