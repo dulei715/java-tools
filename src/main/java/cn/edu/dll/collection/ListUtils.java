@@ -167,6 +167,15 @@ public class ListUtils {
         }
         return result;
     }
+    public static double getMaximalValue(List<Double> data, Double minimalLowerBound) {
+        double result = minimalLowerBound;
+        for (Double element : data) {
+            if (element > result) {
+                result = element;
+            }
+        }
+        return result;
+    }
 
     public static <T> void addValue(List<T> list, T element, int size) {
         for (int i = 0; i < size; i++) {
