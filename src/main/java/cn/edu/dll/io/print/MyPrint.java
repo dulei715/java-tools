@@ -122,6 +122,15 @@ public class MyPrint {
         showIntegerArray(data, ", ", -1);
     }
 
+    public static <T> void show2DimensionArray(T[][] data, String split) {
+        for (int i = 0, j; i < data.length; i++) {
+            for (j = 0; j < data[0].length - 1; j++) {
+                System.out.print(data[i][j] + split);
+            }
+            System.out.println(data[i][j]);
+        }
+    }
+
     public static void show2DimensionDoubleArray(double[][] data, String split, int precision) {
         int i, j;
         if (precision >= 0) {
@@ -147,6 +156,7 @@ public class MyPrint {
             }
         }
     }
+
 
     public static void show2DimensionDoubleArray(Double[][] data, String split, int precision) {
         int i, j;
