@@ -59,6 +59,21 @@ public class StatisticTool {
         return result;
     }
 
+    public static Double getVariance(final Map<String, Integer> rawData, final Map<String, Double> estimationData) {
+        Double result = 0D;
+        String name;
+        Integer rawCount;
+        Double estimationCount;
+        for (Map.Entry<String, Integer> rawEntry : rawData.entrySet()) {
+            name = rawEntry.getKey();
+            rawCount = rawEntry.getValue();
+            estimationCount = estimationData.get(name);
+            result += Math.pow(estimationCount - rawCount, 2);
+        }
+        result /= rawData.size();
+        return result;
+    }
+
     /**
      * 极大似然估计
      * @param value
