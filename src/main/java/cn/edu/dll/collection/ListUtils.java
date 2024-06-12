@@ -177,6 +177,16 @@ public class ListUtils {
         return result;
     }
 
+    public static double getMaximalValue(List<Integer> data, Integer minimalLowerBound) {
+        int result = minimalLowerBound;
+        for (Integer element : data) {
+            if (element > result) {
+                result = element;
+            }
+        }
+        return result;
+    }
+
     public static <T> void addValue(List<T> list, T element, int size) {
         for (int i = 0; i < size; i++) {
             list.add(element);

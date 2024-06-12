@@ -1,0 +1,75 @@
+package cn.edu.dll.configure;
+
+import cn.edu.dll.struct.pair.PurePair;
+import cn.edu.dll.struct.pair.PureTriple;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.Node;
+import org.dom4j.io.SAXReader;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+
+public class XMLConfigure {
+    private Document document;
+
+    private static final String splitTag = ",";
+
+    public XMLConfigure(String filePath) {
+        SAXReader reader = new SAXReader();
+        InputStream inputStream = XMLConfigure.class.getClassLoader().getResourceAsStream(filePath);
+        try {
+            this.document = reader.read(inputStream);
+        } catch (DocumentException e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public Document getDocument() {
+        return document;
+    }
+
+    public <T> PureTriple<String, T, List<T>> getIndependentData(String independentVariableName, String singleName, String varianceName) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        List<Node> nodeList = this.document.selectNodes("/root/independentVariables/attribute[@name='" + independentVariableName + "']");
+        Element variableElement = (Element)nodeList.get(0);
+        String dataType = variableElement.element("dataType").getTextTrim();
+        Element singleElement = (Element) variableElement.selectNodes("./single[@name='"+singleName+"']").get(0);
+        Element varianceElement = (Element) variableElement.selectNodes("./variance[@name='"+varianceName+"']").get(0);
+        Class clazz = Class.forName(dataType);
+        Method method = ("java.lang.String".equals(dataType)) ? clazz.getMethod("valueOf", java.lang.Object.class) : clazz.getMethod("valueOf", java.lang.String.class);
+        T singleValue = (T) method.invoke(null, singleElement.getTextTrim());
+        List<T> valueList = new ArrayList<>();
+        String[] valueArray = varianceElement.getTextTrim().split(splitTag);
+        for (int i = 0; i < valueArray.length; i++) {
+            valueList.add((T) method.invoke(null, valueArray[i]));
+        }
+        return new PureTriple<>(dataType, singleValue, valueList);
+    }
+
+
+    public <T> PurePair<String, T> getDependentData(String dependentVariableName) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        List<Node> nodeList = this.document.selectNodes("/root/dependentVariables/attribute[@name='" + dependentVariableName + "']");
+        Element variableElement = (Element)nodeList.get(0);
+        String dataType = variableElement.element("dataType").getTextTrim();
+        String defaultValueString = variableElement.element("defaultValue").getTextTrim();
+        Class clazz = Class.forName(dataType);
+        Method method = ("java.lang.String".equals(dataType)) ? clazz.getMethod("valueOf", java.lang.Object.class) : clazz.getMethod("valueOf", java.lang.String.class);
+        T defaultValue = (T) method.invoke(null, defaultValueString);
+        return new PurePair<>(dataType, defaultValue);
+    }
+
+    public static void main(String[] args) {
+    }
+
+}

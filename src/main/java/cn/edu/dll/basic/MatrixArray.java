@@ -38,6 +38,30 @@ public class MatrixArray {
         return result;
     }
 
+    public static double getMinimalValue(List<List<Double>> data) {
+        Double minimalValue = Double.MAX_VALUE;
+        for (List<Double> datumList : data) {
+            for (Double value : datumList) {
+                if (value < minimalValue) {
+                    minimalValue = value;
+                }
+            }
+        }
+        return minimalValue;
+    }
+
+    public static int getMaximalValue(List<List<Integer>> data, Integer minimalLowerBound) {
+        Integer maximalValue = minimalLowerBound;
+        for (List<Integer> datumList : data) {
+            for (Integer value : datumList) {
+                if (value > maximalValue) {
+                    maximalValue = value;
+                }
+            }
+        }
+        return maximalValue;
+    }
+
     /**
      * 获取matrix的行数和列数
      * @param matrix
