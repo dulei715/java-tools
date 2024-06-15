@@ -2,6 +2,7 @@ package cn.edu.ecnu.struct;
 
 import cn.edu.dll.basic.BasicCalculation;
 import cn.edu.dll.basic.MatrixArray;
+import cn.edu.dll.constant_values.ConstantValues;
 import cn.edu.dll.io.print.MyPrint;
 import org.junit.Test;
 
@@ -113,6 +114,23 @@ public class MatrixArrayTest {
         Double[] data = new Double[]{1D,2D,3D};
         MatrixArray.setRowValueAsGivenVector(matrix, 0, data);
         MyPrint.show2DimensionDoubleArray(matrix);
+    }
+
+    @Test
+    public void fun6() {
+        List<List<Integer>> data = new ArrayList<>();
+        List<Integer> tempList;
+        for (int i = 0; i < 4; i++) {
+            tempList = new ArrayList<>();
+            for (int j = 0; j < 3; j++) {
+                tempList.add(i*100+j);
+            }
+            data.add(tempList);
+        }
+        MyPrint.show2DimensionArray(data, ",", ConstantValues.LINE_SPLIT);
+        MyPrint.showSplitLine("*", 150);
+        List<List<Integer>> newData = MatrixArray.getTransposition(data);
+        MyPrint.show2DimensionArray(newData, ", ", ConstantValues.LINE_SPLIT);
     }
 
 
