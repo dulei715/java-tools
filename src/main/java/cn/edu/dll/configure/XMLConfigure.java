@@ -36,6 +36,8 @@ public class XMLConfigure {
         }
     }
 
+
+
     public Document getDocument() {
         return document;
     }
@@ -68,6 +70,8 @@ public class XMLConfigure {
         T defaultValue = (T) method.invoke(null, defaultValueString);
         return new PurePair<>(dataType, defaultValue);
     }
+
+
 
     public static void main(String[] args) {
     }

@@ -160,6 +160,20 @@ public class BasicWrite {
         }
     }
 
+    public <T> void writeStringListWithoutSize(List<T> dataList) {
+        int i = 0;
+        T element;
+        try {
+            for (; i < dataList.size(); i++) {
+                element = dataList.get(i);
+                this.bufferedWriter.write(element.toString());
+                this.bufferedWriter.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void endWriting() {
         try {
             bufferedWriter.close();

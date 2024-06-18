@@ -480,6 +480,15 @@ public class BasicArrayUtil {
         return sum;
     }
 
+    public static Double getSum(int fromIndex, int size, Double... nums) {
+        Double sum = 0.0;
+        int endIndex = fromIndex + size;
+        for (int i = fromIndex; i < endIndex; ++i) {
+            sum += nums[i];
+        }
+        return sum;
+    }
+
 
 
     /**

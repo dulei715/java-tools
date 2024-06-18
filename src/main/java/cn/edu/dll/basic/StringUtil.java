@@ -45,6 +45,19 @@ public class StringUtil {
         stringBuilder.append(strings[i]);
         return stringBuilder.toString();
     }
+    public static String join(String split, String[] strings, int beginIndex, int endIndex) {
+        int i = beginIndex;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (; i < strings.length - 1 && i < endIndex; i++) {
+            stringBuilder.append(strings[i]).append(split);
+        }
+        stringBuilder.append(strings[i]);
+        return stringBuilder.toString();
+    }
+    public static String join(String split, String[] strings, int beginIndex) {
+        int endIndex = strings.length - 1;
+        return join(split, strings, beginIndex, endIndex);
+    }
 
     public static String[] getStringArray(String... strs) {
         String[] resultStringArray = new String[strs.length];

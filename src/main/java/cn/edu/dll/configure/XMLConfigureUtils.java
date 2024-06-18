@@ -35,6 +35,14 @@ public class XMLConfigureUtils {
         return null;
     }
 
+    public static Element getElementByID(String filePath, String id) throws DocumentException {
+        SAXReader reader = new SAXReader();
+        InputStream inputStream = XMLConfigure.class.getClassLoader().getResourceAsStream(filePath);
+        Document document = reader.read(inputStream);
+        Element basicElement = (Element) document.selectNodes("//field[@id='" + id + "']").get(0);
+        return basicElement;
+    }
+
     public static void main(String[] args) {
         String tagName = "resultOutputFileConfig";
         Element resultElement = getFirstLayerElementByTagName(tagName);

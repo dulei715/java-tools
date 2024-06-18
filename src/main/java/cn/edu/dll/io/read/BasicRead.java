@@ -73,6 +73,38 @@ public class BasicRead {
         return result;
 
     }
+    public List<String> readAllWithoutLineNumberRecordInFile() {
+        List<String> result = null;
+        String line;
+        try {
+            result = new ArrayList<>();
+            while ((line = this.bufferedReader.readLine()) != null) {
+                result.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
+
+    }
+
+    public List<String> readGivenLineSize(int lineSize) {
+        List<String> result = null;
+        String line;
+        try {
+            result = new ArrayList<>();
+            for (int k = 0; k < lineSize; k++) {
+                line = this.bufferedReader.readLine();
+                if (line == null) {
+                    break;
+                }
+                result.add(line);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
 
     public List<String> readStringStartFromGivenLine(int lineNumber) {
         List<String> result = new ArrayList<>();

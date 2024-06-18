@@ -3,6 +3,7 @@ package cn.edu.dll.io.read;
 
 import cn.edu.dll.io.print.MyPrint;
 import cn.edu.dll.io.write.CSVWrite;
+import cn.edu.dll.struct.bean_structs.BeanInterface;
 import cn.edu.dll.struct.point.TwoDimensionalIntegerPoint;
 
 import java.io.*;
@@ -178,6 +179,36 @@ public class CSVRead {
             }
         }
         return line;
+    }
+
+    public static <T> List<T> readDataToBeanList(String filePath, BeanInterface<T> beanInterface) {
+        BufferedReader bufferedReader = null;
+        String line;
+        List<T> elementList = new ArrayList<>();
+        T tempElement;
+        try {
+            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
+            while ((line = bufferedReader.readLine()) != null) {
+                if (line.startsWith(CSVWrite.commonTag)) {
+                    // 跳过注释
+                    continue;
+                }
+                tempElement = beanInterface.toBean(line.split(","));
+                elementList.add(tempElement);
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return elementList;
     }
 
     public static void main(String[] args) {

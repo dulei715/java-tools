@@ -16,6 +16,14 @@ public class SetUtils {
         return arr;
     }
 
+    public static <T> Set<T> valueOf(T[] data) {
+        Set<T> result = new HashSet<>();
+        for (T datum : data) {
+            result.add(datum);
+        }
+        return result;
+    }
+
     public static <T> Set<T> combine(List<T>[] listArray, int fromIndex, int endIndex) {
         Set<T> set = new HashSet<>();
         for (int i = fromIndex; i <= endIndex; i++) {
