@@ -8,6 +8,8 @@ import org.dom4j.Element;
 import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
@@ -20,12 +22,16 @@ public class XMLConfigure {
 
     private static final String splitTag = ",";
 
-    public XMLConfigure(String filePath) {
+    public XMLConfigure(String fileAbPath) {
         SAXReader reader = new SAXReader();
-        InputStream inputStream = XMLConfigure.class.getClassLoader().getResourceAsStream(filePath);
+//        InputStream inputStream = XMLConfigure.class.getClassLoader().getResourceAsStream(filePath);
+        InputStream inputStream = null;
         try {
+            inputStream = new FileInputStream(fileAbPath);
             this.document = reader.read(inputStream);
         } catch (DocumentException e) {
+            throw new RuntimeException(e);
+        } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } finally {
             try {
