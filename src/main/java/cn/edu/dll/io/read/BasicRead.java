@@ -87,6 +87,10 @@ public class BasicRead {
         return result;
 
     }
+    public String[] split(String data) {
+        return data.split(this.INPUT_SPLIT_SYMBOL);
+    }
+
 
     public List<String> readGivenLineSize(int lineSize) {
         List<String> result = null;

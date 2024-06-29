@@ -642,6 +642,23 @@ public class StatisticTool {
     }
 
 
+    public static <K> void addElement(Map<K, Integer> map, K element) {
+        Integer count = map.getOrDefault(element, 0);
+        ++count;
+        map.put(element, count);
+    }
+
+    public static <KA, KB> void addElement(Map<KA, Map<KB, Integer>> map, KA elementA, KB elementB) {
+        Map<KB, Integer> innerMap = map.get(elementA);
+        if (innerMap == null) {
+            innerMap = new TreeMap<>();
+            map.put(elementA, innerMap);
+        }
+        Integer tempCount = innerMap.getOrDefault(elementB, 0);
+        ++tempCount;
+        innerMap.put(elementB, tempCount);
+    }
+
 
     public static void main1(String[] args) {
 //        Double[] values = new Double[]{4.0, 12.0, 8.0, 4.0, 16.0, 12.0};
