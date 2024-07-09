@@ -4,7 +4,7 @@ import cn.edu.dll.basic.BasicArrayUtil;
 
 public class MathUtils {
     /**
-     *
+     * 获取二项式
      * @param n 非负正数
      * @param m 小于n的非负数
      * @return
