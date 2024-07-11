@@ -1,8 +1,5 @@
 package cn.edu.dll.differential_privacy.noise;
 
-import org.apache.commons.math3.analysis.function.Gaussian;
-import org.apache.commons.math3.distribution.LaplaceDistribution;
-
 import java.util.Random;
 
 public class GaussUtils {
@@ -34,8 +31,20 @@ public class GaussUtils {
         return result;
     }
 
-    public double getLaplaceNoise() {
-        return this.random.nextGaussian();
+    public double getGaussNoise(double average, double standardVariance) {
+        return this.random.nextGaussian() * standardVariance + average;
     }
+
+    public double[] getGaussNoise(double average, double standardVariance, int size) {
+        double[] result = new double[size];
+        for (int i = 0; i < size; i++) {
+            result[i] = getGaussNoise(average, standardVariance);
+        }
+        return result;
+    }
+
+//    public double getLaplaceNoise() {
+//        return this.random.nextGaussian();
+//    }
 
 }
