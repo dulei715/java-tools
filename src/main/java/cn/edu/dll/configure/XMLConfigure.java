@@ -22,6 +22,10 @@ public class XMLConfigure {
 
     private static final String splitTag = ",";
 
+    public XMLConfigure(Document document) {
+        this.document = document;
+    }
+
     public XMLConfigure(String fileAbPath) {
         SAXReader reader = new SAXReader();
 //        InputStream inputStream = XMLConfigure.class.getClassLoader().getResourceAsStream(filePath);

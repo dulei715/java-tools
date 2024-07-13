@@ -177,7 +177,7 @@ public class ListUtils {
         return result;
     }
 
-    public static double getMaximalValue(List<Integer> data, Integer minimalLowerBound) {
+    public static int getMaximalValue(List<Integer> data, Integer minimalLowerBound) {
         int result = minimalLowerBound;
         for (Integer element : data) {
             if (element > result) {
