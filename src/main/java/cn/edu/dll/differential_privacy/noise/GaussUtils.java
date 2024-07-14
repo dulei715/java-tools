@@ -1,5 +1,7 @@
 package cn.edu.dll.differential_privacy.noise;
 
+import cn.edu.dll.basic.NumberUtil;
+
 import java.util.Random;
 
 public class GaussUtils {
@@ -39,6 +41,21 @@ public class GaussUtils {
         double[] result = new double[size];
         for (int i = 0; i < size; i++) {
             result[i] = getGaussNoise(average, standardVariance);
+        }
+        return result;
+    }
+
+    public double[] getGaussNoise(double average, double standardVariance, int size, int precision) {
+        double[] result = new double[size];
+        double tempDouble;
+        for (int i = 0; i < size; i++) {
+            tempDouble = getGaussNoise(average, standardVariance);
+            result[i] = NumberUtil.roundFormat(tempDouble, precision);
+
+//            String tempString = String.valueOf(result[i]);
+//            if (tempString.substring(tempString.indexOf(".")).length()>3) {
+//                System.out.println("woc");
+//            }
         }
         return result;
     }

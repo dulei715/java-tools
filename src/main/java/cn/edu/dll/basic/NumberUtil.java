@@ -36,7 +36,7 @@ public class NumberUtil {
     public static void main(String[] args) {
 //        String dataA = "-23a";
 //        System.out.println(isNumber(dataA));
-        Double result = roundFormat(2.41254422, 2);
+        Double result = roundFormat(0.060000000000000005, 2);
         System.out.println(result);
     }
 }
