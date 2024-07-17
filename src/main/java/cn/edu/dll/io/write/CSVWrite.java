@@ -1,5 +1,6 @@
 package cn.edu.dll.io.write;
 
+import cn.edu.dll.struct.bean_structs.BeanInterface;
 import cn.edu.dll.struct.point.TwoDimensionalIntegerPoint;
 
 import java.io.IOException;
@@ -106,5 +107,16 @@ public class CSVWrite extends BasicWrite{
 
     public void writeTwoDimensionalIntegerPointWithTileOrder(TreeMap<TwoDimensionalIntegerPoint, Double> data, List<String> tileList) {
         this.writeTwoDimensionalIntegerPointWithTileOrder(data, tileList, null);
+    }
+
+    public <T extends BeanInterface<T>> void writeBeanList(List<T> beanList) {
+        try {
+            for (BeanInterface<T> bean : beanList) {
+                this.bufferedWriter.write(bean.toFormatString());
+                this.bufferedWriter.newLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

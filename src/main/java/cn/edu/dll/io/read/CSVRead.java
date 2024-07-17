@@ -181,6 +181,35 @@ public class CSVRead {
         return line;
     }
 
+    public static <T> List<T> readDataToBeanListWithoutTitleInContext(String filePath, BeanInterface<T> beanInterface) {
+        BufferedReader bufferedReader = null;
+        String line;
+        List<T> elementList = new ArrayList<>();
+        T tempElement;
+        try {
+            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
+            while ((line = bufferedReader.readLine()) != null) {
+                if (line.startsWith(CSVWrite.commonTag)) {
+                    // 跳过注释
+                    continue;
+                }
+                tempElement = beanInterface.toBean(line.split(","));
+                elementList.add(tempElement);
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return elementList;
+    }
     public static <T> List<T> readDataToBeanList(String filePath, BeanInterface<T> beanInterface) {
         BufferedReader bufferedReader = null;
         String line;
@@ -188,6 +217,7 @@ public class CSVRead {
         T tempElement;
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
+            while ((line = bufferedReader.readLine()).startsWith(CSVWrite.commonTag));   // 循环直到读到不是注释为止
             while ((line = bufferedReader.readLine()) != null) {
                 if (line.startsWith(CSVWrite.commonTag)) {
                     // 跳过注释
