@@ -3,6 +3,7 @@ package cn.edu.dll.execute;
 import cn.edu.dll.basic.StringUtil;
 import cn.edu.dll.constant_values.ConstantValues;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,6 +14,10 @@ public class CopyUtils {
         try {
             FileInputStream fis = new FileInputStream(sourcePath);
             FileOutputStream fos = new FileOutputStream(destinationPath);
+            File outputDirPath = new File(destinationPath).getParentFile();
+            if (!outputDirPath.exists()) {
+                outputDirPath.mkdirs();
+            }
             FileChannel sourceChannel = fis.getChannel();
             FileChannel destinationChannel = fos.getChannel();
             // 使用 transferTo 方法传输数据
