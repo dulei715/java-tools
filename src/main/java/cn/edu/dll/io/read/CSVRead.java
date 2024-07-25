@@ -130,6 +130,34 @@ public class CSVRead {
         return resultMap;
     }
 
+//    public static List<String> readAllWithoutLineNumberRecordInFile(String filePath) {
+//        BufferedReader bufferedReader = null;
+//        String line;
+//        List<String> elementList = new ArrayList<>();
+//        try {
+//            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
+////            line = bufferedReader.readLine();
+//            while ((line = bufferedReader.readLine()) != null) {
+//                if (line.startsWith(CSVWrite.commonTag)) {
+//                    continue;
+//                }
+//                elementList.add(line);
+//            }
+//
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            try {
+//                bufferedReader.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        return elementList;
+//    }
+
     public static List<String> readDataLinesWithoutTitle(String filePath) {
         BufferedReader bufferedReader = null;
         String line;
@@ -137,7 +165,15 @@ public class CSVRead {
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
 //            line = bufferedReader.readLine();
-            while ((line = bufferedReader.readLine()).startsWith(CSVWrite.commonTag));   // 循环直到读到不是注释为止
+//            while ((line = bufferedReader.readLine()).startsWith(CSVWrite.commonTag));   // 循环直到读到不是注释为止
+            while(true) {
+                line = bufferedReader.readLine();
+                if (line == null) {
+                    return elementList;
+                } else if (!line.startsWith(CSVWrite.commonTag)) {
+                    break;
+                }
+            }
             while ((line = bufferedReader.readLine()) != null) {
                 if (line.startsWith(CSVWrite.commonTag)) {
                     continue;
