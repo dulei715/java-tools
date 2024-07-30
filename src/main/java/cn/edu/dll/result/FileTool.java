@@ -1,5 +1,7 @@
 package cn.edu.dll.result;
 
+import cn.edu.dll.basic.StringUtil;
+import cn.edu.dll.constant_values.ConstantValues;
 import cn.edu.dll.io.write.BasicWrite;
 import cn.edu.dll.io.write.CSVWrite;
 import cn.edu.dll.basic.BasicArrayUtil;
@@ -156,4 +158,7 @@ public class FileTool {
 //    public static void main(String[] args) {
 //        System.out.println(resultConfigFile.getPath());
 //    }
+    public static String getPath(String... names) {
+        return StringUtil.join(ConstantValues.FILE_SPLIT, names);
+    }
 }
