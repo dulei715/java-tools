@@ -2,24 +2,25 @@ package cn.edu.dll.differential_privacy.ldp.frequency_oracle.basic_struct;
 
 
 import cn.edu.dll.cryptography.HashFunction;
+import cn.edu.dll.cryptography.hash_function_impl.BoundedHashFunction;
 
 public class HashFunctionResponsePair<T> {
-    private HashFunction hashFunction = null;
+    private BoundedHashFunction hashFunction = null;
     private T responseValue = null;
 
     public HashFunctionResponsePair() {
     }
 
-    public HashFunctionResponsePair(HashFunction hashFunction, T responseValue) {
+    public HashFunctionResponsePair(BoundedHashFunction hashFunction, T responseValue) {
         this.hashFunction = hashFunction;
         this.responseValue = responseValue;
     }
 
-    public HashFunction getHashFunction() {
+    public BoundedHashFunction getHashFunction() {
         return hashFunction;
     }
 
-    public void setHashFunction(HashFunction hashFunction) {
+    public void setHashFunction(BoundedHashFunction hashFunction) {
         this.hashFunction = hashFunction;
     }
 

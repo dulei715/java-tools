@@ -10,14 +10,14 @@ public class GeneralizedRandomizedResponse<T> implements FrequencyOracle<T, T> {
     private int size;
     private double p;
     private double q;
-    private T[] data;
+    private T[] dataDomainArray;
 
     private Random random;
 
-    public GeneralizedRandomizedResponse(double epsilon, T[] data) {
+    public GeneralizedRandomizedResponse(double epsilon, T[] dataDomainArray) {
         this.epsilon = epsilon;
-        this.data = data;
-        this.size = data.length;
+        this.dataDomainArray = dataDomainArray;
+        this.size = dataDomainArray.length;
         this.p = Math.exp(epsilon) / (Math.exp(epsilon) + this.size - 1);
         this.q = 1 / (Math.exp(epsilon) + this.size - 1);
 
@@ -33,9 +33,9 @@ public class GeneralizedRandomizedResponse<T> implements FrequencyOracle<T, T> {
     private T getRandomDataExcept(int index) {
         int pos = this.random.nextInt(this.size - 1);
         if (pos < index) {
-            return this.data[pos];
+            return this.dataDomainArray[pos];
         }
-        return this.data[pos+1];
+        return this.dataDomainArray[pos+1];
     }
 
 
@@ -58,13 +58,21 @@ public class GeneralizedRandomizedResponse<T> implements FrequencyOracle<T, T> {
         }
 //        double rawDoubleData = (double)rawData;
 //        int index = Arrays.binarySearch(this.data, rawDoubleData);
-        int index = getIndex(this.data, rawData);
+        int index = getIndex(this.dataDomainArray, rawData);
         return getRandomDataExcept(index);
     }
 
     @Override
-    public double aggregate(T data, int noiseEstimate) {
-        return (noiseEstimate * 1.0 / this.size - this.q)/(this.p - this.q);
+    public double aggregate(int noiseEstimateCount, int userSize) {
+        return (noiseEstimateCount * 1.0 / userSize - this.q)/(this.p - this.q);
+    }
+
+    public double getProbabilityP() {
+        return p;
+    }
+
+    public double getProbabilityQ() {
+        return q;
     }
 
     public static void main(String[] args) {

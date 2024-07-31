@@ -39,6 +39,7 @@ public class StatisticTool {
         return result / distribution.length;
     }
 
+
     public static Double getVariance(final Double[][] distribution) {
         Double mean = getMean(distribution);
         Double result = 0.0;

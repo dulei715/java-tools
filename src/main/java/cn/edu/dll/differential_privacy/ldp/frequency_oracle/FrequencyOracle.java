@@ -8,10 +8,10 @@ public interface FrequencyOracle<I,O> {
      */
     O perturb(I rawData);
 
+
     /**
      * Used by the aggregator to aggregate and unbia values
-     * @param data
      * @return
      */
-    double aggregate(O data, int noiseEstimate);
+    double aggregate(int targetNoiseEstimateCount, int userSize);
 }

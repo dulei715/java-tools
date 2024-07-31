@@ -336,10 +336,21 @@ public class MyPrint {
     }
 
 
-    public static <S, T> void showMap(Map<S, T> resultMap) {
+    public static <S, T> void showMap(Map<S, T> resultMap, String splitString) {
+        int size = resultMap.entrySet().size();
+        int k = 1;
         for (Map.Entry<S, T> entry : resultMap.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+            if (k < size) {
+                System.out.print(entry.getKey() + ": " + entry.getValue() + splitString);
+            } else {
+                System.out.println(entry.getKey() + ": " + entry.getValue());
+            }
+            ++k;
         }
+    }
+
+    public static <S, T> void showMap(Map<S, T> resultMap) {
+        showMap(resultMap, ConstantValues.LINE_SPLIT);
     }
 
 
