@@ -85,6 +85,7 @@ public abstract class HashFunction {
 
 
 
+
     public static void main(String[] args) throws NoSuchAlgorithmException {
 //        MessageDigest messageDigest = MessageDigest.getInstance("sha1");
 //        byte[] digest = messageDigest.digest("hello".getBytes());

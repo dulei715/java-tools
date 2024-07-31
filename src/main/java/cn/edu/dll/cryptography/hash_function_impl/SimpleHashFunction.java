@@ -40,6 +40,7 @@ public class SimpleHashFunction extends HashFunction {
 
     @Override
     public Long getHashValue(String rawDataStr) {
-        return null;
+
+        return super.getHashLongValue(rawDataStr);
     }
 }

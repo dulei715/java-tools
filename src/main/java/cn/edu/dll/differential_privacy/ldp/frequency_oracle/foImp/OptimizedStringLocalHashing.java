@@ -7,7 +7,7 @@ import cn.edu.dll.cryptography.BoundedHashFunctionFamily;
 import cn.edu.dll.cryptography.HashFunction;
 import cn.edu.dll.differential_privacy.ldp.frequency_oracle.FrequencyOracle;
 
-public class OptimizedLocalHashing implements FrequencyOracle<String, HashFunctionResponsePair> {
+public class OptimizedStringLocalHashing implements FrequencyOracle<String, HashFunctionResponsePair> {
 
     protected Integer g = null;
     protected String[] data = null;
@@ -15,7 +15,7 @@ public class OptimizedLocalHashing implements FrequencyOracle<String, HashFuncti
     public BoundedHashFunctionFamily hashFunctionFamily = null;
     public GeneralizedRandomizedResponse<Long> gRR = null;
 
-    public OptimizedLocalHashing(double epsilon, int functionArraySize, int upperBound) {
+    public OptimizedStringLocalHashing(double epsilon, int functionArraySize, int upperBound) {
         this.g = upperBound;
         this.hashFunctionFamily = new BoundedHashFunctionFamily(functionArraySize, this.g);
         this.hashFunctionIndexArray = this.hashFunctionFamily.getFunctionIndexArray();

@@ -36,7 +36,7 @@ public class BoundedHashFunctionFamily {
         return this.functionIndexArray;
     }
 
-    public HashFunction getFunction(Integer functionIndex) {
+    public BoundedHashFunction getFunction(Integer functionIndex) {
         if (functionIndex < 0) {
             throw new RuntimeException("The index of hash function should not be negative!");
         }
@@ -48,6 +48,12 @@ public class BoundedHashFunctionFamily {
             throw new RuntimeException("The index of hash function should not be negative!");
         }
         return hashFunctionFamily[functionIndex].getHashValue(rawValueStr);
+    }
+    public Integer getHashValue(Integer functionIndex, Integer rawValue) {
+        if (functionIndex < 0) {
+            throw new RuntimeException("The index of hash function should not be negative!");
+        }
+        return hashFunctionFamily[functionIndex].getHashValue(rawValue);
     }
 
     public static void main(String[] args) {

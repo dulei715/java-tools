@@ -2,6 +2,7 @@ package cn.edu.dll.cryptography;
 
 
 
+import cn.edu.dll.constant_values.ConstantValues;
 import cn.edu.dll.io.print.MyPrint;
 
 import javax.crypto.KeyGenerator;
@@ -27,7 +28,7 @@ public class KeyUtils {
         String keyName = "HmacSHA1";
         int keyNumber = 10;
         List<Key> keyList = KeyUtils.getKeyList(keyName, keyNumber);
-        MyPrint.showList(keyList, "\r\n");
+        MyPrint.showList(keyList, ConstantValues.LINE_SPLIT);
     }
 
 }

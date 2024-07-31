@@ -3,14 +3,14 @@ package cn.edu.dll.differential_privacy.ldp.frequency_oracle.basic_struct;
 
 import cn.edu.dll.cryptography.HashFunction;
 
-public class HashFunctionResponsePair {
+public class HashFunctionResponsePair<T> {
     private HashFunction hashFunction = null;
-    private Long responseValue = null;
+    private T responseValue = null;
 
     public HashFunctionResponsePair() {
     }
 
-    public HashFunctionResponsePair(HashFunction hashFunction, Long responseValue) {
+    public HashFunctionResponsePair(HashFunction hashFunction, T responseValue) {
         this.hashFunction = hashFunction;
         this.responseValue = responseValue;
     }
@@ -23,11 +23,11 @@ public class HashFunctionResponsePair {
         this.hashFunction = hashFunction;
     }
 
-    public Long getResponseValue() {
+    public T getResponseValue() {
         return responseValue;
     }
 
-    public void setResponseValue(Long responseValue) {
+    public void setResponseValue(T responseValue) {
         this.responseValue = responseValue;
     }
 }
