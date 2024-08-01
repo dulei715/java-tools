@@ -21,10 +21,10 @@ public class OptimizedLocalHashingTest {
     @Test
     public void fun1() {
         int inputDomainSize = 1000;
-        int hashBound = 100;
+//        int hashBound = 100;
         int hashFunctionSize = 100;
         int userSize = 10000;
-        double epsilon = 200.0;
+        double epsilon = 1.0;
         Integer[] inputDomain = BasicArrayUtil.getIncreaseIntegerNumberArray(0, 1, inputDomainSize - 1);
         TreeMap<Integer, Integer> userMap = new TreeMap<>();
         for (int i = 0; i < userSize; i++) {
@@ -42,7 +42,7 @@ public class OptimizedLocalHashingTest {
         }
         MyPrint.showMap(countRatioMap, "; ");
 
-        OptimizedIntegerLocalHashing optimizedLocalHashing = new OptimizedIntegerLocalHashing(epsilon, inputDomain, hashFunctionSize, hashBound);
+        OptimizedIntegerLocalHashing optimizedLocalHashing = new OptimizedIntegerLocalHashing(epsilon, inputDomain, hashFunctionSize);
         TreeMap<Integer, Integer> noiseUserMap = new TreeMap<>();
         List<HashFunctionResponsePair<Integer>> responseList = new ArrayList<>();
         for (Map.Entry<Integer, Integer> userEntry : userMap.entrySet()) {

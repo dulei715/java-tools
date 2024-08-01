@@ -114,6 +114,14 @@ public class ListUtils {
         return Arrays.asList(resultArray);
     }
 
+    public static <T> List<T> getSameElementList(T element, int size) {
+        List<T> result = new ArrayList<>(size);
+        for (int i = 0; i < size; i++) {
+            result.add(element);
+        }
+        return result;
+    }
+
     public static <T> List<T> subList(List<T> originalList, int fromIndex, int endIndex) {
         List<T> list = new ArrayList<>(endIndex - fromIndex + 1);
         for (int i = fromIndex; i <= endIndex; i++) {
