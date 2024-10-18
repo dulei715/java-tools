@@ -5,28 +5,31 @@ import cn.edu.dll.basic.RandomUtil;
 import cn.edu.dll.constant_values.ConstantValues;
 import cn.edu.dll.differential_privacy.ldp.frequency_oracle.FrequencyOracle;
 import cn.edu.dll.io.print.MyPrint;
-import cn.edu.dll.struct.OneHot;
+import cn.edu.dll.struct.one_hot.OneHot;
+import cn.edu.dll.struct.one_hot.SimpleIntegerOneHot;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-public class OptimizedUnaryEncoding implements FrequencyOracle<OneHot, OneHot> {
+public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, OneHot<T>> {
 
-    private double epsilon;
-    private int size;
+//    private double epsilon;
+//    private int size;
     private double q;
-    private Random random;
+//    private Random random;
+//    private OneHot<T> oneHot;
 
     public OptimizedUnaryEncoding(double epsilon) {
-        this.epsilon = epsilon;
+//        this.epsilon = epsilon;
         this.q = 1.0 / (Math.exp(epsilon)+1);
-        this.random = new Random();
+//        this.random = new Random();
+//        this.oneHot = oneHot;
     }
 
     @Override
-    public OneHot perturb(OneHot rawData) {
+    public OneHot<T> perturb(OneHot<T> rawData) {
         boolean[] data = rawData.getData();
         boolean[] resultData = new boolean[data.length];
         double probability;
@@ -38,7 +41,7 @@ public class OptimizedUnaryEncoding implements FrequencyOracle<OneHot, OneHot> {
             }
             resultData[i] = RandomUtil.isChosen(probability) ? OneHot.ONE : OneHot.ZERO;
         }
-        return new OneHot(resultData);
+        return rawData.getInstance(resultData);
     }
 
     @Override
@@ -47,7 +50,7 @@ public class OptimizedUnaryEncoding implements FrequencyOracle<OneHot, OneHot> {
     }
 
     public static int[] count(Collection<OneHot> dataCollection) {
-        int colSize = dataCollection.iterator().next().getDataLength();
+        int colSize = dataCollection.iterator().next().getAreaSize();
         int[] result = new int[colSize];
         boolean[] tempOneHot;
         BasicArrayUtil.setIntArrayToZero(result);
@@ -69,14 +72,15 @@ public class OptimizedUnaryEncoding implements FrequencyOracle<OneHot, OneHot> {
     }
 
     public static void main(String[] args) {
-        double epsilon = 100;
+        double epsilon = 0.5;
+        OneHot<Integer> oneHotBasic = new SimpleIntegerOneHot(5);
         OptimizedUnaryEncoding oue = new OptimizedUnaryEncoding(epsilon);
         OneHot[] dataArray = new OneHot[]{
-                new OneHot(OneHot.ONE, OneHot.ZERO, OneHot.ZERO, OneHot.ZERO, OneHot.ZERO),
-                new OneHot(OneHot.ZERO, OneHot.ONE, OneHot.ZERO, OneHot.ZERO, OneHot.ZERO),
-                new OneHot(OneHot.ZERO, OneHot.ZERO, OneHot.ONE, OneHot.ZERO, OneHot.ZERO),
-                new OneHot(OneHot.ZERO, OneHot.ZERO, OneHot.ZERO, OneHot.ONE, OneHot.ZERO),
-                new OneHot(OneHot.ZERO, OneHot.ZERO, OneHot.ZERO, OneHot.ZERO, OneHot.ONE),
+                new SimpleIntegerOneHot(5, 0),
+                new SimpleIntegerOneHot(5, 1),
+                new SimpleIntegerOneHot(5, 2),
+                new SimpleIntegerOneHot(5, 3),
+                new SimpleIntegerOneHot(5, 4),
         };
         MyPrint.showArray(dataArray);
         MyPrint.showSplitLine("*", 150);

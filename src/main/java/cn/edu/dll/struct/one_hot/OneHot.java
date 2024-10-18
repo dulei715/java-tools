@@ -1,33 +1,42 @@
-package cn.edu.dll.struct;
+package cn.edu.dll.struct.one_hot;
 
 import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
-public class OneHot {
+public abstract class OneHot<T> {
     public static final boolean ONE = true;
     public static final boolean ZERO = false;
-    private boolean[] data;
+    protected int areaSize;
+    protected boolean[] data;
 
-    public OneHot(int length) {
-        this.data = new boolean[length];
+    public OneHot(int areaSize) {
+        this.areaSize = areaSize;
+        this.data = new boolean[areaSize];
     }
 
-    public OneHot(int length, int position) {
-        this(length);
-        this.data[position] = true;
+    public void setElement(T element) {
+        this.data[toOneHotDataIndex(element)] = ONE;
     }
+    public OneHot(int areaSize, T element) {
+        this(areaSize);
+        setElement(element);
+    }
+
+//    public OneHot(int length, int position) {
+//        this(length);
+//        this.data[position] = true;
+//    }
 
 //    public OneHot(boolean[] data) {
 //        this.data = data;
 //    }
 
-    public OneHot(boolean... data) {
+    protected OneHot(boolean... data) {
         this.data = data;
     }
 
-    public int getDataLength() {
+    public abstract OneHot<T> getInstance(boolean... data);
+
+    public int getAreaSize() {
         return this.data.length;
     }
 
@@ -56,4 +65,6 @@ public class OneHot {
         String originalString =  Arrays.toString(data);
         return originalString.replaceAll("true", "1").replaceAll("false", "0");
     }
+
+    protected abstract int toOneHotDataIndex(T element);
 }
