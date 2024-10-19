@@ -13,13 +13,14 @@ public abstract class OneHot<T> {
         this.data = new boolean[areaSize];
     }
 
-    public void setElement(T element) {
-        this.data[toOneHotDataIndex(element)] = ONE;
-    }
-    public OneHot(int areaSize, T element) {
-        this(areaSize);
-        setElement(element);
-    }
+//    public void setElement(T element) {
+//        this.data[toOneHotDataIndex(element)] = ONE;
+//    }
+    public abstract void setElement(T element);
+//    public OneHot(int areaSize, T element) {
+//        this(areaSize);
+//        setElement(element);
+//    }
 
 //    public OneHot(int length, int position) {
 //        this(length);
@@ -66,5 +67,5 @@ public abstract class OneHot<T> {
         return originalString.replaceAll("true", "1").replaceAll("false", "0");
     }
 
-    protected abstract int toOneHotDataIndex(T element);
+//    protected abstract int toOneHotDataIndex(T element);
 }

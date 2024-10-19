@@ -5,9 +5,14 @@ public class SimpleIntegerOneHot extends OneHot<Integer>{
         super(areaSize);
     }
 
-    public SimpleIntegerOneHot(int areaSize, Integer element) {
-        super(areaSize, element);
+    @Override
+    public void setElement(Integer element) {
+        this.data[toOneHotDataIndex(element)] = ONE;
     }
+
+//    public SimpleIntegerOneHot(int areaSize, Integer element) {
+//        super(areaSize, element);
+//    }
 
     protected SimpleIntegerOneHot(boolean... data) {
         this.data = data;
@@ -18,7 +23,7 @@ public class SimpleIntegerOneHot extends OneHot<Integer>{
         return new SimpleIntegerOneHot(data);
     }
 
-    @Override
+//    @Override
     protected int toOneHotDataIndex(Integer element) {
         if (element < 0 || element >= this.areaSize) {
             throw new RuntimeException("Illegal Element!");

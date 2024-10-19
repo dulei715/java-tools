@@ -75,13 +75,13 @@ public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, One
         double epsilon = 0.5;
         OneHot<Integer> oneHotBasic = new SimpleIntegerOneHot(5);
         OptimizedUnaryEncoding oue = new OptimizedUnaryEncoding(epsilon);
-        OneHot[] dataArray = new OneHot[]{
-                new SimpleIntegerOneHot(5, 0),
-                new SimpleIntegerOneHot(5, 1),
-                new SimpleIntegerOneHot(5, 2),
-                new SimpleIntegerOneHot(5, 3),
-                new SimpleIntegerOneHot(5, 4),
-        };
+        OneHot[] dataArray = new OneHot[5];
+        for (int i = 0; i < dataArray.length; i++) {
+            dataArray[i] = new SimpleIntegerOneHot(5);
+        }
+        for (int i = 0; i < dataArray.length; i++) {
+            dataArray[i].setElement(i);
+        }
         MyPrint.showArray(dataArray);
         MyPrint.showSplitLine("*", 150);
         List<OneHot> disturbedData = new ArrayList<>(dataArray.length);
