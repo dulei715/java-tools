@@ -49,12 +49,12 @@ public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, One
         return (targetNoiseEstimateCount - userSize * this.q) / (0.5 - this.q);
     }
 
-    public static int[] count(Collection<OneHot> dataCollection) {
+    public static <T> int[] count(Collection<OneHot<T>> dataCollection) {
         int colSize = dataCollection.iterator().next().getAreaSize();
         int[] result = new int[colSize];
         boolean[] tempOneHot;
         BasicArrayUtil.setIntArrayToZero(result);
-        for (OneHot oneHot : dataCollection) {
+        for (OneHot<T> oneHot : dataCollection) {
             tempOneHot = oneHot.getData();
             for (int i = 0; i < colSize; i++) {
                 result[i] += tempOneHot[i] ? 1 : 0;
@@ -75,7 +75,7 @@ public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, One
         double epsilon = 0.5;
         OneHot<Integer> oneHotBasic = new SimpleIntegerOneHot(5);
         OptimizedUnaryEncoding oue = new OptimizedUnaryEncoding(epsilon);
-        OneHot[] dataArray = new OneHot[5];
+        OneHot<Integer>[] dataArray = new OneHot[5];
         for (int i = 0; i < dataArray.length; i++) {
             dataArray[i] = new SimpleIntegerOneHot(5);
         }
@@ -84,7 +84,7 @@ public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, One
         }
         MyPrint.showArray(dataArray);
         MyPrint.showSplitLine("*", 150);
-        List<OneHot> disturbedData = new ArrayList<>(dataArray.length);
+        List<OneHot<Integer>> disturbedData = new ArrayList<>(dataArray.length);
         for (int i = 0; i < dataArray.length; i++) {
             disturbedData.add(oue.perturb(dataArray[i]));
         }

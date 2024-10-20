@@ -23,7 +23,7 @@ public class SimpleIntegerOneHot extends OneHot<Integer>{
         return new SimpleIntegerOneHot(data);
     }
 
-//    @Override
+    //    @Override
     protected int toOneHotDataIndex(Integer element) {
         if (element < 0 || element >= this.areaSize) {
             throw new RuntimeException("Illegal Element!");

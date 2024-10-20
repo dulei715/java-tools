@@ -32,6 +32,7 @@ public abstract class OneHot<T> {
 //    }
 
     protected OneHot(boolean... data) {
+        this.areaSize = data.length;
         this.data = data;
     }
 
@@ -66,6 +67,7 @@ public abstract class OneHot<T> {
         String originalString =  Arrays.toString(data);
         return originalString.replaceAll("true", "1").replaceAll("false", "0");
     }
+
 
 //    protected abstract int toOneHotDataIndex(T element);
 }
