@@ -49,9 +49,9 @@ public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, One
         return (targetNoiseEstimateCount - userSize * this.q) / (0.5 - this.q);
     }
 
-    public static <T> int[] count(Collection<OneHot<T>> dataCollection) {
+    public static <T> Integer[] count(Collection<OneHot<T>> dataCollection) {
         int colSize = dataCollection.iterator().next().getAreaSize();
-        int[] result = new int[colSize];
+        Integer[] result = new Integer[colSize];
         boolean[] tempOneHot;
         BasicArrayUtil.setIntArrayToZero(result);
         for (OneHot<T> oneHot : dataCollection) {
@@ -63,8 +63,8 @@ public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, One
         return result;
     }
 
-    public double[] unbias(int[] perturbedCount, int userSize) {
-        double[] result = new double[perturbedCount.length];
+    public Double[] unbias(Integer[] perturbedCount, int userSize) {
+        Double[] result = new Double[perturbedCount.length];
         for (int i = 0; i < perturbedCount.length; i++) {
             result[i] = this.aggregate(perturbedCount[i], userSize);
         }
@@ -90,10 +90,10 @@ public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, One
         }
         MyPrint.showList(disturbedData, ConstantValues.LINE_SPLIT);
         MyPrint.showSplitLine("*", 150);
-        int[] disturbedCount = OptimizedUnaryEncoding.count(disturbedData);
+        Integer[] disturbedCount = OptimizedUnaryEncoding.count(disturbedData);
         MyPrint.showIntegerArray(disturbedCount);
         MyPrint.showSplitLine("*", 150);
-        double[] unbiasCount = oue.unbias(disturbedCount, disturbedData.size());
+        Double[] unbiasCount = oue.unbias(disturbedCount, disturbedData.size());
         MyPrint.showDoubleArray(unbiasCount);
 
     }

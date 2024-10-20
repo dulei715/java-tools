@@ -212,6 +212,7 @@ public class RandomUtil {
         return BasicSearch.binaryLatterSearchWithMinimalIndex(cumulatedValues, randomValue);
     }
 
+
     public static Integer getRandomIndexGivenCountPoint(final List<Double> countValueList) {
         int len = countValueList.size();
         Double[] cumulatedValues = CumulativeFunction.getCumulativeDistribution(countValueList.toArray(new Double[0]));
