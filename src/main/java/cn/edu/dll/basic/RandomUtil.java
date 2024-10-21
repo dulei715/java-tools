@@ -222,6 +222,35 @@ public class RandomUtil {
         return startIndex + bias;
     }
 
+    public static Integer[] getTwoPartsRandomIndexGivenCountPoint(final Double[] countValuesA, int startIndexA, int endIndexA, final Double[] countValuesB, int startIndexB, int endIndexB) {
+        int lenA = endIndexA - startIndexA + 1;
+        int lenB = endIndexB - startIndexB + 1;
+        Double[] cumulatedValuesA = CumulativeFunction.getCumulativeDistribution(countValuesA, startIndexA, endIndexA);
+        Double[] cumulatedValuesB = CumulativeFunction.getCumulativeDistribution(countValuesB, startIndexB, endIndexB);
+        Double[] highLevelCountValue = new Double[]{cumulatedValuesA[lenA - 1], cumulatedValuesB[lenB - 1]};
+        Double[] highLevelCumulatedValue = CumulativeFunction.getCumulativeDistribution(highLevelCountValue);
+        BasicArrayUtil.linearTransform(highLevelCumulatedValue, 1.0 / highLevelCumulatedValue[1], 0.0);
+        double highLevelRandomValue = Math.random();
+        int highLevelIndex = BasicSearch.binaryLatterSearchWithMinimalIndex(highLevelCumulatedValue, highLevelRandomValue);
+        double randomValue;
+        int bias;
+        Integer[] result = new Integer[2];
+        if (highLevelIndex == 0) {
+            result[0] = 0;
+            BasicArrayUtil.linearTransform(cumulatedValuesA, 1.0 / cumulatedValuesA[lenA - 1], 0.0);
+            randomValue = Math.random();
+            bias = BasicSearch.binaryLatterSearchWithMinimalIndex(cumulatedValuesA, randomValue);
+            result[1] = startIndexA + bias;
+        } else {
+            result[0] = 1;
+            BasicArrayUtil.linearTransform(cumulatedValuesB, 1.0 / cumulatedValuesB[lenB - 1], 0.0);
+            randomValue = Math.random();
+            bias = BasicSearch.binaryLatterSearchWithMinimalIndex(cumulatedValuesB, randomValue);
+            result[1] = startIndexB + bias;
+        }
+
+        return result;
+    }
 
     public static Integer getRandomIndexGivenCountPoint(final List<Double> countValueList) {
         int len = countValueList.size();
