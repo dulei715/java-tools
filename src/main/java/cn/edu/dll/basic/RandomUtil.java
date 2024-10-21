@@ -212,6 +212,16 @@ public class RandomUtil {
         return BasicSearch.binaryLatterSearchWithMinimalIndex(cumulatedValues, randomValue);
     }
 
+    public static Integer getRandomIndexGivenCountPoint(final Double[] countValues, int startIndex, int endIndex) {
+        int len = endIndex - startIndex + 1;
+        Double[] cumulatedValues = CumulativeFunction.getCumulativeDistribution(countValues, startIndex, endIndex);
+        BasicArrayUtil.linearTransform(cumulatedValues, 1.0/cumulatedValues[len-1], 0.0);
+        double randomValue = Math.random();
+//        return BasicSearch.binarySearch(cumulatedValues, randomValue, BasicSearch.LATTER);
+        int bias =  BasicSearch.binaryLatterSearchWithMinimalIndex(cumulatedValues, randomValue);
+        return startIndex + bias;
+    }
+
 
     public static Integer getRandomIndexGivenCountPoint(final List<Double> countValueList) {
         int len = countValueList.size();

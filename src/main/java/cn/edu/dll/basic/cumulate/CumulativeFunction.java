@@ -45,6 +45,16 @@ public class CumulativeFunction {
         return result;
     }
 
+    public static Double[] getCumulativeDistribution(Double[] statisticDistribution, int startIndex, int endIndex) {
+        int len = endIndex - startIndex + 1;
+        Double[] result = new Double[len];
+        result[0] = statisticDistribution[startIndex];
+        for (int i = 1, pos = startIndex + 1; i < len; ++i, ++pos) {
+            result[i] = result[i-1] + statisticDistribution[pos];
+        }
+        return result;
+    }
+
     public static Integer[] getCumulativeDistribution(Integer[] statisticDistribution) {
         int len = statisticDistribution.length;
         Integer[] result = new Integer[len];
