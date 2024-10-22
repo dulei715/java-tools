@@ -46,7 +46,9 @@ public class Line implements Comparable<Line>{
     public void roll(double xIndex, double yIndex, double thetaAngle) {
         double newParamA = this.paramA * Math.cos(thetaAngle) - this.paramB * Math.sin(thetaAngle);
         double newParamB = this.paramA * Math.sin(thetaAngle) + this.paramB * Math.cos(thetaAngle);
-        double newParamC = -newParamA * xIndex - newParamB * yIndex + this.paramC;
+//        double newParamC = -newParamA * xIndex - newParamB * yIndex + this.paramC;
+        double newParamC = (this.paramA-newParamA) * xIndex + (this.paramB - newParamB) * yIndex + this.paramC;
+
         this.paramA = newParamA;
         this.paramB = newParamB;
         this.paramC = newParamC;
@@ -83,19 +85,23 @@ public class Line implements Comparable<Line>{
 
     @Override
     public int compareTo(Line lineB) {
-        double differ = this.directAngle - lineB.directAngle;
-        if (differ > 0) {
-            return 1;
-        } else if (differ < 0) {
-            return -1;
+//        double differ = this.directAngle - lineB.directAngle;
+        int angleCompare = Double.compare(this.directAngle, lineB.directAngle);
+        if (angleCompare != 0) {
+            return angleCompare;
         }
-        double differ2 =  this.paramC - lineB.paramC;
-        if (differ2 > 0) {
-            return 1;
-        } else if (differ2 < 0) {
-            return -1;
-        }
-        return 0;
+//        int differ2 =  this.paramC - lineB.paramC;
+        return Double.compare(this.paramC, lineB.paramC);
+    }
+
+    /**
+     * 用直线的一般式带入x和y得到的值
+     * @param x
+     * @param y
+     * @return
+     */
+    public double getLineValue(double x, double y) {
+        return this.paramA * x + this.paramB * y + this.paramC;
     }
 
     public static void main(String[] args) {

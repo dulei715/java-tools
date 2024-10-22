@@ -64,7 +64,8 @@ public class LineUtils {
         paramC = originalLine.getParamC();
         double newParamA = paramA * Math.cos(thetaAngle) - paramB * Math.sin(thetaAngle);
         double newParamB = paramA * Math.sin(thetaAngle) + paramB * Math.cos(thetaAngle);
-        double newParamC = -newParamA * xIndex - newParamB * yIndex + paramC;
+//        double newParamC = -newParamA * xIndex - newParamB * yIndex + paramC;
+        double newParamC = (paramA-newParamA) * xIndex + (paramB - newParamB) * yIndex + paramC;
         return new Line(newParamA, newParamB, newParamC);
     }
 }
