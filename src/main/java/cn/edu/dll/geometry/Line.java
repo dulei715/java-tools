@@ -1,6 +1,6 @@
 package cn.edu.dll.geometry;
 
-public class Line {
+public class Line implements Comparable<Line>{
     /**
      * 直线用一般式表示 Ax + By +C = 0
      */
@@ -8,22 +8,29 @@ public class Line {
     private double paramB;
     private double paramC;
 
+    // 记录方向角
+    private double directAngle;
+
     public Line(double paramA, double paramB, double paramC) {
         this.paramA = paramA;
         this.paramB = paramB;
         this.paramC = paramC;
+        unifyXParamTag();
+        this.directAngle = LineUtils.getDirectAngle(this);
     }
 
     public Line(double x1, double y1, double x2, double y2) {
         this.paramA = y2 - y1;
         this.paramB = x1 - x2;
         this.paramC = x2 * y1 - x1 * y2;
+        unifyXParamTag();
+        this.directAngle = LineUtils.getDirectAngle(this);
     }
 
     /**
      * 将this.paramA设为正的e而不改变直线
      */
-    public void unifyXParamTag() {
+    private void unifyXParamTag() {
         if (this.paramA >= 0) {
             return;
         }
@@ -32,11 +39,19 @@ public class Line {
         this.paramC = -this.paramC;
     }
 
-    public Line roll(double xIndex, double yIndex, double thetaAngle) {
+
+
+
+
+    public void roll(double xIndex, double yIndex, double thetaAngle) {
         double newParamA = this.paramA * Math.cos(thetaAngle) - this.paramB * Math.sin(thetaAngle);
         double newParamB = this.paramA * Math.sin(thetaAngle) + this.paramB * Math.cos(thetaAngle);
-        double newParamC = -newParamA * xIndex - newParamB * yIndex;
-        return new Line(newParamA, newParamB, newParamC);
+        double newParamC = -newParamA * xIndex - newParamB * yIndex + this.paramC;
+        this.paramA = newParamA;
+        this.paramB = newParamB;
+        this.paramC = newParamC;
+        unifyXParamTag();
+        this.directAngle = LineUtils.getDirectAngle(this);
     }
 
     @Override
@@ -48,17 +63,10 @@ public class Line {
         return paramA;
     }
 
-    public void setParamA(double paramA) {
-        this.paramA = paramA;
-    }
-
     public double getParamB() {
         return paramB;
     }
 
-    public void setParamB(double paramB) {
-        this.paramB = paramB;
-    }
 
     public double getParamC() {
         return paramC;
@@ -68,12 +76,34 @@ public class Line {
         this.paramC = paramC;
     }
 
+    public double getDirectAngle() {
+        return directAngle;
+    }
+
+
+    @Override
+    public int compareTo(Line lineB) {
+        double differ = this.directAngle - lineB.directAngle;
+        if (differ > 0) {
+            return 1;
+        } else if (differ < 0) {
+            return -1;
+        }
+        double differ2 =  this.paramC - lineB.paramC;
+        if (differ2 > 0) {
+            return 1;
+        } else if (differ2 < 0) {
+            return -1;
+        }
+        return 0;
+    }
+
     public static void main(String[] args) {
         Line line = new Line(-2, 1, -1);
+        double angle = Math.PI / 2;
         System.out.println(line);
-        Line rollLine = line.roll(0, 0, Math.PI / 6);
+        Line rollLine = LineUtils.getRoll(line,0, 0, angle);
         System.out.println(rollLine);
 
     }
-
 }

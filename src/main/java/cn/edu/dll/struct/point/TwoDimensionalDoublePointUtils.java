@@ -122,4 +122,13 @@ public class TwoDimensionalDoublePointUtils {
         return result;
     }
 
+    public static double[] getDirectVector(TwoDimensionalDoublePoint point, TwoDimensionalDoublePoint originalPoint) {
+        return new double[]{point.getXIndex() - originalPoint.getXIndex(), point.getYIndex() - originalPoint.getYIndex()};
+    }
+
+    public static double getDirectAngle(TwoDimensionalDoublePoint point, TwoDimensionalDoublePoint originalPoint) {
+        double[] directVector = getDirectVector(point, originalPoint);
+        return Math.atan2(directVector[1], directVector[0]);
+    }
+
 }
