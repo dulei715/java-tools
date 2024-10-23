@@ -1,8 +1,12 @@
 package cn.edu.ecnu.basic;
 
 import cn.edu.dll.basic.RandomUtil;
+import cn.edu.dll.io.print.MyPrint;
 import cn.edu.dll.math.MathUtils;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BasicTest {
     @Test
@@ -64,6 +68,17 @@ public class BasicTest {
     public void fun9() {
         String valueStr = "6.36E-05";
         System.out.println(Double.valueOf(valueStr));
+    }
+
+    @Test
+    public void fun10() {
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 10; ++i) {
+            list.add("str_" + i);
+        }
+        MyPrint.showList(list);
+        list.remove(3);
+        MyPrint.showList(list);
     }
 
 }

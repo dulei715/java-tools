@@ -4,10 +4,7 @@ package cn.edu.dll.struct.point;
 import cn.edu.dll.basic.BasicCalculation;
 import cn.edu.dll.struct.pair.BasicPair;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 @SuppressWarnings("ALL")
 public class TwoDimensionalDoublePointUtils {
@@ -133,6 +130,32 @@ public class TwoDimensionalDoublePointUtils {
 
     public static double get2NormDistance(TwoDimensionalDoublePoint pointA, TwoDimensionalDoublePoint pointB) {
         return BasicCalculation.get2Norm(pointA.getIndex(), pointB.getIndex());
+    }
+
+    public static BasicPair<TwoDimensionalDoublePoint, Double> getNearest2NormDistancePointInGivenCollection(TwoDimensionalDoublePoint targetPoint, Collection<TwoDimensionalDoublePoint> pointCollection) {
+        Double resultDistance = Double.MAX_VALUE, tempDistance;
+        TwoDimensionalDoublePoint resultPoint = null;
+        for (TwoDimensionalDoublePoint currentPoint : pointCollection) {
+            tempDistance = get2NormDistance(targetPoint, currentPoint);
+            if (tempDistance < resultDistance) {
+                resultDistance = tempDistance;
+                resultPoint = currentPoint;
+            }
+        }
+        return new BasicPair<>(resultPoint, resultDistance);
+    }
+
+    public static BasicPair<TwoDimensionalDoublePoint, Double> getLongestDistance(TwoDimensionalDoublePoint targetPoint, List<TwoDimensionalDoublePoint> pointCollection) {
+        Double resultDistance = -1D, tempDistance;
+        TwoDimensionalDoublePoint resultPoint = null;
+        for (TwoDimensionalDoublePoint currentPoint : pointCollection) {
+            tempDistance = get2NormDistance(targetPoint, currentPoint);
+            if (tempDistance > resultDistance) {
+                resultDistance = tempDistance;
+                resultPoint = currentPoint;
+            }
+        }
+        return new BasicPair<>(resultPoint, resultDistance);
     }
 
 }
