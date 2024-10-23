@@ -131,4 +131,8 @@ public class TwoDimensionalDoublePointUtils {
         return Math.atan2(directVector[1], directVector[0]);
     }
 
+    public static double get2NormDistance(TwoDimensionalDoublePoint pointA, TwoDimensionalDoublePoint pointB) {
+        return BasicCalculation.get2Norm(pointA.getIndex(), pointB.getIndex());
+    }
+
 }
