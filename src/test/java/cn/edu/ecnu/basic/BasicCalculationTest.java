@@ -42,4 +42,11 @@ public class BasicCalculationTest {
         System.out.println(result);
     }
 
+    @Test
+    public void intervalTest() {
+        double[] intervalA = new double[]{3.5, 10.2};
+        double[] intervalB = new double[]{4.5, 11.2};
+        double[] result = BasicCalculation.getIntervalIntersection(intervalA, intervalB);
+        MyPrint.showDoubleArray(result);
+    }
 }

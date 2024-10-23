@@ -683,6 +683,16 @@ public class BasicCalculation {
         return Double.valueOf(doubleStr);
     }
 
+    public static double[] getIntervalIntersection(double[] intervalA, double[] interValB) {
+        if (intervalA[0] > intervalA[1] || interValB[0] > interValB[1]) {
+            throw new RuntimeException("The intervals are not increasing!");
+        }
+        if (intervalA[0] > interValB[1] || intervalA[1] < interValB[0]) {
+            return null;
+        }
+        return new double[]{Math.max(intervalA[0], interValB[0]), Math.min(intervalA[1], interValB[1])};
+    }
+
 
 
 
