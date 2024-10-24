@@ -5,6 +5,7 @@ import cn.edu.dll.basic.BasicCalculation;
 import cn.edu.dll.struct.pair.BasicPair;
 
 import java.util.*;
+import java.util.function.Function;
 
 @SuppressWarnings("ALL")
 public class TwoDimensionalDoublePointUtils {
@@ -156,6 +157,18 @@ public class TwoDimensionalDoublePointUtils {
             }
         }
         return new BasicPair<>(resultPoint, resultDistance);
+    }
+
+    public static List<TwoDimensionalDoublePoint> getPointSubCollectionInGiven2NormDistanceRange(List<TwoDimensionalDoublePoint> dataCollection, TwoDimensionalDoublePoint targetPoint, Double distanceFactor, Double distanceConst, Double lowerBoundDistance, Double upperBoundDistance) {
+        List<TwoDimensionalDoublePoint> result = new ArrayList<>();
+        Double tempDistance;
+        for (TwoDimensionalDoublePoint element : dataCollection) {
+            tempDistance = get2NormDistance(targetPoint, element) * distanceFactor + distanceConst;
+            if (tempDistance >= lowerBoundDistance && tempDistance <= upperBoundDistance) {
+                result.add(element);
+            }
+        }
+        return result;
     }
 
 }
