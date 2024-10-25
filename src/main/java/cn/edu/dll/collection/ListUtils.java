@@ -3,10 +3,7 @@ package cn.edu.dll.collection;
 import cn.edu.dll.basic.BasicArrayUtil;
 import cn.edu.dll.differential_privacy.cdp.basic_struct.DistanceAble;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class ListUtils {
 
@@ -178,6 +175,20 @@ public class ListUtils {
     public static double getMaximalValue(List<Double> data, Double minimalLowerBound) {
         double result = minimalLowerBound;
         for (Double element : data) {
+            if (element > result) {
+                result = element;
+            }
+        }
+        return result;
+    }
+    public static double getMaximalDoubleValue(List<Double> data) {
+        if (data.isEmpty()) {
+            throw new RuntimeException("The data list is empty!");
+        }
+        Iterator<Double> iterator = data.iterator();
+        double result = iterator.next(), element;
+        while (iterator.hasNext()) {
+            element = iterator.next();
             if (element > result) {
                 result = element;
             }
