@@ -66,7 +66,18 @@ public class RandomUtil {
         int firstPartSize = upperBoundA - lowerBoundA + 1;
         int secondPartSize = upperBoundB - lowerBoundB + 1;
         if (firstPartSize < 0 || secondPartSize < 0) {
-            throw new RuntimeException("Size of some Parts is less than 0!");
+            if (firstPartSize < 0 && secondPartSize < 0) {
+//                System.out.println();
+                throw new RuntimeException("The two part size are both less than 0!");
+            }
+            if (firstPartSize < 0) {
+                System.out.println("The first part size is " + firstPartSize + " which is less than zeros!");
+                firstPartSize = 0;
+            } else {
+                System.out.println("The second part size is " + secondPartSize + " which is less than zeros!");
+                secondPartSize = 0;
+            }
+//            throw new RuntimeException("Size of some Parts is less than 0!");
         }
         double randomPart = Math.random();
         if (randomPart < firstPartSize * 1.0 / (firstPartSize + secondPartSize)) {
