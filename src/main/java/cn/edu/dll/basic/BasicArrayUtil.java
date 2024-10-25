@@ -893,6 +893,15 @@ public class BasicArrayUtil {
         return result;
     }
 
+    public static boolean isAllNoMoreThanZero(double[] data) {
+        for (double datum : data) {
+            if (datum > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         double[] arr = new double[] {
                 9.0, 7.0, 6.0, 3.0, 1.0

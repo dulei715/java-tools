@@ -172,6 +172,15 @@ public class ListUtils {
         }
         return result;
     }
+    public static Integer getMinimalIntegerValue(List<Integer> data) {
+        Integer result = Integer.MAX_VALUE;
+        for (Integer element : data) {
+            if (element < result) {
+                result = element;
+            }
+        }
+        return result;
+    }
     public static double getMaximalValue(List<Double> data, Double minimalLowerBound) {
         double result = minimalLowerBound;
         for (Double element : data) {
@@ -198,6 +207,15 @@ public class ListUtils {
 
     public static int getMaximalValue(List<Integer> data, Integer minimalLowerBound) {
         int result = minimalLowerBound;
+        for (Integer element : data) {
+            if (element > result) {
+                result = element;
+            }
+        }
+        return result;
+    }
+    public static int getMaximalIntegerValue(List<Integer> data) {
+        int result = data.iterator().next();
         for (Integer element : data) {
             if (element > result) {
                 result = element;

@@ -131,14 +131,14 @@ public class MyPrint {
         }
     }
 
-    public static <T> void show2DimensionArray(List<List<T>> data, String splitA, String spliB) {
+    public static <T> void show2DimensionArray(List<List<T>> data, String splitA, String splitB) {
         List<T> tempList;
         for (int i = 0, j; i < data.size(); i++) {
             tempList = data.get(i);
             for (j = 0; j < tempList.size() - 1; j++) {
                 System.out.print(tempList.get(j) + splitA);
             }
-            System.out.print(tempList.get(j) + spliB);
+            System.out.print(tempList.get(j) + splitB);
         }
     }
 

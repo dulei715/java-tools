@@ -533,6 +533,14 @@ public class BasicCalculation {
         return result;
     }
 
+    public static Double getPowerSum(double[] data, double indexValue) {
+        Double result = 0D;
+        for (double datum : data) {
+            result += Math.pow(datum, indexValue);
+        }
+        return result;
+    }
+
 
 
 
