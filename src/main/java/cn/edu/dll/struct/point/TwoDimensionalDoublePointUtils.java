@@ -171,4 +171,12 @@ public class TwoDimensionalDoublePointUtils {
         return result;
     }
 
+    public static List<TwoDimensionalDoublePoint> toSimpleDoublePoint(List<TwoDimensionalIntegerPoint> integerTrajectory) {
+        List<TwoDimensionalDoublePoint> result = new ArrayList<>(integerTrajectory.size());
+        for (TwoDimensionalIntegerPoint integerPoint : integerTrajectory) {
+            result.add(new TwoDimensionalDoublePoint(integerPoint.getXIndex()*1.0, integerPoint.getYIndex()*1.0));
+        }
+        return result;
+    }
+
 }

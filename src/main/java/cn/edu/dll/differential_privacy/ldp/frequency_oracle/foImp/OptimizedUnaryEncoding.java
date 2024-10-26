@@ -28,6 +28,10 @@ public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, One
 //        this.oneHot = oneHot;
     }
 
+    public void resetEpsilon(double epsilon) {
+        this.q = 1.0 / (Math.exp(epsilon)+1);
+    }
+
     @Override
     public OneHot<T> perturb(OneHot<T> rawData) {
         boolean[] data = rawData.getData();
@@ -62,6 +66,21 @@ public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, One
         }
         return result;
     }
+    public static <T> Integer[] countMultiple(Collection<List<OneHot<T>>> dataListCollection) {
+        int colSize = dataListCollection.iterator().next().get(0).getAreaSize();
+        Integer[] result = new Integer[colSize];
+        boolean[] tempOneHot;
+        BasicArrayUtil.setIntArrayToZero(result);
+        for (List<OneHot<T>> dataList : dataListCollection) {
+            for (OneHot<T> oneHot : dataList) {
+                tempOneHot = oneHot.getData();
+                for (int i = 0; i < colSize; i++) {
+                    result[i] += tempOneHot[i] ? 1 : 0;
+                }
+            }
+        }
+        return result;
+    }
 
     public Double[] unbias(Integer[] perturbedCount, int userSize) {
         Double[] result = new Double[perturbedCount.length];
@@ -69,6 +88,10 @@ public class OptimizedUnaryEncoding<T> implements FrequencyOracle<OneHot<T>, One
             result[i] = this.aggregate(perturbedCount[i], userSize);
         }
         return result;
+    }
+
+    public double getQ() {
+        return q;
     }
 
     public static void main(String[] args) {

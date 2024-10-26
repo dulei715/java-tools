@@ -54,4 +54,12 @@ public class TwoDimensionalIntegerPointUtils {
         return resultMap;
     }
 
+    public static List<TwoDimensionalIntegerPoint> toSimpleIntegerPoint(List<TwoDimensionalDoublePoint> doubleTrajectory) {
+        List<TwoDimensionalIntegerPoint> result = new ArrayList<>(doubleTrajectory.size());
+        for (TwoDimensionalDoublePoint doublePoint : doubleTrajectory) {
+            result.add(new TwoDimensionalIntegerPoint((int)Math.round(doublePoint.getXIndex()), (int)Math.round(doublePoint.getYIndex())));
+        }
+        return result;
+    }
+
 }
