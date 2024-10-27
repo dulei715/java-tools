@@ -43,6 +43,7 @@ public abstract class ExponentialMechanism<X, R> {
             }
         }
         this.cumulationProbabilityMatrix = new Double[this.inputList.size()][this.outputList.size()];
+        this.moleculeSum = new Double[this.cumulationProbabilityMatrix.length];
         for (int i = 0; i < this.cumulationProbabilityMatrix.length; i++) {
             this.moleculeSum[i] = BasicArrayUtil.getSum(probabilityMoleculeMatrix[i]);
             this.cumulationProbabilityMatrix[i][0] = 0.0;
