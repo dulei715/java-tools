@@ -75,6 +75,84 @@ public class StatisticTool {
         return result;
     }
 
+//    public static Double getKLDivergence(final Map<String, Integer> rawData, final Map<String, Double> estimationData) {
+//        // 计算estimationData相对于rawData的KL散度
+//        Double result = 0D;
+//        String name;
+//        Integer rawCount;
+//        Double estimationCount;
+//        for (Map.Entry<String, Integer> rawEntry : rawData.entrySet()) {
+//            name = rawEntry.getKey();
+//            rawCount = rawEntry.getValue();
+//            estimationCount = estimationData.get(name);
+//            result += estimationCount * Math.log(estimationCount / rawCount);
+//        }
+//        return result;
+//    }
+
+    public static Double getKLDivergenceValue(Double valueA, Double valueB) {
+        if (valueA <= 0.0) {
+            return 0.0;
+        }
+//        if (valueB.equals(0)) {
+//            throw new RuntimeException("valueB is zero!");
+//        }
+        Double result = valueA * Math.log(valueA / valueB);
+//        if (result.isNaN()) {
+//            throw new RuntimeException("The result is NaN!");
+//        }
+        return result;
+    }
+    public static Double getKLDivergenceValue(Integer valueA, Double valueB) {
+        if (valueA <= 0) {
+            return 0.0;
+        }
+//        if (valueB.equals(0.0)) {
+//            throw new RuntimeException("valueB is zero!");
+//        }
+        Double result = valueA * Math.log(valueA / valueB);
+//        if (result.isNaN()) {
+//            System.out.println(valueA);
+//            System.out.println(valueB);
+//            System.out.println(valueA / valueB);
+//            throw new RuntimeException("The result is NaN!");
+//        }
+        return result;
+    }
+
+    /**
+     * 由于用的KL散度底数是2，因此JS散度的最大值为1
+     * @param rawData
+     * @param estimationData
+     * @return
+     */
+    public static Double getJSDivergence(final Map<String, Integer> rawData, final Map<String, Double> estimationData) {
+        /*
+            计算estimationData相对于rawData的JS散度
+            JSD(P||Q) = 0.5×D_{KL}(P||M) + 0.5×D_{KL}(Q||M)
+            其中 M = 0.5×(P+Q)
+         */
+        Double result = 0D;
+        String name;
+        Integer rawCount;
+        Double estimationCount;
+        for (Map.Entry<String, Integer> rawEntry : rawData.entrySet()) {
+            name = rawEntry.getKey();
+            rawCount = rawEntry.getValue();
+            estimationCount = estimationData.get(name);
+            if (estimationCount <= 0) {
+                estimationCount = 0.0;
+            }
+            Double m = (rawCount + estimationCount) / 2;
+            if(m == 0.0) {
+                // JS散度贡献为0
+                continue;
+            }
+            result += 0.5 * (getKLDivergenceValue(rawCount, m) + getKLDivergenceValue(estimationCount, m));
+        }
+        return result;
+    }
+
     /**
      * 极大似然估计
      * @param value
