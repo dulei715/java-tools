@@ -303,6 +303,7 @@ public class BasicArrayUtil {
      * @return
      * @param <T>
      */
+    @Deprecated
     public static <T> List<T> getInitializedList(T value, int size) throws InstantiationException, IllegalAccessException {
         Class clazz = value.getClass();
         List<T> result = new ArrayList<>();
@@ -901,6 +902,7 @@ public class BasicArrayUtil {
         }
         return true;
     }
+    
 
     public static void main(String[] args) {
         double[] arr = new double[] {
