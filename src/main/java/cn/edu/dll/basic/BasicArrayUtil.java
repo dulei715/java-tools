@@ -885,9 +885,27 @@ public class BasicArrayUtil {
     }
     
     public static double getMinimalValue(double... values) {
+        if (values.length < 1) {
+            throw new RuntimeException("no data input!");
+        }
         double result = Double.MAX_VALUE;
         for (double value : values) {
             if (value < result) {
+                result = value;
+            }
+        }
+        return result;
+    }
+
+    public static double getMaximalValue(double... values) {
+        if (values.length < 1) {
+            throw new RuntimeException("no data input!");
+        }
+        double result = values[0];
+        double value;
+        for (int i = 1; i < values.length; ++i) {
+            value = values[i];
+            if (value > result) {
                 result = value;
             }
         }
