@@ -5,7 +5,15 @@ import cn.edu.dll.basic.NumberUtil;
 import java.util.Random;
 
 public class GaussUtils {
-    private Random random = new Random();
+    private Random random;
+
+    public GaussUtils(Long seed) {
+        this.random = new Random(seed);
+    }
+
+    public GaussUtils() {
+        this.random = new Random();
+    }
 
 //    public GaussUtils(double sensitivity, double epsilon, double delta) {
 //        this.gaussDistribution = new Gaussian(0, Math.sqrt(2*Math.log(1/delta))*sensitivity/epsilon);
